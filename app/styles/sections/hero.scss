@@ -1,0 +1,66 @@
+.hero {
+  padding-bottom: em(80);
+  padding-left: em(5);
+  &-wrap {
+    background-image: url($imgPath+'hero.png');
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 50px );
+    min-height: em(500);
+  }
+  &-caption {
+    text-align: center;
+    &_title {
+      margin: 0;
+      font-family: $ffHeader;
+      font-size: em(48);
+      line-height: 1;
+      margin-bottom: em(15, 48);
+      transition-delay: .3s;
+    }
+    &_text {
+      transition-delay: .6s;
+      font-size: em(16);
+      margin: em(10, 16) 0;
+      &--bigger {
+        transition-delay: .9s;
+        font-weight: 700;
+        font-size: em(18);
+      }
+    }
+    &-footer {
+      transition-delay: 1.2s;
+      margin-top: em(45);
+      text-align: center;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .hero {
+    &-wrap {
+      height: calc(100vh - 100px );
+    }
+  }
+}
+@media (min-width: 960px) {
+  .hero {
+    &-caption {
+      text-align: left;
+      &_title {
+        font-size: em(90);
+      }
+      &_text {
+        font-size: em(30);
+        &--bigger {
+          font-size: em(33);
+        }
+      }
+      &--foter {
+        margin-top: em(45);
+      }
+    }
+  }
+}
+@media (min-width: 1070px) {
+
+}

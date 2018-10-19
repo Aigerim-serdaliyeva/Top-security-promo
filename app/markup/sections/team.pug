@@ -1,0 +1,13 @@
+mixin team-item(data)
+  .team-mate
+    .team-mate-img
+      img(src="assets/media/images/content/"+data.img+".png", alt=data.name)
+    h2.team-mate-name!=data.name
+    p.team-mate-text!=data.text
+mixin team() 
+  section.team-wrap
+    h1.section-title.section-title--small.anim.slide-in-top Наша команда
+    .team
+      .team-carousel.anim.slide-in-bot
+        each val in team
+          +team-item(val)

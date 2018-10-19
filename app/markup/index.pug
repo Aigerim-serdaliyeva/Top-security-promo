@@ -1,0 +1,30 @@
+- var title = 'Top Security | Обезопась себя и своих близких!'
+include sections/header.pug
+include sections/hero.pug
+include sections/steps.pug
+include sections/services.pug
+include sections/benefits.pug
+include sections/testimonials.pug
+include sections/about.pug
+include sections/callback.pug
+include sections/team.pug
+include sections/footer.pug
+include sections/mobile-menu.pug
+<!DOCTYPE html>
+html(lang="ru")
+  include includes/head.pug
+  body
+    +header()
+    +mobile-menu()
+    main
+      +hero()
+      +steps()
+      +services()
+      +benefits()
+      +testimonials()
+      +about()
+      +callback()
+      +team()
+      +footer()
+      
+    script(src="main.js")

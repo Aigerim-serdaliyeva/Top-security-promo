@@ -1,0 +1,148 @@
+.footer {
+  background-color: $colorDark;
+  padding: em(50) 0 em(40);
+  &-cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  &-col {
+    flex-basis: 100%;
+  }
+  &-logo {
+    text-align: center;
+    &-link {
+      display: inline-block;
+      transition: .4s;
+      &:hover, &:focus {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &-tel {
+    font-size: em(27);
+    text-decoration: none;
+    color: $colorAlt;
+    display: block;
+    text-align: center;
+    &:focus, &:hover {
+      text-decoration: underline;
+    }
+  }
+  &-desc {
+    text-align: center;
+    font-size: em(12);
+    display: block;
+  }
+  &-menu {
+    display: none;
+  }
+  &-socials {
+    text-align: center;
+    margin-top: em(40);
+    &_item {
+      vertical-align: middle;
+      opacity: .6;
+      transition: .4s;
+      margin-left: em(6);
+      img{
+        vertical-align: middle;
+      }
+      &:hover,&:focus {
+        opacity: 1;
+      }
+    }
+  }
+  &-address {
+    text-align: center;
+    font-style: normal;
+    font-weight: 300;
+    font-size: em(15);
+    margin: em(20) 0;
+    opacity: .6;
+    transition: .4s;
+    line-height: 1.4;
+    span {
+      font-size: em(18);
+      font-weight: 400;
+    }
+    &:hover,&:focus-within {
+      opacity: 1;
+    }
+    a {
+      color: inherit;
+      transition: .4s;
+      &:focus, &:hover {
+        color: $colorAlt;
+      }
+    }
+  }
+  &-copy {
+    font-weight: 300;
+    text-align: center;
+    font-size: em(14);
+    opacity: .6;
+    margin-top: em(40);
+  }
+}
+@media (min-width: 760px) {
+  .footer {
+    &-col {
+      flex: 1;
+      &--full {
+        flex-basis: 100%;
+      }
+    }
+    &-socials {
+      text-align: right;
+      margin-top: 0;
+    }
+    &-address {
+      text-align: right;
+    }
+    &-menu {
+      display: block;
+      &-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        
+      }
+      &-item {
+        &+.footer-menu-item {
+          margin-top: em(10);
+        }
+      }
+      &-link {
+        color: $colorMain;
+        text-decoration: none;
+        font-size: em(18);
+        transition: .4s;
+        opacity: 0.6;
+        display: inline-block;
+        position: relative;
+        &:before {
+          content: '';
+          opacity: 0;
+          position: absolute;
+          display: block;
+          left: 0;
+          right: 0;
+          bottom: -2px;
+          height: 2px;
+          background-color: $colorAlt;
+          transform: translateX(-100%);
+          transition: .4s;
+        }
+        &:hover, &:focus {
+          opacity: 1;
+          outline: none;
+          &:before {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+}

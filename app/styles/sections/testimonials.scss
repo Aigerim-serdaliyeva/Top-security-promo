@@ -1,0 +1,176 @@
+.testimonials {
+  position: relative;
+  padding: em(27) em(15);
+	&-wrap {
+    background-color: $colorDark;
+    border-top: em(14) solid $colorAlt;
+    border-bottom: em(14) solid $colorPrimary;
+    background-image: url($imgPath+'testi-bg.png');
+    background-size: cover;
+    background-position: 50% 0;
+    padding-top: em(33);
+    padding-bottom: em(33);
+  }
+  &-arrows {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
+    transform: translateY(-50%);
+  }
+  &-arrow {
+    position: absolute;
+    background-image: url($imgPath+'testi-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width: 20px;
+    height: 71px;
+    top: -35px;
+    &--left {
+      left: 0;
+      transform: scale(-1)
+    }
+    &--right {
+      right: 0;
+    }
+  }
+  &-navs {
+    display: flex;
+    justify-content: center;
+    margin-top: em(9);
+    margin-bottom: em(3);
+  }
+  &-nav {
+    width: em(10);
+    height: em(10);
+    border: 1px solid $colorMain;
+    border-radius: 50%;
+    display: block;
+    transition: .3s;
+    margin: 0 em(4);
+    &.active {
+      background-color: $colorAlt;
+      border-color: $colorAlt;
+    }
+  }
+  &-carousel {
+    .slick-slide {
+      opacity: 0;
+      transition: .4s;
+      &.slick-current {
+        opacity: 1;
+      }
+    }
+  }
+}
+.testimonial {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &-avatar {
+    overflow: hidden;
+    border-radius: 50%;
+    width: em(130);
+    height: em(130);
+    flex-basis: em(130);
+    img {
+      width: 100%;
+    }
+  }
+  &-quote {
+    margin: 0;
+    flex: 1;
+  }
+  &-author {
+    font-family: $ffHeader;
+    font-style: normal;
+    font-size: em(25);
+    text-align: center;
+    font-weight: 400;
+    display: block;
+    line-height: 1;
+    margin-top: em(15,25);
+  }
+  &-company {
+    line-height: 1;
+    font-family: $ffHeader;
+    display: block;
+    color: $colorAlt;
+    font-style: normal;
+    font-size: em(14);
+    text-align: center;
+    padding-bottom: em(2,20);
+    border-bottom: 1px dashed;
+    position: relative;
+  }
+  &-text {
+    font-size: em(14);
+    margin: em(10,25) 0;
+    font-weight: 300;
+    text-align: center;
+  }
+}
+@media (min-width: 760px) {
+  .testimonials {
+    padding: em(27) em(55);
+    &-arrows {
+      top: 50%;
+    }
+    &-arrow {
+      width: 35px;
+      height: 71px;
+      top: -35px;
+    }
+  }
+  .testimonial {
+    flex-direction: row;
+    &-quote {
+      margin: 0 0 0 em(50);
+    }
+    &-company {
+      font-size: em(20);
+      text-align: left;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 1px;
+        background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(37,37,37,1) 75%);
+      }
+    }
+    &-avatar {
+      width: em(260);
+      height: em(260);
+      flex-basis: em(260);
+    }
+    &-text {
+      font-size: em(20);
+      text-align: left;
+    }
+    &-author {
+      font-size: em(32);
+      text-align: left;
+      margin-top: 0;
+    }
+  }
+}
+@media (min-width: 960px) {
+  .testimonial {
+    &-text {
+      font-size: em(25);
+    }
+    &-author {
+      font-size: em(40);
+    }
+  }
+}
+@media (min-width: 1070px) {
+  .testimonials {
+    padding: em(27) em(136);
+    &-wrap {
+    }
+  }
+}

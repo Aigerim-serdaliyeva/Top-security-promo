@@ -1,0 +1,26 @@
+body {
+  font-family: $ffMain, sans-serif;
+  color: $colorMain;
+  background-color: #eaeaea;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 1rem;
+}
+*{
+  box-sizing: border-box;
+  // outline: 1px solid red;
+  &:focus {
+    outline: none;
+  }
+  &:before,&:after{
+    box-sizing: border-box;
+  }
+}
+
+@import 'base/btns.scss';
+@import 'base/grid.scss';
+@import 'base/animations.scss';
+@import 'base/helpers.scss';
+@import 'base/basics.scss';
+

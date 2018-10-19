@@ -1,0 +1,51 @@
+.team {
+	&-wrap {
+    padding: em(77) 0 em(69);
+  }
+  &-mate {
+    text-align: center;
+    &-img {
+      img {
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0,0,0,.25);
+        display: inline-block;
+      }
+    }
+    &-name {
+      font-weight: 900;
+      font-size: em(25);
+      color: $colorDark;
+      margin: em(24,25) 0 0;
+    }
+    &-text {
+      color: $colorDark;
+      font-size: em(15);
+      margin: em(5, 15) 0;
+    }
+  }
+  &-carousel {
+    padding-top: em(26);
+    .slick-slide {
+      width: 270px;
+      transform: scale(.8);
+      transition: .4s;
+      &.slick-current {
+        transform: scale(1);
+        &:hover {
+          transform: scale(1);
+        }
+      }
+      &:hover {
+        transform: scale(.9);
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+@media (min-width: 760px) {
+  .team-carousel .slick-slide {
+    margin: 0 em(20);
+  }
+}

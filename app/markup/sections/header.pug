@@ -1,0 +1,37 @@
+mixin navbar-item(data)
+  li.navbar-menu-item
+    a.js-scroll-to.spy.navbar-menu-link(href=data.href, title=data.name)=data.name
+mixin header()
+  #page-start.spy-it
+  header.header
+    .container
+      nav.navbar
+        button.navbar-burger
+          span
+          span
+          span
+        .navbar-logo
+          a.navbar-logo-link.spy.js-scroll-to(href="/" title=index.name)
+            img.navbar-logo-img(src="assets/media/images/content/logo.svg", alt=index.name+" логотип")
+        .navbar-menu
+          ul.navbar-menu-list
+            each item in navbar.items
+              +navbar-item(item)
+        a(href="tel:+77010840817").navbar-phone
+      .mobile
+        nav.mobile-menu
+          ul.mobile-menu-list
+            each item in navbar.items
+              li.mobile-menu-item
+                a.mobile-menu-link.js-scroll-to(href=item.href, title=item.name)=item.name
+        .mobile-section
+          a.js-scroll-to(href="#callback").btn.btn--primary Заказать звонок
+        .mobile-section
+          .mobile-social
+            a.mobile-social-item(href="#")
+              img(src="assets/media/images/shared/mobile-fb.svg", alt="Facebook")
+            a.mobile-social-item(href="#")
+              img(src="assets/media/images/shared/mobile-vk.svg", alt="Vkontakte")
+            a.mobile-social-item(href="#")
+              img(src="assets/media/images/shared/mobile-insta.svg", alt="Instagram")
+        

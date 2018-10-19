@@ -1,0 +1,72 @@
+.callback {
+  &-wrap {
+    background-color: $colorDark;
+    padding-top: em(70);
+    padding-bottom: em(53);
+    border-top: 5px solid $colorPrimary;
+    border-bottom: 5px solid $colorAlt;
+  }
+  &-title {
+    font-family: $ffHeader;
+    text-align: center;
+    font-size: em(36);
+  }
+  &-desc {
+    text-align: center;
+    font-size: em(18);
+    font-weight: 300;
+    margin: em(10, 30) 0;
+  }
+  &-form {
+    margin-top: em(26);
+    margin-bottom: em(26);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .btn {
+      min-height: 50px;
+    }
+    .input {
+      margin: em(5);
+      width: 285px;
+      // text-align: center;
+    }
+    &-message {
+      display: none;
+      width: 100%;
+      text-align: center;
+      font-size: em(20);
+      margin: em(20, 18)
+    }
+    &.submitted {
+      .callback-form-message {
+        opacity: 1;
+      }
+    }
+  }
+  &-end {
+    text-align: center;
+  }
+}
+@media (min-width: 760px) {
+  .callback {
+    &-desc {
+      font-size: em(24);
+    }
+    &-title {
+      font-size: em(50);
+    }
+    &-form {
+      .input {
+        width: auto;
+      }
+    }
+  }
+}
+@media (min-width: 960px) {
+
+}
+@media (min-width: 1070px) {
+
+}

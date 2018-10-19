@@ -1,0 +1,28 @@
+mixin testimonial(data)
+  .testimonial-wrap
+    .testimonial
+      .testimonial-avatar
+        img.testimonial-img(src=data.img, alt=data.name)
+      blockquote.testimonial-quote
+        header.testimonial-header
+          cite.testimonial-author=data.name
+          cite.testimonial-company=data.company
+        p.testimonial-text!=data.text
+      
+
+mixin testimonials()
+  section.testimonials-wrap.anim.slide-in-bot
+    .container
+      h1.section-title.section-title--small.section-title--white.anim.slide-in-top Под защитой «Top Security» 
+      .testimonials
+        .testimonials-carousel.anim.slide-in-bot
+          each item in testimonials
+            +testimonial(item)
+        .testimonials-ctrl
+          .testimonials-navs
+            each item in testimonials
+              .testimonials-nav
+          .testimonials-arrows
+            .testimonials-arrow.testimonials-arrow--left
+            .testimonials-arrow.testimonials-arrow--right
+          

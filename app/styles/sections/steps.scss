@@ -1,0 +1,266 @@
+.steps {
+  margin-top: 34px;
+  padding: 0;
+	&-wrap {
+    padding: em(71) 0;
+    
+    background-image: 
+      url('assets/media/images/shared/rects.png'),
+      url('assets/media/images/shared/step-bg-2.png'),
+      url('assets/media/images/shared/step-bg-1.png');
+    background-position: center center,  bottom left, top right;
+    background-size: cover, auto 50%, auto 50%;
+    background-repeat: no-repeat;
+  }
+}
+.step {
+  display: flex;
+  color: $colorDark;
+  position: relative;
+  align-items: flex-start;
+  
+  &-icon {
+    border-radius: 50%;
+    overflow: hidden;
+    flex-basis: em(110);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: em(5) solid $colorPrimary;
+    margin-right: em(20);
+    position: relative;
+    z-index: 3;
+    align-self: center;
+    &.active {
+      animation-name: blink;
+      animation-duration: .8s;
+      animation-delay: .8s;
+      animation-iteration-count: 2;
+      &+.step-caption {
+        opacity: 1;
+        transition-delay: .4s;
+        transform: translateX(0);
+      }
+    }
+  }
+  &-img {
+    display: block;
+    max-width: 100%;
+  }
+  &-caption {
+    flex-basis: em(220);
+    // padding-top: em(52);
+    align-self: center;
+    &--right {
+      text-align: right;
+    }
+  }
+  &-text {
+    font-size: em(14);
+    margin: 0;
+  }
+  &-title {
+    font-family:$ffHeader;
+    font-size: em(28);
+    font-weight: bold;
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: em(3,50);
+  }
+  &-line {
+    position: absolute;
+    top: 100%;
+    margin-top: 0;
+    transition: linear 1s;
+    max-width: em(0);
+    overflow: hidden;
+    will-change: width;
+    svg {
+      width: 100%;
+    }
+    &--left {
+      transform-origin: left top;
+      left: 50px;
+      right: 50px;
+    }
+    &--right {
+      transform-origin: right top;
+      left: 50px;
+      right: 50px;
+      text-align: right;
+      svg {
+        float: right;
+        animation-direction: reverse;
+        
+      }
+    }
+    &.active {
+      max-width: em(685);
+      max-height: em(105);
+      svg {
+        animation-name: line;
+        animation-delay: 0s;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+    }
+  }
+  &+.step {
+    margin-top: 50px;
+  }
+  &:last-child {
+    .step-line {
+      display: none;
+    }
+  }
+  &--right {
+    flex-direction: row-reverse;
+    .step-icon {
+      margin-left: em(20);
+      margin-right: 0;
+    }
+  }
+  &.active {
+    
+  }
+}
+@keyframes line{
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -120;
+  }
+}
+@keyframes blink{
+  0% {
+    box-shadow: 0 0 0 $colorAlt;
+  }
+  50% {
+    box-shadow: 0 0 50px $colorAlt;
+  }
+}
+.show-mobile {
+  display: block;
+}
+.show-tablet {
+  display: none;
+}
+@media (min-width: 560px) {
+  .step {
+    &+.step {
+      margin-top: 10%;
+    }
+    &-line {
+      margin-top: -4%;
+    }
+  }
+  .show-mobile {
+    display: none;
+  }
+  .show-tablet {
+    display: block;
+  }
+}
+@media (min-width: 760px) {
+  .steps {
+    margin: 34px 0;
+    padding: 0 85px;
+    width: auto;
+    &-wrap {
+      background-size: cover, auto, auto;
+    }
+  }
+  .step {
+    &+.step {
+      margin-top: 3em;
+    }
+    &-icon {
+      flex-basis: em(220);
+      border: em(10) solid $colorPrimary;
+    }
+    &-img {
+      display: block;
+    }
+    &-caption {
+      flex-basis: em(470);
+      align-self: center;
+    }
+    &-line {
+      margin-top: -0%;
+      &--left {
+        transform-origin: left top;
+        left: 15%;
+        right: 15%;
+      }
+      &--right {
+        transform-origin: right top;
+        right: 15%;
+        left: 15%;
+        text-align: right;
+      }
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-text {
+      font-size: em(18);
+    }
+    &-title {
+      font-size: em(36);
+    }
+  }
+}
+@media (min-width: 960px) {
+  .step {
+    &+.step {
+      margin-top: 5em;
+    }
+    &-icon {
+      flex-basis: em(220);
+      border: em(10) solid $colorPrimary;
+    }
+    &-img {
+      display: block;
+    }
+    &-caption {
+      flex-basis: em(470);
+      align-self: center;
+    }
+    &-line {
+      &--left {
+        transform-origin: left top;
+        left: em(108);
+        right: auto;
+      }
+      &--right {
+        transform-origin: right top;
+        right: em(108);
+        left: auto;
+        text-align: right;
+      }
+    }
+    &-text {
+      font-size: em(25);
+    }
+    &-title {
+      font-size: em(50);
+    }
+    &-line {
+      svg {
+        width: em(546);
+      }
+    }
+  }
+}
+@media (min-width: 1070px) {
+  .step {
+    &-line {
+      svg {
+        width: auto;
+      }
+    }
+  }
+}

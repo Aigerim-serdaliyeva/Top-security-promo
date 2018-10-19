@@ -1,0 +1,11 @@
+{
+  "navbar": {
+    "items": [
+      { "href": "#how-it-works", "name": "Как мы работаем" },
+      { "href": "#services", "name": "Услуги" },
+      { "href": "#benefits", "name": "Преимущества" },
+      { "href": "#about", "name": "О нас" },
+      { "href": "#contacts", "name": "Контакты" }
+    ]
+  }
+}
