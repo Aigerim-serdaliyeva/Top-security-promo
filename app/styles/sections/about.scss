@@ -6,6 +6,7 @@
   flex-wrap: wrap;
 	&-wrap {
     padding: em(57) 0 em(22);
+    overflow: hidden;
   }
   &-img {
     display: block;

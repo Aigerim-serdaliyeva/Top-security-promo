@@ -7,6 +7,7 @@
     background-position: center;
     height: calc(100vh - 50px );
     min-height: em(500);
+    overflow: hidden;
   }
   &-caption {
     text-align: center;

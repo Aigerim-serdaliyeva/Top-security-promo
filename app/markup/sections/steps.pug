@@ -5,8 +5,7 @@ mixin step(data, index)
   li.step.anim(class='step--' + (index + 1) + ' step--' + side)
     .step-icon.anim.scale-in
       img.step-img(
-        src="assets/media/images/content/" + data.img + ".png", 
-        srcset="assets/media/images/content/" + data.img + ".png 1x, assets/media/images/content/" + data.img + "@2x.png 2x", 
+        src="assets/media/images/content/" + data.img + ".png",
         alt=data.title)
     .step-caption(class='step-caption--' + side + ' slide-in-' + side)
       h2.step-title=data.title

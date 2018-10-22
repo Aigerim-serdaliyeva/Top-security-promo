@@ -1,6 +1,6 @@
 <?
 if((isset($_POST['name'])&&$_POST['name']!="")&&(isset($_POST['phone'])&&$_POST['phone']!="")){ //Проверка отправилось ли наше поля name и не пустые ли они
-        $to = 'info@topsecurity.kz'; //Почта получателя, через запятую можно указать сколько угодно адресов
+        $to = 'info@topsecurity.ru'; //Почта получателя, через запятую можно указать сколько угодно адресов
         $subject = 'Заказали звонок'; //Загаловок сообщения
         $message = '
                 <html>
@@ -13,7 +13,7 @@ if((isset($_POST['name'])&&$_POST['name']!="")&&(isset($_POST['phone'])&&$_POST[
                     </body>
                 </html>'; //Текст нащего сообщения можно использовать HTML теги
         $headers  = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
-        $headers .= "From: Отправитель <topsecurity>\r\n"; //Наименование и почта отправителя
+        $headers .= "From: С сайта promo.topsecurity.kz \r\n"; //Наименование и почта отправителя
         mail($to, $subject, $message, $headers); //Отправка письма с помощью функции mail
 }
 ?>

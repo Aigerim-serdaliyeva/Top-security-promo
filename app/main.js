@@ -13515,18 +13515,24 @@ jQuery(document).ready(function ($) {
     var form = $(_this);
     var form_data = $(_this).serialize(); //собераем все данные из формы
 
-    $.ajax({
-      type: "POST", //Метод отправки
-      url: "ajax_send_mail.php", //путь до php фаила отправителя
-      data: form_data,
-      success: function success() {
-        //код в этом блоке выполняется при успешной отправке сообщения
-        form.addClass('submitted');
-        form.find('*').fadeOut(500);
-        setTimeout(function () {
-          form.find('.callback-form-message').fadeIn(), 600;
-        }, 600);
-      }
+    $(".ajax-form").submit(function (event) {
+      //устанавливаем событие отправки для формы с id=form
+      event.preventDefault();
+      var form = $(event.target);
+      var form_data = $(event.target).serialize(); //собераем все данные из формы
+      $.ajax({
+        type: "POST", //Метод отправки
+        url: "/ajax_send_mail.php", //путь до php фаила отправителя
+        data: form_data,
+        success: function success() {
+          //код в этом блоке выполняется при успешной отправке сообщения
+          form.addClass('submitted');
+          form.find('.input').fadeOut(500);
+          setTimeout(function () {
+            form.find('.callback-form-message').fadeIn(), 600;
+          }, 600);
+        }
+      });
     });
   });
   // ajax-form

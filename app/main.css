@@ -754,7 +754,8 @@ body {
     background-size: cover;
     background-position: center;
     height: calc(100vh - 50px);
-    min-height: 31.25em; }
+    min-height: 31.25em;
+    overflow: hidden; }
   .hero-caption {
     text-align: center; }
     .hero-caption_title {
@@ -802,6 +803,7 @@ body {
   padding: 0; }
   .steps-wrap {
     padding: 4.4375em 0;
+    overflow: hidden;
     background-image: url("assets/media/images/shared/rects.png"), url("assets/media/images/shared/step-bg-2.png"), url("assets/media/images/shared/step-bg-1.png");
     background-position: center center,  bottom left, top right;
     background-size: cover, auto 50%, auto 50%;
@@ -1046,7 +1048,8 @@ body {
 
 .services-wrap {
   background-color: #f7f7f7;
-  padding: 4.125em 0 4.6875em; }
+  padding: 4.125em 0 4.6875em;
+  overflow: hidden; }
 
 .services-text {
   font-size: 1.125em;
@@ -1125,7 +1128,8 @@ body {
   .benefits-wrap {
     padding: 5.3125em 0 4.625em;
     background-image: url("assets/media/images/shared/rects-flip.png");
-    background-size: cover; }
+    background-size: cover;
+    overflow: hidden; }
 
 .benefit {
   margin: 0;
@@ -1212,7 +1216,8 @@ body {
     background-size: cover;
     background-position: 50% 0;
     padding-top: 2.0625em;
-    padding-bottom: 2.0625em; }
+    padding-bottom: 2.0625em;
+    overflow: hidden; }
   .testimonials-arrows {
     position: absolute;
     left: 0;
@@ -1376,7 +1381,8 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
   .about-wrap {
-    padding: 3.5625em 0 1.375em; }
+    padding: 3.5625em 0 1.375em;
+    overflow: hidden; }
   .about-img {
     display: block;
     max-width: 100%; }
@@ -1502,7 +1508,8 @@ body {
     width: auto; } }
 
 .team-wrap {
-  padding: 4.8125em 0 4.3125em; }
+  padding: 4.8125em 0 4.3125em;
+  overflow: hidden; }
 
 .team-mate {
   text-align: center; }

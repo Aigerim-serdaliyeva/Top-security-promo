@@ -24,6 +24,7 @@
     padding: em(85) 0 em(74);
     background-image: url($imgPath+'rects-flip.png');
     background-size: cover;
+    overflow: hidden;
   }
 }
 .benefit {
