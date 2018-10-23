@@ -234,19 +234,22 @@
     }
     &-line {
       margin-top: 0%;
+      svg {
+        width: em(580);
+      }
       &--left {
         transform-origin: left top;
         left: em(90);
-        right: em(90);
+        right: auto;
       }
       &--right {
         transform-origin: right top;
         right: em(90);
-        left: em(90);
+        left: auto;
         text-align: right;
       }
       &.active {
-        max-width: em(720);
+        max-width: em(580);
         max-height: em(105);
       }
     }
@@ -256,19 +259,29 @@
     &-title {
       font-size: em(50);
     }
-    &-line {
-      // svg {
-      //   width: em(546);
-      // }
-    }
   }
 }
 @media (min-width: 1070px) {
   .step {
     &-line {
-      margin-top: -2%;
+      margin-top: 0%;
       svg {
-        width: 100%;
+        width: em(720);
+      }
+      &--left {
+        transform-origin: left top;
+        left: em(90);
+        right: auto;
+      }
+      &--right {
+        transform-origin: right top;
+        right: em(90);
+        left: auto;
+        text-align: right;
+      }
+      &.active {
+        max-width: em(720);
+        max-height: em(105);
       }
     }
   }
