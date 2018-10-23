@@ -899,8 +899,8 @@ body {
         float: right;
         animation-direction: reverse; }
     .step-line.active {
-      max-width: 42.8125em;
-      max-height: 6.5625em; }
+      max-width: none;
+      max-height: none; }
       .step-line.active svg {
         -webkit-animation-name: line;
                 animation-name: line;
@@ -977,7 +977,7 @@ body {
     .steps-wrap {
       background-size: cover, auto, auto; }
   .step + .step {
-    margin-top: 3em; }
+    margin-top: 4em; }
   .step-icon {
     -ms-flex-preferred-size: 13.75em;
         flex-basis: 13.75em;
@@ -990,7 +990,7 @@ body {
     -ms-flex-item-align: center;
         align-self: center; }
   .step-line {
-    margin-top: -0%; }
+    margin-top: 0%; }
     .step-line--left {
       -webkit-transform-origin: left top;
               transform-origin: left top;
@@ -1005,6 +1005,8 @@ body {
     .step-line svg {
       width: 100%;
       height: 100%; }
+    .step-line.active {
+      max-width: 34.125em; }
   .step-text {
     font-size: 1.125em; }
   .step-title {
@@ -1014,8 +1016,8 @@ body {
   .step + .step {
     margin-top: 5em; }
   .step-icon {
-    -ms-flex-preferred-size: 13.75em;
-        flex-basis: 13.75em;
+    -ms-flex-preferred-size: 11.875em;
+        flex-basis: 11.875em;
     border: 0.625em solid #FFB800; }
   .step-img {
     display: block; }
@@ -1024,27 +1026,32 @@ body {
         flex-basis: 29.375em;
     -ms-flex-item-align: center;
         align-self: center; }
-  .step-line--left {
-    -webkit-transform-origin: left top;
-            transform-origin: left top;
-    left: 6.75em;
-    right: auto; }
-  .step-line--right {
-    -webkit-transform-origin: right top;
-            transform-origin: right top;
-    right: 6.75em;
-    left: auto;
-    text-align: right; }
+  .step-line {
+    margin-top: 0%; }
+    .step-line--left {
+      -webkit-transform-origin: left top;
+              transform-origin: left top;
+      left: 5.625em;
+      right: 5.625em; }
+    .step-line--right {
+      -webkit-transform-origin: right top;
+              transform-origin: right top;
+      right: 5.625em;
+      left: 5.625em;
+      text-align: right; }
+    .step-line.active {
+      max-width: 45em;
+      max-height: 6.5625em; }
   .step-text {
     font-size: 1.5625em; }
   .step-title {
-    font-size: 3.125em; }
-  .step-line svg {
-    width: 34.125em; } }
+    font-size: 3.125em; } }
 
 @media (min-width: 1070px) {
-  .step-line svg {
-    width: auto; } }
+  .step-line {
+    margin-top: -2%; }
+    .step-line svg {
+      width: 100%; } }
 
 .services-wrap {
   background-color: #f7f7f7;
