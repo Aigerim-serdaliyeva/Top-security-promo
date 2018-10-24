@@ -99,6 +99,10 @@ gulp.task('image', function () {
     .pipe(gulp.dest('app/assets/media/images'));
 });
 gulp.task('build', () => {
+  gulp.src('app/mailer/**/*')
+    .pipe(gulp.dest('dist/mailer'));
+  gulp.src('app/*.php')
+    .pipe(gulp.dest('dist'));
   gulp.src('app/assets/**/*')
     .pipe(gulp.dest('dist/assets'));
   gulp.src('app/*.js')
@@ -109,7 +113,7 @@ gulp.task('build', () => {
     .pipe(gulp.dest('dist'));
   gulp.src('app/*.html')
     .pipe(gulp.dest('dist'));
-});
+})
 gulp.task('default', ['watch']);
 var filesToCreate = [
   {

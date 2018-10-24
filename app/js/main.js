@@ -132,7 +132,7 @@ jQuery(document).ready(function($) {
       var form_data = $(event.target).serialize(); //собераем все данные из формы
       $.ajax({
         type: "POST", //Метод отправки
-        url: "/ajax_send_mail.php", //путь до php фаила отправителя
+        url: "/mailer.php", //путь до php фаила отправителя
         data: form_data,
         success: function success() {
           //код в этом блоке выполняется при успешной отправке сообщения
