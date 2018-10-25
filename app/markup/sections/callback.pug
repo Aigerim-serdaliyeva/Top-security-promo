@@ -17,4 +17,5 @@ mixin callback()
             input.input-value(type="text", data-mask="+7 (000) 0000 000", required, id="callback_phone", name="phone")
           .input.callback-end
             button.btn.btn--primary(type="submit") Заказать
-          .callback-form-message Ваше сообщение отправлено!
+          .callback-form-message.callback-form-message--success Ваше сообщение отправлено!
+          .callback-form-message.callback-form-message--error Ошибка при отправке запроса!

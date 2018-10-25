@@ -13400,8 +13400,6 @@ h("input"),watchDataMask:!1,byPassKeys:[9,16,17,18,36,37,38,39,40,91],translatio
 
 
 jQuery(document).ready(function ($) {
-  var _this = this;
-
   // smooth scroll to anchor
   $('.js-scroll-to').on('click', function (event) {
     event.preventDefault();
@@ -13510,29 +13508,27 @@ jQuery(document).ready(function ($) {
   });
   // ajax-form
   $(".ajax-form").submit(function (event) {
-    //устанавливаем событие отправки для формы с id=form
     event.preventDefault();
-    var form = $(_this);
-    var form_data = $(_this).serialize(); //собераем все данные из формы
+    var form = $(event.target);
+    var form_data = form.serialize();
 
-    $(".ajax-form").submit(function (event) {
-      //устанавливаем событие отправки для формы с id=form
-      event.preventDefault();
-      var form = $(event.target);
-      var form_data = $(event.target).serialize(); //собераем все данные из формы
-      $.ajax({
-        type: "POST", //Метод отправки
-        url: "/mailer.php", //путь до php фаила отправителя
-        data: form_data,
-        success: function success() {
-          //код в этом блоке выполняется при успешной отправке сообщения
-          form.addClass('submitted');
-          form.find('.input').fadeOut(500);
-          setTimeout(function () {
-            form.find('.callback-form-message').fadeIn(), 600;
-          }, 600);
-        }
-      });
+    form.addClass('loading');
+
+    $.ajax({
+      type: "POST",
+      url: "/mailer.php",
+      data: form_data,
+      success: function success() {
+        form.removeClass('loading').addClass('submitted');
+        form.find('.input').fadeOut(500);
+        setTimeout(function () {
+          form.find('.callback-form-message--success').fadeIn(), 600;
+        }, 600);
+      },
+      error: function error() {
+        form.removeClass('loading');
+        form.find('.callback-form-message--error').fadeIn(), 600;
+      }
     });
   });
   // ajax-form
