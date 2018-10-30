@@ -9,6 +9,7 @@
   "author": "crip",
   "license": "ISC",
   "devDependencies": {
+    "animejs": "^2.2.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.5",
