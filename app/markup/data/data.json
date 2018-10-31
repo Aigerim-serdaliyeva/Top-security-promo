@@ -33,12 +33,12 @@
 	"navbar": {
 		"items": [
 			{
-				"href": "#how-it-works2",
-				"name": "Как мы работаем"
-			},
-			{
 				"href": "#services",
 				"name": "Услуги"
+			},
+			{
+				"href": "#how-it-works3",
+				"name": "Как мы работаем"
 			},
 			{
 				"href": "#benefits",
@@ -114,28 +114,28 @@
 	"testimonials": [
 		{
 			"name": "Алиханов Мейрамбек",
-			"img": "assets/media/images/content/avatar.png",
+			"img": "assets/media/images/content/avatar1.jpg",
 			"title": "Под защитой «Top Security»",
 			"company": "Директор ТОО «NewEstate»",
 			"text": "После того, как была попытка взлома нашего офиса, мы установили тревожную сигнализацию Top Security. За год работы ни разу не было ложных срабатываний сигнализации. Я часто улетаю, но не волнуюсь за имущество, потому что знаю, что ребята Top Security не дадут нас в обиду."
 		},
 		{
 			"name": "Борисов Игорь",
-			"img": "assets/media/images/content/avatar.png",
+			"img": "assets/media/images/content/avatar2.jpg",
 			"title": "Под защитой «Top Security»",
 			"company": "Старший механик сервиса «Автолига»",
 			"text": "Моя жена в декретном отпуске, постоянно одна дома с ребенком. Район у нас не спокойный, вот и обратился в компанию, чтобы поставить  сигнализацию. Теперь я спокоен. Могу наблюдать за домом через телефон. Знаю, что с моей семьей все в порядке."
 		},
 		{
 			"name": "Мухамадиева Раиса",
-			"img": "assets/media/images/content/avatar.png",
+			"img": "assets/media/images/content/avatar3.jpg",
 			"title": "Под защитой «Top Security»",
 			"company": "пенсионерка",
 			"text": "Уже несколько раз грабили нашу дачу. Потом дети заказали охрану. Думала, никогда не сможем сами открыть и закрыть дом. Пульт не сложный, уже справляемся сами. И воры дачу обходят стороной."
 		},
 		{
 			"name": "Валиев Тимур",
-			"img": "assets/media/images/content/avatar.png",
+			"img": "assets/media/images/content/avatar4.jpg",
 			"title": "Под защитой «Top Security»",
 			"company": "частный предприниматель",
 			"text": "У меня под охраной и квартира и гараж. Спокойно уезжаем на рыбалку на Или. Ну, и в аул к родственникам. Даже там пульт работает. Смотрим, что с домом все нормально."

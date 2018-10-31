@@ -6,11 +6,7 @@
 
 jQuery(document).ready(function($) {
 
-  if (window.matchMedia("(min-width: 960px)").matches ) { // If media query matches
-    if ($('.navbar-menu-item a').attr('title') == 'Как мы работаем') {
-      $('.navbar-menu-item a:first').prop('href', '#how-it-works3');
-    }
-  } 
+
 
   // smooth scroll to anchor
   $('.js-scroll-to').on('click', function(event) {
@@ -22,6 +18,7 @@ jQuery(document).ready(function($) {
     }
     $(this).addClass('active').parent().siblings().find('.js-scroll-to').removeClass('active')
     $('.mobile, .navbar, .navbar-burger').removeClass('active');
+    
   })
   $('.screenshot-btn').on('click', (event) => {
     $(event.target).toggleClass('active');
@@ -69,7 +66,9 @@ jQuery(document).ready(function($) {
     $('.navbar-burger').on('click', (event) => {
       $(event.target).toggleClass('active');
       $('.mobile').toggleClass('active');
-      $('.navbar').toggleClass('active');
+      $('.navbar').toggleClass('active');         
+ 
+      
     })
   }
   mobileMenu();

@@ -29,14 +29,14 @@ mixin step(data, index)
 
 //- Sanzhar steps
 mixin steps()
-  section.steps-wrap#how-it-works2.spy-it.asan-steps
+  section.asan-steps.steps-wrap#how-it-works2.spy-it
     .container
       h1.section-title.anim.slide-in-top=steps.title
       ul.steps
         each item, index in steps.list
           +step(item, index)
   section.steps-wrap.spy-it.sanj-steps
-    .container.new-container#how-it-works3
+    .container.new-container#how-it-works3.spy-it
       h1.section-title.anim.slide-in-top=steps.title
       .steps-container
         .steps-item.--left.anim.slide-in-left

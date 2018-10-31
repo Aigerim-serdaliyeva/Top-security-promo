@@ -13434,13 +13434,6 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
 
 jQuery(document).ready(function ($) {
 
-  if (window.matchMedia("(min-width: 960px)").matches) {
-    // If media query matches
-    if ($('.navbar-menu-item a').attr('title') == 'Как мы работаем') {
-      $('.navbar-menu-item a:first').prop('href', '#how-it-works3');
-    }
-  }
-
   // smooth scroll to anchor
   $('.js-scroll-to').on('click', function (event) {
     event.preventDefault();
