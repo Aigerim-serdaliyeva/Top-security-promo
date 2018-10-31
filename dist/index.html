@@ -13,7 +13,7 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-    <link href="main.css" rel="stylesheet"/>
+    <link href="main.css?v=015" rel="stylesheet"/>
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -34,7 +34,7 @@
           <div class="navbar-logo"><a class="navbar-logo-link spy js-scroll-to" href="/" title="Top Security"><img class="navbar-logo-img" src="assets/media/images/content/logo.svg" alt="Top Security логотип"/></a></div>
           <div class="navbar-menu">
             <ul class="navbar-menu-list">
-              <li class="navbar-menu-item"><a class="js-scroll-to spy navbar-menu-link" href="#how-it-works" title="Как мы работаем">Как мы работаем</a></li>
+              <li class="navbar-menu-item"><a class="js-scroll-to spy navbar-menu-link" href="#how-it-works2" title="Как мы работаем">Как мы работаем</a></li>
               <li class="navbar-menu-item"><a class="js-scroll-to spy navbar-menu-link" href="#services" title="Услуги">Услуги</a></li>
               <li class="navbar-menu-item"><a class="js-scroll-to spy navbar-menu-link" href="#benefits" title="Преимущества">Преимущества</a></li>
               <li class="navbar-menu-item"><a class="js-scroll-to spy navbar-menu-link" href="#about" title="О нас">О нас</a></li>
@@ -45,7 +45,7 @@
         <div class="mobile">
           <nav class="mobile-menu">
             <ul class="mobile-menu-list">
-              <li class="mobile-menu-item"><a class="mobile-menu-link js-scroll-to" href="#how-it-works" title="Как мы работаем">Как мы работаем</a></li>
+              <li class="mobile-menu-item"><a class="mobile-menu-link js-scroll-to" href="#how-it-works2" title="Как мы работаем">Как мы работаем</a></li>
               <li class="mobile-menu-item"><a class="mobile-menu-link js-scroll-to" href="#services" title="Услуги">Услуги</a></li>
               <li class="mobile-menu-item"><a class="mobile-menu-link js-scroll-to" href="#benefits" title="Преимущества">Преимущества</a></li>
               <li class="mobile-menu-item"><a class="mobile-menu-link js-scroll-to" href="#about" title="О нас">О нас</a></li>
@@ -62,19 +62,41 @@
     <main>
       <section class="hero-wrap">
         <div class="container container--flex">
-          <div class="col col-md--half col--right col--bottom">
+          <div class="new-hero-wrap">
+            <div class="overlay"></div>
             <div class="hero">
               <div class="hero-caption">
-                <h1 class="hero-caption_title slide-in-right anim">Обезопась себя и своих близких</h1>
-                <p class="hero-caption_text slide-in-right anim">Будь в безопасности нажав всего одну кнопку.</p>
-                <p class="hero-caption_text hero-caption_text--bigger slide-in-right anim">Top Security лучший выбор!</p>
-                <div class="hero-caption-footer slide-in-right anim"><a class="btn btn--big btn--primary js-scroll-to" href="#callback">НАДЕЖНАЯ ОХРАНА ЗА 177 тг.</a></div>
+                <p class="hero-caption_text slide-in-right anim">
+                   Надежная защита имущества<br/>за 5500 тг в месяц</p>
+                <div class="hero-caption-footer slide-in-right anim"><a class="btn btn--big btn--primary js-scroll-to" href="#callback">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</a></div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="steps-wrap spy-it asan-steps" id="how-it-works">
+      <section class="services-wrap spy-it" id="services">
+        <div class="container services">
+          <h1 class="section-title section-title--alt anim slide-in-top">Что мы предлагаем</h1>
+          <p class="services-text anim slide-in-bot">Надежный удаленный контроль при помощи<br>беспроводной сигнализации и смартфона в квартире, доме или офисе</p>
+          <div class="services__container">
+            <div class="services__first services__block anim slide-in-left">
+              <div class="services__block__title">Тревожная сигнализация</div>
+              <div class="services__block__content"> 
+                <div class="services__block__image"><img src="assets/media/images/content/promo-benefits-left.svg" alt=""/></div>
+                <div class="services__block__text">Интеллектуальная GSM система для защиты дома, офиса, дачи или гаража.<br/><br/>В комплекте: <br/><span>датчики движения и открытия, сирена, пульт управления.</span><br/><br/>Беспроводной тип передачи сигнала</div>
+              </div>
+            </div>
+            <div class="services__first services__block anim slide-in-right">
+              <div class="services__block__title">Охранная сигнализация</div>
+              <div class="services__block__content"> 
+                <div class="services__block__image"><img src="assets/media/images/content/promo-benefits-right.svg" alt=""/></div>
+                <div class="services__block__text">Комплекс охранной сигнализации формата Wi-Fi + GSM<br/><br/>В комплекте: <br/><span>Мощный процессор, комплект беспроводных датчиков движения и контроля доступа в помещения.  </span><br/><br/>Беспроводной тип передачи сигнала</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="steps-wrap spy-it asan-steps" id="how-it-works2">
         <div class="container">
           <h1 class="section-title anim slide-in-top">Как это работает?</h1>
           <ul class="steps">
@@ -82,7 +104,7 @@
               <div class="step-icon anim scale-in"><img class="step-img" src="assets/media/images/content/step-1.png" alt="Тревога"/></div>
               <div class="step-caption step-caption--left slide-in-left">
                 <h2 class="step-title">Тревога</h2>
-                <p class="step-text">При срабатывании или вызова тревоги тревоги Сигнал направляется на оператора</p>
+                <p class="step-text">Датчики фиксируют попытку незаконного проникновения 1-2 сек</p>
               </div>
               <div class="step-line anim step-line--left"><svg class="show-tablet" width="685" height="101" viewBox="0 0 685 101" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M2.50098 0V10.5C2.50098 32.5914 20.4096 50.5 42.501 50.5H341.001H642.501C664.592 50.5 682.501 68.4086 682.501 90.5V101" stroke="#FFB800" stroke-width="5" stroke-dasharray="30 10"/>
@@ -96,7 +118,7 @@
               <div class="step-icon anim scale-in"><img class="step-img" src="assets/media/images/content/step-2.png" alt="Оператор"/></div>
               <div class="step-caption step-caption--right slide-in-right">
                 <h2 class="step-title">Оператор</h2>
-                <p class="step-text">при вызове тревоги вызов поступает на оператора</p>
+                <p class="step-text">Оператор получает сигнал оповещает охрану 10 сек</p>
               </div>
               <div class="step-line anim step-line--right"><svg class="show-tablet" width="685" height="101" viewBox="0 0 685 101" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M2.50098 101V90.5C2.50098 68.4086 20.4096 50.5 42.501 50.5H341.001H642.501C664.592 50.5 682.501 32.5914 682.501 10.5V0" stroke="#FFB800" stroke-width="5" stroke-dasharray="30 10"/>
@@ -110,7 +132,7 @@
               <div class="step-icon anim scale-in"><img class="step-img" src="assets/media/images/content/step-3.png" alt="Группа"/></div>
               <div class="step-caption step-caption--left slide-in-left">
                 <h2 class="step-title">Группа</h2>
-                <p class="step-text">Оператор передает сигнал тревоге Ближайшей группе</p>
+                <p class="step-text">Оперативная группа выезжает на место 3-6 минут</p>
               </div>
               <div class="step-line anim step-line--left"><svg class="show-tablet" width="685" height="101" viewBox="0 0 685 101" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M2.50098 0V10.5C2.50098 32.5914 20.4096 50.5 42.501 50.5H341.001H642.501C664.592 50.5 682.501 68.4086 682.501 90.5V101" stroke="#FFB800" stroke-width="5" stroke-dasharray="30 10"/>
@@ -135,9 +157,9 @@
               </div>
             </li>
             <li class="step anim step--5 step--left">
-              <div class="step-icon anim scale-in"><img class="step-img" src="assets/media/images/content/step-5.png" alt="Ответственности"/></div>
+              <div class="step-icon anim scale-in"><img class="step-img" src="assets/media/images/content/step-5.png" alt="Ответственность"/></div>
               <div class="step-caption step-caption--left slide-in-left">
-                <h2 class="step-title">Ответственности</h2>
+                <h2 class="step-title">Ответственность</h2>
                 <p class="step-text">Злоумышленника привлекают к ответственности путем передачи его в правоохранительные органы</p>
               </div>
               <div class="step-line anim step-line--left"><svg class="show-tablet" width="685" height="101" viewBox="0 0 685 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -151,11 +173,11 @@
           </ul>
         </div>
       </section>
-      <section class="steps-wrap spy-it sanj-steps" id="how-it-works">
-        <div class="container new-container">
+      <section class="steps-wrap spy-it sanj-steps">
+        <div class="container new-container" id="how-it-works3">
           <h1 class="section-title anim slide-in-top">Как это работает?</h1>
           <div class="steps-container">
-            <div class="steps-item --left">
+            <div class="steps-item --left anim slide-in-left">
               <div class="overlay"></div>
               <div class="steps-item__left-1">         <img src="assets/media/images/content/steps-l-bg.svg" alt=""/>
                 <p>
@@ -170,12 +192,12 @@
 <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
 </svg>
                     </div>
-                    <div class="animation-wrap__item item-1" id="svg-left-2"></div>
+                    <div class="animation-wrap__item item-2" id="svg-left-2"></div>
                     <div class="animation-wrap__svg svg-1"><svg id="vg-left-2" width="100" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
 </svg>
                     </div>
-                    <div class="animation-wrap__item item-1" id="svg-left-3"></div>
+                    <div class="animation-wrap__item item-3" id="svg-left-3"></div>
                     <div class="animation-wrap__text">
                       <p id="p-left-1">Злоумышленник <br/>проникает в помещение<br/>1 мин</p>
                       <p id="p-left-2">Собирает деньги <br/>и ценные вещи<br/>5-7 мин</p>
@@ -185,17 +207,17 @@
 <path d="M-1.52588e-05 4.00001L102 4.00001C120.225 4.00001 135 18.7746 135 37L135 169.189L135 295C135 313.225 120.225 328 102 328L-1.0963e-06 328" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
 </svg>
                     </div>
-                    <div class="animation-wrap__item item-1" id="svg-left-6"> </div>
+                    <div class="animation-wrap__item item-4" id="svg-left-6"> </div>
                     <div class="animation-wrap__svg svg-2"><svg id="vg-left-5" width="50" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
 </svg>    
                     </div>
-                    <div class="animation-wrap__item item-1" id="svg-left-5"> </div>
+                    <div class="animation-wrap__item item-5" id="svg-left-5"> </div>
                     <div class="animation-wrap__svg svg-2"><svg id="vg-left-4" width="50" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
 </svg> 
                     </div>
-                    <div class="animation-wrap__item item-1" id="svg-left-4">      </div>
+                    <div class="animation-wrap__item item-6" id="svg-left-4">      </div>
                     <div class="animation-wrap__text">
                       <p id="p-left-6">Устранение последствий  <br/>ограбления</p>
                       <p id="p-left-5">Вызывает полицию  </p>
@@ -206,7 +228,7 @@
 <path d="M139 4.00001L37 4.00001C18.7746 4.00001 4 18.7746 4 37L4 147.391L4 291C4 309.225 18.7746 324 37 324L499 324" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
 </svg>                                                                                                  
                     </div>
-                    <div class="animation-wrap__item item-1" id="svg-left-7"></div>
+                    <div class="animation-wrap__item item-7" id="svg-left-7"></div>
                     <div class="animation-wrap__text" style="justify-content:center">
                       <p id="p-left-7">Долгие недели ожидания<br/>возврата пропавших <br/>вещей</p>
                     </div>
@@ -214,7 +236,7 @@
                 </div>
               </div>
             </div>
-            <div class="steps-item --right">
+            <div class="steps-item --right anim slide-in-right">
               <div class="overlay"></div>
               <div class="steps-item__right-1"><img src="assets/media/images/content/steps-2-bg.svg" alt=""/>
                 <p>
@@ -229,12 +251,12 @@
 <path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
 </svg>
                     </div>
-                    <div class="animation-wrap__item item-1" id="svg-right-2"></div>
+                    <div class="animation-wrap__item item-2" id="svg-right-2"></div>
                     <div class="animation-wrap__svg svg-1"><svg id="vg-right-2" width="50" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
 </svg>
                     </div>
-                    <div class="animation-wrap__item item-1" id="svg-right-3"></div>
+                    <div class="animation-wrap__item item-3" id="svg-right-3"></div>
                     <div class="animation-wrap__text">
                       <p id="p-right-1">Датчики фиксируют попытку <br/>незаконного проникновения<br/>1-2 сек</p>
                       <p id="p-right-2">Срабатывает сирена<br/>1-2 сек<br/></p>
@@ -244,17 +266,17 @@
 <path d="M-1.52588e-05 4.00001L102 4.00001C120.225 4.00001 135 18.7746 135 37L135 169.189L135 295C135 313.225 120.225 328 102 328L-1.0963e-06 328" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
 </svg>
                     </div>
-                    <div class="animation-wrap__item item-1" id="svg-right-6">  </div>
+                    <div class="animation-wrap__item item-4" id="svg-right-6">  </div>
                     <div class="animation-wrap__svg svg-2"><svg id="vg-right-5" width="50" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
 </svg>    
                     </div>
-                    <div class="animation-wrap__item item-1" id="svg-right-5">  </div>
+                    <div class="animation-wrap__item item-5" id="svg-right-5">  </div>
                     <div class="animation-wrap__svg svg-2"><svg id="vg-right-4" width="50" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
 </svg> 
                     </div>
-                    <div class="animation-wrap__item item-1" id="svg-right-4">     </div>
+                    <div class="animation-wrap__item item-6" id="svg-right-4">     </div>
                     <div class="animation-wrap__text">
                       <p id="p-right-6">Клиент наслаждается <br/>покоем </p>
                       <p id="p-right-5">Угроза устранена</p>
@@ -269,65 +291,47 @@
           </div>
         </div>
       </section>
-      <section class="services-wrap spy-it" id="services">
-        <div class="container services">
-          <h1 class="section-title section-title--alt anim slide-in-top">Что мы предлагаем</h1>
-          <p class="services-text anim slide-in-bot">Надежный удаленный контроль при помощи<br>беспроводной сигнализации и смартфона в квартире, доме или офисе</p>
-          <ul class="services-list">
-            <li class="services-item anim slide-in-left">
-              <figure class="service"><img class="service-img" src="assets/media/images/content/service-1.png" alt="Тревожная сигнализация"/>
-                <figcpation class="service-label"> <a class="service-link" href="#">Тревожная сигнализация</a></figcpation>
-              </figure>
-            </li>
-            <li class="services-item anim slide-in-right">
-              <figure class="service"><img class="service-img" src="assets/media/images/content/service-2.png" alt="Охранная сигнализация"/>
-                <figcpation class="service-label"><a class="service-link" href="#">Охранная сигнализация</a></figcpation>
-              </figure>
-            </li>
-          </ul>
-        </div>
-      </section>
       <section class="benefits-wrap spy-it" id="benefits">
         <div class="container">
           <div class="section-title anim slide-in-top">5 веских причин выбрать<br>Top Security KZ</div>
           <ul class="benefits">
             <li class="benefits-item anim slide-in-bot">
-              <figure class="benefit"><img class="benefit-img" src="assets/media/images/content/benefit-1.png" alt="Группа быстрого реагирования"/>
+              <figure class="benefit"><img class="benefit-img" src="assets/media/images/content/benefit-1.png" alt="Используем современную экипировку"/>
                 <figcaption class="benefit-caption">
-                  <h2 class="benefit-title">Группа быстрого реагирования</h2>
-                  <p class="benefit-text">Мы прибываем на место, откуда поступил сигнал SOS, в течение 3-6 минут</p>
+                  <h2 class="benefit-title">Используем современную экипировку</h2>
+                  <p class="benefit-text">Новейшее оружие, средства связи, скоростные автомобили – грозная сила против ваших врагов   </p>
                 </figcaption>
               </figure>
             </li>
             <li class="benefits-item anim slide-in-bot">
-              <figure class="benefit"><img class="benefit-img" src="assets/media/images/content/benefit-2.png" alt="Новые технологии"/>
+              <figure class="benefit"><img class="benefit-img" src="assets/media/images/content/benefit-2.png" alt="Идем в ногу со временем"/>
                 <figcaption class="benefit-caption">
-                  <h2 class="benefit-title">Новые технологии</h2>
-                  <p class="benefit-text">Наши клиенты управляют настройками сигнализации через мобильное приложение</p>
+                  <h2 class="benefit-title">Идем в ногу со временем</h2>
+                  <p class="benefit-text">Вы контролируете и настраиваете сигнализацию через мобильное приложение</p>
                 </figcaption>
               </figure>
             </li>
             <li class="benefits-item anim slide-in-bot">
-              <figure class="benefit"><img class="benefit-img" src="assets/media/images/content/benefit-3.png" alt="Профессионалы"/>
+              <figure class="benefit"><img class="benefit-img" src="assets/media/images/content/benefit-3.png" alt="Гарантируем надежность"/>
                 <figcaption class="benefit-caption">
-                  <h2 class="benefit-title">Профессионалы</h2>
-                  <p class="benefit-text">В нашем штате только лучшие – бывшие сотрудники правоохранительных органов и военные</p>
+                  <h2 class="benefit-title">Гарантируем надежность</h2>
+                  <p class="benefit-text">Вас охраняют бойцы, прошедшие специальную подготовку</p>
                 </figcaption>
               </figure>
             </li>
             <li class="benefits-item anim slide-in-bot">
-              <figure class="benefit"><img class="benefit-img" src="assets/media/images/content/benefit-4.png" alt="Оснащение "/>
+              <figure class="benefit"><img class="benefit-img" src="assets/media/images/content/benefit-4.png" alt="Работаем оперативно"/>
                 <figcaption class="benefit-caption">
-                  <h2 class="benefit-title">Оснащение </h2>
-                  <p class="benefit-text">Мы используем новейшее огнестрельное оружие и элитные автомобили</p>
+                  <h2 class="benefit-title">Работаем оперативно</h2>
+                  <p class="benefit-text">Будем у вас уже через 3-6 минут <br> после вызова</p>
                 </figcaption>
               </figure>
             </li>
             <li class="benefits-item anim slide-in-bot">
-              <figure class="benefit"><img class="benefit-img" src="assets/media/images/content/benefit-5.png" alt="Бесплатный Психолог"/>
+              <figure class="benefit"><img class="benefit-img" src="assets/media/images/content/benefit-5.png" alt="Заботимся о клиенте"/>
                 <figcaption class="benefit-caption">
-                  <h2 class="benefit-title">Бесплатный Психолог</h2>
-                  <p class="benefit-text">Если вы нуждаетесь в психологической реабилитации, после проишествия Вы можете воспользоваться услугами бесплатного психолога</p>
+                  <h2 class="benefit-title">Заботимся о клиенте</h2>
+                  <p class="benefit-text">Устраним угрозу и предоставим бесплатную психологическую помощь вам или вашим близким</p>
                 </figcaption>
               </figure>
             </li>
@@ -408,12 +412,19 @@
           <h1 class="section-title section-title--small section-title--alt anim slide-in-top">TOP Security KZ</h1>
           <p class="section-desc anim slide-in-bot">Защитить тех, кто Вам дорог – наша первоочередная задача.</p>
           <div class="about">
-            <div class="about-main">
-              <div class="about-item anim slide-in-bot"><img class="about-img" src="assets/media/images/content/about-1.png" alt="Видео"/><a class="about-item-link" href="#"><img class="about-item-img" src="assets/media/images/content/video.svg" alt="Видео"/><span class="about-item-label">Видео</span></a></div>
+            <div class="about-main w-100">
+              <div class="about-item anim slide-in-bot h-about-img"> <img class="about-img" src="assets/media/images/content/about-1.png" alt="Видео"/><a class="about-item-link" href="#"><img class="about-item-img" src="assets/media/images/content/video.svg" alt="Видео"/><span class="about-item-label">Видео</span></a></div>
             </div>
-            <div class="about-aside anim slide-in-bot">
-              <div class="about-item"><img class="about-img" src="assets/media/images/content/about-2.png" alt="Фото"/><a class="about-item-link" href="http://topsecurity.kz/photos" target="_blank" title="Фотогалерея"><img class="about-item-img" src="assets/media/images/content/photo.svg" alt="Фото"/><span class="about-item-label">Фото</span></a></div>
-              <div class="about-item"><img class="about-img" src="assets/media/images/content/about-3.png" alt="Статьи"/><a class="about-item-link" href="http://topsecurity.kz/articles" target="_blank" title="Статьи"><img class="about-item-img" src="assets/media/images/content/posts.svg" alt="Статьи"/><span class="about-item-label">Статьи</span></a></div>
+            <div class="about__content"> 
+              <h2>
+                <div class="content__number" data-count="25">0</div><span>Довольных клиентов   </span>
+              </h2>
+              <h2> 
+                <div class="content__number" data-count="800">0</div><span>партнеров</span>
+              </h2>
+              <h2> 
+                <div class="content__number" data-count="5">0</div><span>лет на рынке                                  </span>
+              </h2>
             </div>
           </div>
         </div>
@@ -473,40 +484,65 @@
           </div>
         </div>
       </section>
-      <footer class="footer spy-it" id="contacts">
-        <div class="container">
-          <div class="footer-cols">
-            <div class="footer-col">
-              <nav class="footer-menu">
-                <ul class="footer-menu-list">
-                  <li class="footer-menu-item"><a class="footer-menu-link spy js-scroll-to" href="#how-it-works" title="Как мы работаем">Как мы работаем</a></li>
-                  <li class="footer-menu-item"><a class="footer-menu-link spy js-scroll-to" href="#services" title="Услуги">Услуги</a></li>
-                  <li class="footer-menu-item"><a class="footer-menu-link spy js-scroll-to" href="#benefits" title="Преимущества">Преимущества</a></li>
-                  <li class="footer-menu-item"><a class="footer-menu-link spy js-scroll-to" href="#about" title="О нас">О нас</a></li>
-                  <li class="footer-menu-item"><a class="footer-menu-link spy js-scroll-to" href="#contacts" title="Контакты">Контакты</a></li>
-                </ul>
-              </nav>
-            </div>
-            <div class="footer-col">
-              <div class="footer-logo"><a class="footer-logo-link spy js-scroll-to" href="/" title="Top Security"><img class="footer-logo-img" src="assets/media/images/content/logo-ft.svg" alt="Top Secturity logotype"/></a></div><a class="footer-tel" href="tel:+77273468318">+7 (727) 346 8318</a><span class="footer-desc">*Бесплатный звонок по городу Алматы</span>
-            </div>
-            <div class="footer-col">
-              <div class="footer-socials"><a class="footer-socials_item" href="https://www.facebook.com/topseckz/" target="_blank"><img src="assets/media/images/shared/vk.svg"/></a><a class="footer-socials_item" href="https://vk.com/topsecuritykz" target="_blank"><img src="assets/media/images/shared/fb.svg"/></a><a class="footer-socials_item" href="https://www.instagram.com/topsecurity.kz/" target="_blank"><img src="assets/media/images/shared/inst.svg"/></a></div>
-              <address class="footer-address">
-                <span>ТОО «Top Security KZ»</span><br>
-                Адрес: Казахстан, г.Алматы,<br>
-                мкр.Алатау, ул.Асемтау 58,<br>
-                Телефон: <a href="tel:+77010840817">+7 (701) 084 0817</a><br>
-                Email: <a href="mailto:info@topsecurity.kz">info@topsecurity.kz</a>
-              </address>
-            </div>
-            <div class="footer-col footer-col--full">
-              <div class="footer-copy">Copyright © 2018 Top Security KZ. All Rights Reserved</div>
+      <div id="contacts"></div>
+      <div class="des">
+        <div class="new-footer">
+          <div class="container">
+            <div class="new-footer__wrap">
+              <div class="new-footer__block jcsb"> 
+                <div class="block__menu"><a href="#services">Услуги</a><a href="#how-it-works">О компании</a><a href="#contacts">Контакты</a></div>
+                <div class="block__location">
+                  <h2>ТОО «Top Security KZ»</h2>
+                  <p>Адрес: Казахстан, г.Алматы, мкр.Алатау,<br/>ул.Асемтау 58<br/>Телефон: +7 (701) 084 0817<br/>Email: info@topsecurity.kz</p>
+                </div>
+              </div>
+              <div class="new-footer__block">
+                <div class="block__logo"><img src="assets/media/images/content/logo-ft.svg" alt="Top Secturity logotype"/></div>
+                <div class="block__number"><a>+7 (727) 346 8318</a></div>
+                <div class="block__preveligous">
+                  <p>*Бесплатный звонок по городу Алматы</p>
+                </div>
+              </div>
+              <div class="new-footer__block aife jcfe">
+                <div class="block__social"> <img src="assets/media/images/shared/vk.svg" onclick="location.href='https://vk.com/topsecuritykz'"/><img src="assets/media/images/shared/fb.svg" onclick="location.href='https://www.facebook.com/topseckz/'"/><img src="assets/media/images/shared/inst.svg" onclick="location.href='https://www.instagram.com/topsecurity.kz/ '"/></div>
+                <div class="block__copyright">
+                  <p>
+                     Copyright © 2018 Top Security KZ.<br/>All Rights Reserved  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </footer>
+      </div>
+      <div class="mle">
+        <div class="new-footer">
+          <div class="container">
+            <div class="new-footer__wrap">
+              <div class="new-footer__block">
+                <div class="block__logo"><img src="assets/media/images/content/logo-ft.svg" alt="Top Secturity logotype"/></div>
+                <div class="block__number"><a>+7 (727) 346 8318</a></div>
+                <div class="block__preveligous">
+                  <p>*Бесплатный звонок по городу Алматы          </p>
+                </div>
+              </div>
+              <div class="new-footer__block jcsb"> 
+                <div class="block__location">
+                  <h2>ТОО «Top Security KZ»</h2>
+                  <p>Адрес: Казахстан, г.Алматы, мкр.Алатау,<br/>ул.Асемтау 58<br/>Телефон: +7 (701) 084 0817<br/>Email: info@topsecurity.kz</p>
+                </div>
+              </div>
+              <div class="new-footer__block jcc">
+                <div class="block__social"> <img src="assets/media/images/shared/vk.svg" onclick="location.href='https://vk.com/topsecuritykz'"/><img src="assets/media/images/shared/fb.svg" onclick="location.href='https://www.facebook.com/topseckz/'"/><img src="assets/media/images/shared/inst.svg" onclick="location.href='https://www.instagram.com/topsecurity.kz/ '"/></div>
+                <div class="block__copyright">
+                  <p>
+                     Copyright © 2018 Top Security KZ.<br/>All Rights Reserved  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-    <script src="main.js"></script>
+    <script src="main.js?v=009"></script>
   </body>
 </html>

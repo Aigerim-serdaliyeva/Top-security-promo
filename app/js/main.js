@@ -5,6 +5,13 @@
 
 
 jQuery(document).ready(function($) {
+
+  if (window.matchMedia("(min-width: 960px)").matches ) { // If media query matches
+    if ($('.navbar-menu-item a').attr('title') == 'Как мы работаем') {
+      $('.navbar-menu-item a:first').prop('href', '#how-it-works3');
+    }
+  } 
+
   // smooth scroll to anchor
   $('.js-scroll-to').on('click', function(event) {
     event.preventDefault();
@@ -189,6 +196,44 @@ jQuery(document).ready(function($) {
 
 
   // sanzhar changes
+  (function animNumbers() {
+   
+    var a = 0;
+    $(window).scroll(function() {
+    
+      var oTop = $('.content__number:first').offset().top - window.innerHeight;
+      if (a == 0 && $(window).scrollTop() > oTop) {
+        $('.content__number').each(function() {
+          var $this = $(this),
+            countTo = $this.attr('data-count');
+          $({
+            countNum: $this.text()
+          }).animate({
+              countNum: countTo
+            },
+    
+            {
+    
+              duration: 3000,
+              easing: 'swing',
+              step: function() {
+                $this.text(Math.floor(this.countNum));
+              },
+              complete: function() {
+                $this.text(this.countNum);
+                //alert('finished');
+              }
+    
+            });
+        });
+        a = 1;
+      }
+    
+    });
+  })();
+
+
+
   (function stepLeft() {
     let stepBool = true;
     let stepBool2 = true;
@@ -204,6 +249,15 @@ jQuery(document).ready(function($) {
     // event listeners
     stepLMain.addEventListener('click', () => {
     // change width
+    if (window.matchMedia("(min-width: 1300px)").matches ) { // If media query matches
+      $('.steps-item__right-1 p').css('width', '100%').css('font-size', '90px');
+      $('.steps-item__left-1 p').css('width', '100%').css('font-size', '90px');
+    } 
+
+    if (window.matchMedia("(min-width: 1070px)").matches && window.matchMedia("(max-width: 1300px)").matches ) { // If media query matches
+      $('.steps-item__right-1 p').css('width', '100%').css('font-size', '50px').css('line-height', '50px');
+      $('.steps-item__left-1 p').css('width', '100%').css('font-size', '50px').css('line-height', '50px');
+    } 
     stepLMain.querySelector('.overlay').style.opacity = '1';
     stepRMain.querySelector('.overlay').style.opacity = '0';
     stepLMain.classList.remove('change-width-20');
@@ -314,6 +368,15 @@ jQuery(document).ready(function($) {
 
     stepRMain.addEventListener('click', () => {
       // change width
+        if (window.matchMedia("(min-width: 1300px)").matches ) { // If media query matches
+          $('.steps-item__right-1 p').css('width', '100%').css('font-size', '90px').css('line-height', '90px');;
+          $('.steps-item__left-1 p').css('width', '100%').css('font-size', '90px').css('line-height', '90px');;
+        } 
+        if (window.matchMedia("(min-width: 1070px)").matches && window.matchMedia("(max-width: 1300px)").matches ) { // If media query matches
+          $('.steps-item__right-1 p').css('width', '100%').css('font-size', '50px').css('line-height', '50px');
+          $('.steps-item__left-1 p').css('width', '100%').css('font-size', '50px').css('line-height', '50px');
+        } 
+   
       stepRMain.querySelector('.overlay').style.opacity = '1';
       stepLMain.querySelector('.overlay').style.opacity = '0';
       stepRMain.classList.remove('change-width-20');
@@ -417,11 +480,11 @@ jQuery(document).ready(function($) {
     })(); stepBool2 = false; }
       
     });
-
-    
-    
-
-
   })();
+  //  anime end
+
+
+    
+
   
 })

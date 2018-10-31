@@ -3,18 +3,50 @@ mixin services()
     .container.services
       h1.section-title.section-title--alt.anim.slide-in-top Что мы предлагаем
       p.services-text.anim.slide-in-bot Надежный удаленный контроль при помощи<br>беспроводной сигнализации и смартфона в квартире, доме или офисе
-      ul.services-list
-        li.services-item.anim.slide-in-left
-          figure.service
-            img.service-img(
-              src="assets/media/images/content/service-1.png",
-              alt="Тревожная сигнализация")
-            figcpation.service-label 
-              a(href="#").service-link Тревожная сигнализация
-        li.services-item.anim.slide-in-right
-          figure.service
-            img.service-img(
-              src="assets/media/images/content/service-2.png",
-              alt="Охранная сигнализация")
-            figcpation.service-label
-              a(href="#").service-link Охранная сигнализация
+      .services__container
+        .services__first.services__block.anim.slide-in-left
+          .services__block__title Тревожная сигнализация
+          .services__block__content 
+            .services__block__image
+              img(src="assets/media/images/content/promo-benefits-left.svg", alt="")
+            .services__block__text
+              | Интеллектуальная GSM система для защиты дома, офиса, дачи или гаража.
+              br
+              br
+              |В комплекте: 
+              br              
+              span датчики движения и открытия, сирена, пульт управления.
+              br
+              br
+              | Беспроводной тип передачи сигнала
+        .services__first.services__block.anim.slide-in-right
+          .services__block__title Охранная сигнализация
+          .services__block__content 
+            .services__block__image
+              img(src="assets/media/images/content/promo-benefits-right.svg", alt="")
+            .services__block__text
+              | Комплекс охранной сигнализации формата Wi-Fi + GSM
+              br
+              br
+              |В комплекте: 
+              br            
+              span Мощный процессор, комплект беспроводных датчиков движения и контроля доступа в помещения.  
+              br
+              br
+              | Беспроводной тип передачи сигнала
+        
+      //- ul.services-list
+      //-   li.services-item.anim.slide-in-left
+      //-     figure.service
+      //-       img.service-img(
+      //-         src="assets/media/images/content/service-1.png",
+      //-         alt="Тревожная сигнализация")
+      //-       figcpation.service-label 
+      //-         a(href="#").service-link Тревожная сигнализация
+      //-   li.services-item.anim.slide-in-right
+      //-     figure.service
+      //-       img.service-img(
+      //-         src="assets/media/images/content/service-2.png",
+      //-         alt="Охранная сигнализация")
+      //-       figcpation.service-label
+      //-         a(href="#").service-link Охранная сигнализация

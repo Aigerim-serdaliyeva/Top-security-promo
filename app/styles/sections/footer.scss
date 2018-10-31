@@ -1,3 +1,117 @@
+// SANJ
+
+.op0-6 {
+  opacity: 0.6;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.jcfe {
+  justify-content: flex-end;
+}
+
+.aife {
+  align-items: flex-end;
+}
+
+
+
+.new-footer {
+  height: auto;
+  width: 100%;
+  background: #252525;
+  font-family: Montserrat;
+  padding: 20px;
+  &__wrap {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__block {
+    width: 33%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;    
+    padding: 20px 0;
+    .block {
+      &__menu {
+        display: flex;
+        flex-direction: column;      
+        a {
+          color: rgba(255,255,255,0.6);
+          text-decoration: none;
+          margin-bottom: 15px;
+          font-size: 20px;
+        }
+      }
+      &__location {
+        h2 {
+          font-size: 18px;
+          font-weight: normal;
+          margin: 0;                
+        }
+        p {
+          margin: 0;
+          font-size: 16px;
+          color: rgba(255,255,255,0.6);
+        }
+      }
+      &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 200px;
+        }
+      }
+      &__number {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        color: #EF3B39;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;  
+      }
+      &__preveligous {
+        p {
+        margin: 0;
+        font-weight: normal;
+        font-size: 13px;
+        text-align: center;
+        }
+      }
+      &__social {
+        display: flex;
+        align-items: center;
+        opacity: 0.6;
+        margin-bottom: 20px;
+        img {
+          margin-right: 10px;
+          cursor: pointer;
+        }                
+      }
+      &__copyright {
+        
+        p {
+          margin: 0;
+          color: rgba(255,255,255,0.6);
+          text-align: right;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+// ASAN
 .footer {
   background-color: $colorDark;
   padding: em(50) 0 em(40);
@@ -144,5 +258,48 @@
         }
       }
     }
+  }
+}
+
+.mle {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .mle {
+   display: block;
+  }
+  .des {
+    display: none;
+  }
+  .new-footer { 
+    &__wrap {
+      flex-direction: column;
+      height: auto;
+    }
+    &__block {
+      width: 100%;
+    }
+    .block {
+      &__location {
+        text-align: center;
+      }
+      &__social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.6;
+      margin-bottom: 20px;
+      img {
+        margin-right: 10px;        
+      }                
+    }
+    &__copyright {      
+      p { 
+        text-align: center;
+        padding-right: 0;
+      }
+    }
+  }
   }
 }

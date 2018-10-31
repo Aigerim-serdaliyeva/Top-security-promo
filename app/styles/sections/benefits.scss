@@ -22,9 +22,19 @@
   }
   &-wrap {
     padding: em(85) 0 em(74);
-    background-image: url($imgPath+'rects-flip.png');
+    background-image: url($imgPath+'promo-back-benefits.png');
     background-size: cover;
     overflow: hidden;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      background: rgba(255,255,255,0.95);
+    }
   }
 }
 .benefit {
