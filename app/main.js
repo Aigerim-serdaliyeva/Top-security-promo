@@ -13525,7 +13525,7 @@ jQuery(document).ready(function ($) {
 
     $spyTo.each(function () {
       var $block = $(this),
-          blockTop = $block.offset().top - 100;
+          blockTop = $block.offset().top - 150;
       if (wTop >= blockTop) {
         $('.spy[href="#' + $block.attr('id') + '"]').addClass('active').parent().siblings().find('.spy').removeClass('active');
       } else if (wTop < 100) {
@@ -13606,11 +13606,24 @@ jQuery(document).ready(function ($) {
   window.onload = function () {};
 
   // sanzhar changes
-  (function animNumbers() {
+  (function hoverSteps() {
+    function directionHover(widthHover, widthHovered, selHover, selHovered) {
+      $(selHover).hover(function () {
+        $(selHover).css('width', 'calc(' + widthHover + ' - 10px)');
+        $(selHovered).css('width', 'calc(' + widthHovered + ' - 10px)');
+      });
+      $(selHover).mouseleave(function () {
+        $(selHover).css('width', 'calc(50% - 10px)');
+        $(selHovered).css('width', 'calc(50% - 10px)');
+      });
+    }
+    directionHover('55%', '45%', $('.--left'), $('.--right'));
+    directionHover('55%', '45%', $('.--right'), $('.--left'));
+  })();
 
+  (function animNumbers() {
     var a = 0;
     $(window).scroll(function () {
-
       var oTop = $('.content__number:first').offset().top - window.innerHeight;
       if (a == 0 && $(window).scrollTop() > oTop) {
         $('.content__number').each(function () {
@@ -13621,7 +13634,6 @@ jQuery(document).ready(function ($) {
           }).animate({
             countNum: countTo
           }, {
-
             duration: 3000,
             easing: 'swing',
             step: function step() {
@@ -13631,7 +13643,6 @@ jQuery(document).ready(function ($) {
               $this.text(this.countNum);
               //alert('finished');
             }
-
           });
         });
         a = 1;
@@ -13639,11 +13650,45 @@ jQuery(document).ready(function ($) {
     });
   })();
 
+  (function animLR() {
+    var val1Duration = 300;
+    var val0Duration = 350;
+    var TLcontrols = anime.timeline({
+      loop: true,
+      easing: 'linear'
+    });
+    TLcontrols.add({
+      targets: '.--left .overlay',
+      opacity: [{ value: 1, duration: val1Duration, delay: val1Duration }, { value: 0, duration: val0Duration, delay: val0Duration }]
+
+    }).add({
+      targets: '.--right .overlay',
+      opacity: [{ value: 1, duration: val1Duration, delay: val1Duration }, { value: 0, duration: val0Duration, delay: val0Duration }]
+
+    });
+    var leftEven = anime({
+      targets: '.--left .overlay',
+      opacity: [{ value: 1, duration: val1Duration, delay: val1Duration }, { value: 0, duration: val0Duration, delay: val0Duration }],
+      easing: 'linear',
+      autoplay: false
+    });
+    var rightEven = anime({
+      targets: '.--right .overlay',
+      opacity: [{ value: 1, duration: val1Duration, delay: val1Duration }, { value: 0, duration: val0Duration, delay: val0Duration }],
+      easing: 'linear',
+      autoplay: false
+    });
+
+    //  left and right main blocks
+
+    document.querySelector('.--left').onclick = TLcontrols.pause;
+    document.querySelector('.--right').onclick = TLcontrols.pause;
+  })();
+
   (function stepLeft() {
     var stepBool = true;
     var stepBool2 = true;
-    // STEP LEFT
-
+    // STEP LEFT    
     var stepLMain = document.querySelector('.--left');
     var stepLFirst = document.querySelector('.steps-item__left-1');
     var stepLSecond = document.querySelector('.steps-item__left-2');
@@ -13653,18 +13698,14 @@ jQuery(document).ready(function ($) {
     var stepRSecond = document.querySelector('.steps-item__right-2');
     // event listeners
     stepLMain.addEventListener('click', function () {
+
       // change width
-      if (window.matchMedia("(min-width: 1300px)").matches) {
+      if (window.matchMedia("(min-width: 1070px)").matches) {
         // If media query matches
-        $('.steps-item__right-1 p').css('width', '100%').css('font-size', '90px');
-        $('.steps-item__left-1 p').css('width', '100%').css('font-size', '90px');
+        $('.steps-item__right-1 p').css('width', '100%');
+        $('.steps-item__left-1 p').css('width', '100%');
       }
 
-      if (window.matchMedia("(min-width: 1070px)").matches && window.matchMedia("(max-width: 1300px)").matches) {
-        // If media query matches
-        $('.steps-item__right-1 p').css('width', '100%').css('font-size', '50px').css('line-height', '50px');
-        $('.steps-item__left-1 p').css('width', '100%').css('font-size', '50px').css('line-height', '50px');
-      }
       stepLMain.querySelector('.overlay').style.opacity = '1';
       stepRMain.querySelector('.overlay').style.opacity = '0';
       stepLMain.classList.remove('change-width-20');
@@ -13722,7 +13763,7 @@ jQuery(document).ready(function ($) {
           });
 
           basicTimeline3.add({
-            targets: ['#vg-left-1', '#vg-left-2'],
+            targets: ['.svg-wrap-1', '.svg-wrap-2'],
             opacity: 1,
             translateX: '0',
             width: {
@@ -13734,7 +13775,7 @@ jQuery(document).ready(function ($) {
             },
             offset: '-=600'
           }).add({
-            targets: ['#vg-left-3', '#vg-left-4', '#vg-left-5', '#vg-left-6'],
+            targets: ['#vg-left-3', '.svg-wrap-4', '.svg-wrap-5', '#vg-left-6'],
             opacity: 1,
             translateX: '0',
             width: {
@@ -13759,15 +13800,10 @@ jQuery(document).ready(function ($) {
 
     stepRMain.addEventListener('click', function () {
       // change width
-      if (window.matchMedia("(min-width: 1300px)").matches) {
+      if (window.matchMedia("(min-width: 1070px)").matches) {
         // If media query matches
-        $('.steps-item__right-1 p').css('width', '100%').css('font-size', '90px').css('line-height', '90px');;
-        $('.steps-item__left-1 p').css('width', '100%').css('font-size', '90px').css('line-height', '90px');;
-      }
-      if (window.matchMedia("(min-width: 1070px)").matches && window.matchMedia("(max-width: 1300px)").matches) {
-        // If media query matches
-        $('.steps-item__right-1 p').css('width', '100%').css('font-size', '50px').css('line-height', '50px');
-        $('.steps-item__left-1 p').css('width', '100%').css('font-size', '50px').css('line-height', '50px');
+        $('.steps-item__right-1 p').css('width', '100%');
+        $('.steps-item__left-1 p').css('width', '100%');
       }
 
       stepRMain.querySelector('.overlay').style.opacity = '1';
@@ -13826,7 +13862,7 @@ jQuery(document).ready(function ($) {
           });
 
           basicTimeline3.add({
-            targets: ['#vg-right-1', '#vg-right-2'],
+            targets: ['.svg-r-wrap-1', '.svg-r-wrap-2'],
             opacity: 1,
             translateX: '0',
             width: {
@@ -13838,7 +13874,7 @@ jQuery(document).ready(function ($) {
             },
             offset: '-=600'
           }).add({
-            targets: ['#vg-right-3', '#vg-right-4', '#vg-right-5'],
+            targets: ['#vg-right-3', '.svg-r-wrap-4', '.svg-r-wrap-5'],
             opacity: 1,
             translateX: '0',
             width: {

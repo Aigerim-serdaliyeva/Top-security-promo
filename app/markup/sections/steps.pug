@@ -28,15 +28,15 @@ mixin step(data, index)
 
 
 //- Sanzhar steps
-mixin steps()
-  section.asan-steps.steps-wrap#how-it-works2.spy-it
-    .container
+mixin steps()  
+  #TLcontrols Press
+  section.steps-wrap#how-it-works3.spy-it
+    .container.asan-steps
       h1.section-title.anim.slide-in-top=steps.title
       ul.steps
         each item, index in steps.list
           +step(item, index)
-  section.steps-wrap.spy-it.sanj-steps
-    .container.new-container#how-it-works3.spy-it
+    .container.new-container.sanj-steps
       h1.section-title.anim.slide-in-top=steps.title
       .steps-container
         .steps-item.--left.anim.slide-in-left
@@ -46,7 +46,7 @@ mixin steps()
             p 
               | Объект
               br
-              | без
+              span.stepRed без
               br
               | охраны
               br
@@ -60,14 +60,16 @@ mixin steps()
                 .animation-wrap__item.item-1#svg-left-1
                 //- 720
                 .animation-wrap__svg.svg-1
-                 <svg id="vg-left-1" width="100" height="8" viewBox="0 0 200 8" fill="none" xmlns:mydata="http://www.w3.org/2000/svg">
-                  <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
-                 </svg>
+                  .svg-wrap.svg-wrap-1
+                     <svg id="vg-left-1" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns:mydata="http://www.w3.org/2000/svg">
+                      <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
+                     </svg>
                 .animation-wrap__item.item-2#svg-left-2
                 .animation-wrap__svg.svg-1
-                 <svg id="vg-left-2" width="100" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
-                 </svg>
+                  .svg-wrap.svg-wrap-2
+                    <svg id="vg-left-2" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
+                    </svg>
                 .animation-wrap__item.item-3#svg-left-3
                 .animation-wrap__text
                   p#p-left-1 Злоумышленник 
@@ -92,15 +94,17 @@ mixin steps()
                   <path d="M-1.52588e-05 4.00001L102 4.00001C120.225 4.00001 135 18.7746 135 37L135 169.189L135 295C135 313.225 120.225 328 102 328L-1.0963e-06 328" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
                   </svg>
                 .animation-wrap__item.item-4#svg-left-6  
-                .animation-wrap__svg.svg-2
-                  <svg id="vg-left-5" width="50" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
-                  </svg>    
+                .animation-wrap__svg.svg-2  
+                  .svg-wrap.svg-wrap-5              
+                    <svg id="vg-left-5" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
+                    </svg>    
                 .animation-wrap__item.item-5#svg-left-5  
                 .animation-wrap__svg.svg-2
-                 <svg id="vg-left-4" width="50" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
-                 </svg> 
+                  .svg-wrap.svg-wrap-4
+                     <svg id="vg-left-4" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
+                     </svg> 
                 .animation-wrap__item.item-6#svg-left-4       
                 .animation-wrap__text
                   p#p-left-6 Устранение последствий  
@@ -131,7 +135,7 @@ mixin steps()
             p 
               | Объект
               br
-              | под
+              span.stepYellow под
               br
               | охраной
               br
@@ -145,15 +149,17 @@ mixin steps()
                 .animation-wrap__item.item-1#svg-right-1
                 //- 720
                 .animation-wrap__svg.svg-1
-                  <svg id="vg-right-1" width="50" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
-                  </svg>
+                  .svg-wrap.svg-r-wrap-1  
+                    <svg id="vg-right-1" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
+                    </svg>
                 
                 .animation-wrap__item.item-2#svg-right-2
                 .animation-wrap__svg.svg-1
-                  <svg id="vg-right-2" width="50" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
-                  </svg>
+                  .svg-wrap.svg-r-wrap-2  
+                     <svg id="vg-right-2" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
+                     </svg>
                 .animation-wrap__item.item-3#svg-right-3
                 .animation-wrap__text
                   p#p-right-1 Датчики фиксируют попытку 
@@ -176,14 +182,16 @@ mixin steps()
                   </svg>
                 .animation-wrap__item.item-4#svg-right-6   
                 .animation-wrap__svg.svg-2
-                  <svg id="vg-right-5" width="50" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
-                  </svg>    
+                  .svg-wrap.svg-r-wrap-5  
+                    <svg id="vg-right-5" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
+                    </svg>    
                 .animation-wrap__item.item-5#svg-right-5   
                 .animation-wrap__svg.svg-2
-                  <svg id="vg-right-4" width="50" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
-                  </svg> 
+                 .svg-wrap.svg-r-wrap-4  
+                   <svg id="vg-right-4" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
+                   </svg> 
                 .animation-wrap__item.item-6#svg-right-4      
                 .animation-wrap__text
                   p#p-right-6 Клиент наслаждается 

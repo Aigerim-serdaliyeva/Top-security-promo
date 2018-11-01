@@ -10,11 +10,13 @@
 
 @media screen and (max-width:960px) {
   .new-hero-wrap {
-  justify-content: flex-end;
+  justify-content: center;
   }
   .hero-caption_text  {
-    font-size: 22px !important;    
+    font-size: 22px !important; 
+      
   }
+
   .btn {  
     padding: 1em 2em !important;   
 }
@@ -65,7 +67,8 @@
     &_text {
       transition-delay: .6s;
       font-size: em(16);
-      margin: em(10, 16) 0;     
+      margin: em(10, 16) 0;  
+   
       &--bigger {
         transition-delay: .9s;
         font-weight: 700;
@@ -75,7 +78,10 @@
     &-footer {
       transition-delay: 1.2s;
       margin-top: em(45);
-      text-align: center;
+      text-align: left;
+      @media screen and (max-width: 960px) {
+        text-align: center;
+      }   
     }
   }
 }
