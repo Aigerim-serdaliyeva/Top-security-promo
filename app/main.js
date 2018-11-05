@@ -13606,19 +13606,32 @@ jQuery(document).ready(function ($) {
   window.onload = function () {};
 
   // sanzhar changes
+
   (function hoverSteps() {
-    function directionHover(widthHover, widthHovered, selHover, selHovered) {
-      $(selHover).hover(function () {
-        $(selHover).css('width', 'calc(' + widthHover + ' - 10px)');
-        $(selHovered).css('width', 'calc(' + widthHovered + ' - 10px)');
+    var tpLeft = document.getElementsByClassName('--left')[0];
+    var tpRight = document.getElementsByClassName('--right')[0];
+    function directionHover(selHover, selHovered) {
+      selHover.addEventListener('mouseover', function () {
+        selHover.classList.add('tp-w55');
+        selHovered.classList.add('tp-w45');
+        selHover.querySelector('.overlay').classList.add('lr-opacity');
       });
-      $(selHover).mouseleave(function () {
-        $(selHover).css('width', 'calc(50% - 10px)');
-        $(selHovered).css('width', 'calc(50% - 10px)');
+      selHover.addEventListener('mouseout', function () {
+        selHover.querySelector('.overlay').classList.remove('lr-opacity');
+        selHover.classList.remove('tp-w55');
+        selHover.classList.remove('tp-w45');
+        selHovered.classList.remove('tp-w55');
+        selHovered.classList.remove('tp-w45');
       });
     }
-    directionHover('55%', '45%', $('.--left'), $('.--right'));
-    directionHover('55%', '45%', $('.--right'), $('.--left'));
+    directionHover(tpLeft, tpRight);
+    directionHover(tpRight, tpLeft);
+  })();
+
+  (function aboutPlay() {
+    $('#about-iframe').click(function () {
+      $('#about-iframe').css('pointer-events', 'all');
+    });
   })();
 
   (function animNumbers() {
@@ -13710,7 +13723,6 @@ jQuery(document).ready(function ($) {
       stepRMain.querySelector('.overlay').style.opacity = '0';
       stepLMain.classList.remove('change-width-20');
       stepLMain.classList.add('change-width-80');
-      stepRMain.classList.add('change-width-80');
       stepRMain.classList.add('change-width-20');
       // change left steps    
       stepLFirst.classList.add('beabsolute');
@@ -13810,7 +13822,6 @@ jQuery(document).ready(function ($) {
       stepLMain.querySelector('.overlay').style.opacity = '0';
       stepRMain.classList.remove('change-width-20');
       stepRMain.classList.add('change-width-80');
-      stepLMain.classList.remove('change-width-80');
       stepLMain.classList.add('change-width-20');
       // change right steps    
       stepRFirst.classList.add('beabsolute');

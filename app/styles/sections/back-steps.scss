@@ -1,17 +1,5 @@
 // Sanzhar changes
 
-// global classes
-.tp-w55{
-  width: calc(55% - 10px) !important;  
-}
-.tp-w45 {
-  width: calc(45% - 10px) !important;
-}
-
-.lr-opacity {
-opacity: 1 !important;
-}
-
 // Svg animation for stroke moving
 @mixin svgLine($start,$end) {   
   0% {  
@@ -95,134 +83,13 @@ width: 80% !important;
 }
 // new step
 
-@mixin stepDirection($primary,$secondary,$imageDirection,$primaryDir,$secondaryDir,$itemBdC) {
-  #{$primary} {        
-    height: 100%;
-    width: 100%;
-    display: inline-block;
-    position: relative;        
-    cursor: pointer;
-    &__block {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: $primaryDir;
-      flex-direction: column;
-    }      
-    p {
-      width: 305px;
-      margin: 0;
-      color: #fff;
-      font-size: 80px;
-      line-height: 80px;
-      text-align: center;
-      text-transform: uppercase;
-      font-weight: bold;
-      font-family: Bebas Neue;
-      z-index: 10;
-    }
-    img {
-      height: 277px;
-      z-index: 10;
-      width: 341px;
-      margin-bottom: 64.67px;
-    }
-  }
-  #{$secondary} {        
-    height: 100%;
-    width: 100%;
-    display: inline-flex;  
-    justify-content: $secondaryDir;
-    align-items: center;
-    padding: 70px;
-    z-index: 10;
-    position: relative;                
-    transition: 0.7s ease-in-out;
-    transition-delay: 0.3s;
-          
-    svg {
-     animation:new-line 2s infinite linear;                 
-     transform: translateX(-50);
-    }
 
-    &__animation {                    
-      height: 993px;
-      width: 993px;                  
-      z-index: 10;
-      
-      h2 {
-        margin: 0;
-        font-family: Bebas Neue;
-        font-size: 54px;
-        line-height: 54px;
-        color: $itemBdC;
-        text-align: center;
-        width: 100%;  text-transform: uppercase;
-        margin-bottom: 56px;
-        opacity: 0;
-      }
-      .animation-wrap {
-        height: auto;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        position: relative;   
-        &__svg {              
-          width: 200px;
-          position: relative;
-        }          
-        .svg-wrap {                             
-            width: 0;
-            overflow: hidden;                                           
-        }
-        .svg-2 {
-          display: flex;
-          justify-content: flex-end;
-          svg {
-            animation:new-line2 2s infinite linear !important;
-          }
-        }         
-        &__item {
-          height: 170px;
-          width: 170px;
-          border: 0.625em solid $itemBdC;
-          border-radius: 50%;
-          opacity: 0;                                                     
-        }
-        &__text {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          text-align: center;
-          margin-bottom: 5%;
-          z-index: 10;
-          p {
-            width: 25%;
-            opacity: 0;
-          }
-        }
-        @for $i from 1 through 8 {
-          .item-#{$i} {
-            background: url('assets/media/images/content/steps-#{$imageDirection}-image#{$i}.jpg') no-repeat;
-            background-size: cover;
-            background-position: center;
-            z-index: 10;
-          }
-        }
-                                                                    
-      }
-
-
-    }
-  }
-}
 
 .steps-wrap {
   
   .new-container {
     width: 100%;  
+
   }
 
   .steps-container {
@@ -234,15 +101,364 @@ width: 80% !important;
     overflow: hidden;
 
     .steps-item {
-      height: 1070px;          
+      height: 1139px;          
       position: relative;
-      transition: 0.4s;     
+      transition: 0.4s;            
+      &__left-1 {        
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+        position: relative;        
+        cursor: pointer;
+        &__block {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          align-items: flex-end;
+          flex-direction: column;
+        }      
+        p {
+          width: 305px;
+          margin: 0;
+          color: #fff;
+          font-size: 80px;
+          line-height: 80px;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-family: Bebas Neue;
+          z-index: 10;
+        }
+        img {
+          height: 277px;
+          z-index: 10;
+          width: 341px;
+          margin-bottom: 64.67px;
+        }
+      }
+      &__left-2 {        
+        height: 100%;
+        width: 100%;
+        display: inline-flex;  
+        justify-content: flex-end;
+        align-items: center;
+        padding: 70px;
+        z-index: 10;
+        position: relative;                
+        transition: 0.7s ease-in-out;
+        transition-delay: 0.3s;
+              
+        svg {
+         animation:new-line 2s infinite linear;                 
+         transform: translateX(-50);
+        }
+
+        &__animation {                    
+          height: 993px;
+          width: 993px;                  
+          z-index: 10;
+          
+          h2 {
+            margin: 0;
+            font-family: Bebas Neue;
+            font-size: 54px;
+            line-height: 54px;
+            color: #EF3B39;
+            text-align: center;
+            width: 100%;  text-transform: uppercase;
+            margin-bottom: 56px;
+            opacity: 0;
+          }
+          .animation-wrap {
+            height: auto;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            position: relative;   
+            &__svg {              
+              width: 200px;
+              position: relative;
+            }          
+            .svg-wrap {                             
+                width: 0;
+                overflow: hidden;                                           
+            }
+            .svg-2 {
+              display: flex;
+              justify-content: flex-end;
+              svg {
+                animation:new-line2 2s infinite linear !important;
+              }
+            }         
+            &__item {
+              height: 170px;
+              width: 170px;
+              border: 0.625em solid #EF3B39;
+              border-radius: 50%;
+              opacity: 0;                                                     
+            }
+            &__text {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              text-align: center;
+              margin-bottom: 5%;
+              z-index: 10;
+              p {
+                width: 25%;
+                opacity: 0;
+              }
+            }
+            .item-1 {
+              background: url('assets/media/images/content/steps-before-image1.jpg') no-repeat;
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }
+            .item-2 {
+              background: url('assets/media/images/content/steps-before-image3.jpg') no-repeat;
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }           
+            .item-3 {
+              background: url('assets/media/images/content/steps-before-image4.jpg') no-repeat;
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }     
+            .item-4 {
+              background: url('assets/media/images/content/steps-before-image5.jpg') no-repeat;
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }     
+            .item-5 {
+              background: url('assets/media/images/content/steps-before-image6.jpg') no-repeat;
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }     
+            .item-6 {
+              background: url('assets/media/images/content/steps-before-image7.jpg') no-repeat;
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }     
+            .item-7 {
+              background: url('assets/media/images/content/steps-before-image8.jpg') no-repeat;
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }                                                                  
+          }
+
+
+        }
+      }
+      &__right-1 {
+        height: 100%;
+        width: 100%;
+        display: inline-block;        
+        cursor: pointer;
+        &__block {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;            
+        }
+        p {
+          width: 305px;
+          margin: 0;
+          color: #fff;
+          font-size: 80px;
+          line-height: 80px;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-family: Bebas Neue;
+          z-index: 10;
+        }
+        img {
+          height: 277px;
+          z-index: 10;
+          width: 341px;
+          margin-bottom: 64.67px;
+        }        
+      }
+      &__right-2 {
+        height: 100%;
+        width: 100%;
+        display: inline-flex;
+       
+        justify-content: flex-start;
+        align-items: center;
+        padding: 70px;
+        z-index: 10;
+        transition: 0.7s ease-in-out;
+        transition-delay: 0.3s;
+        
+        svg {
+          animation:new-line 2s infinite linear;                
+          transform: translateX(-50);
+         }
+        &__animation {          
+          
+          height: 993px;
+          width: 993px;
+        
+          z-index: 10;
+
+
+          h2 {
+            margin: 0;
+            font-family: Bebas Neue;
+            font-size: 54px;
+            line-height: 54px;
+            color: #FFB800;
+            text-align: center;
+            width: 100%;  text-transform: uppercase;
+            margin-bottom: 56px;
+            opacity: 0;
+          }
+          .animation-wrap {
+            height: auto;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            
+            &__svg {              
+              width: 200px;
+            }   
+            .svg-wrap {                             
+              width: 0;
+              overflow: hidden;                                           
+            }
+            .svg-2 {
+              display: flex;
+              justify-content: flex-end;
+              svg {
+                animation:new-line2 2s infinite linear !important;
+              }
+            }              
+            &__item {
+              height: 170px;
+              width: 170px;
+              border: 0.625em solid #FFB800;
+              border-radius: 50%;  
+              opacity: 0;
+              background-size: cover;
+              background-position: center;
+              z-index: 10;        
+            }
+            &__text {
+              width: 100%;
+              z-index: 10;
+              display: flex;
+              justify-content: space-between;
+              text-align: center;
+              margin-bottom: 5%;
+              
+              p {
+                width: 25%;
+                opacity: 0;
+              }
+            }
+            .item-1 {
+              background: url('assets/media/images/content/steps-after-image1.jpg');
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }
+            .item-2 {
+              background: url('assets/media/images/content/steps-after-image2.jpg');
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }           
+            .item-3 {
+              background: url('assets/media/images/content/steps-after-image3.jpg');
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }     
+            .item-4 {
+              background: url('assets/media/images/content/steps-after-image4.jpg');
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }     
+            .item-5 {
+              background: url('assets/media/images/content/steps-after-image5.jpg');
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }     
+            .item-6 {
+              background: url('assets/media/images/content/steps-after-image6.jpg');
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }     
+            .item-7 {
+              background: url('assets/media/images/content/steps-after-image7.jpg');
+              background-size: cover;
+              background-position: center;
+              z-index: 10;
+            }                 
+          }
+
+
+        }
+      }
+    }
+    // 2 big items
+    .--left {
+      width: calc(50% - 10px); 
+      background: rgba(0, 0, 0, 0.9);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 25);
+      position: relative;
+      border: 1px solid #515151;
+      // border-top-color: rgba(255,255,255,0.5);
+      border-radius: 3px;  
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: none;      
+      
+      &:hover .overlay {
+        opacity: 1 !important;        
+      }
+      .overlay {
+        pointer-events: none;
+        position: absolute;
+        transition: 0.4s;
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to right, rgba(239, 59, 57, 0.6) 0%,
+        rgba(239, 59, 57, 0) 100%);  
+        z-index: 1;      
+      }
+    }
+    .--right {
       width: calc(50% - 10px);  
       background:  rgba(0, 0, 0, 0.9);
       box-shadow: 0 1px 4px rgba(0, 0, 0, 25);
       position: relative;
-      border: 1px solid #515151;      
-      border-radius: 3px;     
+      border: 1px solid #515151;
+      // border-top-color: rgba(255,255,255,0.5);
+      border-radius: 3px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+     
+      &:hover .overlay {
+        opacity: 1 !important;
+      }
       .overlay {
         opacity: 0;
         transition: 0.4s;
@@ -251,30 +467,6 @@ width: 80% !important;
         height: 100%;
         width: 100%;
         z-index: 1;
-      }  
-      @include stepDirection('&__left-1','&__left-2', 'before',flex-end, flex-end,#EF3B39);
-      @include stepDirection('&__right-1','&__right-2', 'after',flex-start, flex-start,#FFB800)
-    }
-    // 2 big items
-    .--left { 
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      border-left: none;      
-      
-      
-      .overlay {
-        background: linear-gradient(to right, rgba(239, 59, 57, 0.6) 0%,
-        rgba(239, 59, 57, 0) 100%);  
-        z-index: 1;      
-      }
-    }
-    .--right { 
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      border-right: none;
-     
-      
-      .overlay {
         background: linear-gradient(to left, rgba(255, 138, 0, 0.6) 0%,
         rgba(255, 138, 0, 0) 100%);        
       }
