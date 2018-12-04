@@ -6,9 +6,9 @@
       "img": "assets/media/images/content/benefit-1.png"
     },
     { 
-      "title": "Идем в ногу со временем",
-      "text": "Вы контролируете и настраиваете сигнализацию через мобильное приложение",
-      "img": "assets/media/images/content/benefit-2.png"
+      "title": "бесплатный Психолог",
+      "text": "Если вы нуждаетесь в психологической реабилитации, после проиcшествия Вы можете воспользоваться услугами бесплатного психолога",
+      "img": "assets/media/images/content/benefit-22.png"
     },
     { 
       "title": "Гарантируем надежность",
@@ -23,7 +23,7 @@
     { 
       "title": "Заботимся о клиенте",
       "text": "Устраним угрозу и предоставим бесплатную психологическую помощь вам или вашим близким",
-      "img": "assets/media/images/content/benefit-5.png"
+      "img": "assets/media/images/content/tp-woman.jpg"
     }
   ]
 }

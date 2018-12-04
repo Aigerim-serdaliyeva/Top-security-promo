@@ -1,3 +1,5 @@
+- var path = 'assets/media/images/content/';
+
 mixin step(data, index)
   - var side = "left"
   if (index+1) % 2 === 0
@@ -29,8 +31,8 @@ mixin step(data, index)
 
 //- Sanzhar steps
 mixin steps()  
-  #TLcontrols Press
-  section.steps-wrap#how-it-works3.spy-it
+  #TLcontrols
+  section.steps-wrap#how-it-works3.spy-it(v-cloak)
     .container.asan-steps
       h1.section-title.anim.slide-in-top=steps.title
       ul.steps
@@ -39,9 +41,9 @@ mixin steps()
     .container.new-container.sanj-steps
       h1.section-title.anim.slide-in-top=steps.title
       .steps-container
-        .steps-item.--left.anim.slide-in-left
-          .overlay
-          .steps-item__left-1
+        .steps-item.--left.anim.slide-in-left(v-on:mouseover="changeSide",:class="leftWidthState")#--left
+          .overlay.turnOn(:class="{ 'addOpacity': leftOpacity }")
+          .steps-item__left-1(:class="{ 'beabsolute': leftAbsolute1 }")
             .steps-item__left-1__block          
               img(src="assets/media/images/content/steps-l-bg.svg", alt="")
               p 
@@ -53,10 +55,12 @@ mixin steps()
                 br
                 | top 
                 br
-                | security
-          .steps-item__left-2.beabsolute
+                | security 
+                br 
+                | kz
+          .steps-item__left-2(:class="{ 'beabsolute': leftAbsolute2 }")
              .steps-item__left-2__animation
-                h2 Объект без охраны top security
+                h2 Объект без охраны top security kz
                 .animation-wrap
                   .animation-wrap__item.item-1#svg-left-1
                   //- 720
@@ -128,9 +132,9 @@ mixin steps()
                      | вещей
                 //- left 2 end
                          
-        .steps-item.--right.anim.slide-in-right
-          .overlay
-          .steps-item__right-1
+        .steps-item.--right.anim.slide-in-right#--right(v-on:mouseover="changeSide",:class="rightWidthState")
+          .overlay.turnOn(:class="{'addOpacity': rightOpacity}")
+          .steps-item__right-1(:class="{ 'beabsolute': rightAbsolute1 }")
             .steps-item__right-1__block 
               img(src="assets/media/images/content/steps-2-bg.svg", alt="")
               p 
@@ -143,9 +147,11 @@ mixin steps()
                 | top 
                 br
                 | security
-          .steps-item__right-2
+                br 
+                | kz
+          .steps-item__right-2(:class="{ 'beabsolute': rightAbsolute2 }")
             .steps-item__right-2__animation
-              h2 Объект c охраной top security
+              h2 Объект c охраной top security kz
               .animation-wrap
                 .animation-wrap__item.item-1#svg-right-1
                 //- 720

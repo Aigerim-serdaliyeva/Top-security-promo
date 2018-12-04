@@ -34,8 +34,8 @@
 		$mail->Password = AUTH_PASSWORD;
 
 		$mail->SetFrom(AUTH_LOGIN, EMAIL_NAME);
-		$mail->addAddress(EMAIL_FROM);
-
+		$mail->addAddress('g.kadyrova@muratov.kz');
+		$mail->addAddress('m.masseyeva@muratov.kz');
 		$mail->Subject = EMAIL_SUBJECT;
 		$mail->Body	   = sprintf(EMAIL_BODY, $data['name'], $data['phone']);
 

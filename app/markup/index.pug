@@ -6,6 +6,9 @@ include sections/services.pug
 include sections/benefits.pug
 include sections/testimonials.pug
 include sections/about.pug
+include sections/license.pug
+include sections/clients.pug
+include sections/alarm-button.pug
 include sections/callback.pug
 include sections/team.pug
 include sections/footer.pug
@@ -20,11 +23,19 @@ html(lang="ru")
       +hero()
       +services()
       +steps()            
-      +benefits()
+      +benefits()      
       +testimonials()
-      +about()
-      +callback()
-      +team()
+      +about()                  
+      +license()
+      +alarm()
+      +our-clients()      
+      +callback()            
       +footer()
-      
-    script(src="main.js?v=023")
+
+    script(type='text/javascript').
+      (function(){ var widget_id = '2CMvzc6NhX';var d=document;var w=window;function l(){var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();    
+    //- script(type='text/javascript').
+    //-   (function(){ var widget_id = 'v3yPdiqQHg';var d=document;var w=window;function l(){var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();  
+    script(src="main.js?v=29")
+    
+    

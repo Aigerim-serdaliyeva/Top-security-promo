@@ -55,6 +55,7 @@ opacity: 1 !important;
 
 // Hack for step objects
 .beabsolute {   
+ 
   opacity: 0 !important;
   position: absolute !important;
 }
@@ -256,27 +257,33 @@ width: 80% !important;
       @include stepDirection('&__right-1','&__right-2', 'after',flex-start, flex-start,#FFB800)
     }
     // 2 big items
+    @keyframes turnOn {
+      0% { opacity:0 }
+      50% {opacity:1}
+      100% {opacity: 0}
+    }
+    .turnOn {
+      // animation: turnOn 2.5s infinite both ease-in-out;
+      opacity: 1 !important;
+    }
     .--left { 
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      border-left: none;      
-      
-      
+      border-left: none;                             
       .overlay {
         background: linear-gradient(to right, rgba(239, 59, 57, 0.6) 0%,
         rgba(239, 59, 57, 0) 100%);  
-        z-index: 1;      
+        z-index: 1;              
       }
     }
     .--right { 
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
-      border-right: none;
-     
-      
+      border-right: none;           
       .overlay {
         background: linear-gradient(to left, rgba(255, 138, 0, 0.6) 0%,
-        rgba(255, 138, 0, 0) 100%);        
+        rgba(255, 138, 0, 0) 100%);  
+        animation-delay: 1s;      
       }
     }
     // -2 big items
@@ -763,17 +770,21 @@ width: 80% !important;
                 }
               }
         
-            }
-  
-  
+            }    
           }
         }
-      }
-   
-  
+      }     
     }
   }
 }
 
 
 // end sanzhar media
+
+[v-cloak] {
+  display: none;
+}
+
+.addOpacity {
+  opacity: 0 !important;
+}

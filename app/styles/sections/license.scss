@@ -1,0 +1,147 @@
+$path: 'assets/media/images/content/';
+.dn {
+    display: none;
+}
+.license {
+    padding: 64px 0;
+    height: auto;       
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    font-family: Bebas Neue;
+    background: #353535;
+    h2 {
+        text-align: center;        
+        font-size: 60px;
+    }
+    
+    $mlmr : 2%;
+    article {
+        display: flex;
+        justify-content: space-around;  
+        align-items: center;
+        font-family: Montserrat;
+        p {
+            text-transform: none;            
+            font-size: 20px;
+            color:rgba(255,255,255,0.8);
+            position: relative;
+        }       
+        p:nth-child(1) {
+            left: -30px;
+        } 
+        p:nth-child(2) {
+            left: 10px;
+        } 
+        span {
+            font-weight: bold;
+            font-size: 24px;
+            color: #fff;
+        }
+        img {
+            height: 350px;
+            width: 248px;            
+            position: relative;         
+            cursor: pointer;    
+        } 
+        img:nth-child(2) {
+            cursor: default;
+        }            
+        .license-icon {
+            width: 142px;
+            height: 124.37px;
+        }
+    }
+    article:nth-child(3) {
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .license-overlay{        
+            position: fixed;
+            top: 0; left: 0;right: 0;bottom: 0;
+            margin: auto;
+            height: 100%;           
+            width: 100%;
+            z-index: 100;
+            background: rgba(0,0,0,0.5);
+        }   
+    
+    .license-hidden {
+        position: fixed;    
+        bottom: 0;
+        margin: auto;
+        height: 350px;
+        width: 248px;
+        z-index: 200;        
+        background: #fff;        
+        button {
+            position: absolute;            
+            right: 15px;   
+            top: -33px;      
+            background: white;
+            outline: none;
+            border: none;
+            z-index: 20;            
+            pointer-events: all;
+            cursor: pointer;
+            background: url($path + 'vector-line.svg') no-repeat;
+            background-size: contain;
+        
+            padding: 15px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: -40px;left: 0;
+            height: 40px;
+            width: 100%;
+            background: #353535;
+        }
+    }      
+    .first-hidden {    
+        background: url($path + 'first-license.png') no-repeat;
+        background-size: cover;
+        background-position:center;        
+    }  
+    .second-hidden {
+        background: url($path + 'second-license.png') no-repeat;
+        background-size: cover;
+        background-position:center;        
+    }  
+    }     
+  
+@media screen and (max-width: 960px) {
+
+    .license {
+        h2 {
+            margin: 30px 0 30px;
+            font-size: 2.25em;
+        }
+        article {
+            align-items: center !important;
+            flex-direction: column; 
+            img {
+                margin-bottom: 20px;
+                width: 80%;                
+            }
+            p {
+                font-size:20px;
+            }
+            span {
+                
+            }
+            p:nth-child(1) {
+                left: 0;
+            } 
+            p:nth-child(2) {
+                left: 0;
+            }              
+        }
+        .license-hidden {  
+            margin: 0;         
+            height: calc(100vh - 6rem);
+            width: 100%;           
+        }
+    }   
+}

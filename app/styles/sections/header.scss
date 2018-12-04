@@ -1,5 +1,5 @@
 .header {
-  background-color: $colorDark;
+  background-color: rgba(37,37,37,0.9);
   
   position: fixed;
   left: 0;
@@ -11,6 +11,13 @@
 #page-start {
   height: em(50);
 }
+.nav-number {
+  text-decoration: none;
+  color:#EF3B39;
+  align-self: center;
+  font-size: 18px;
+  margin-left: 5px;
+}
 .navbar {
   display: flex;
   align-items: center;
@@ -19,7 +26,7 @@
   margin-right: em(-15);
   padding-left: em(15);
   padding-right: em(15);
-  background-color: $colorDark;
+  background-color: rgba(37,37,37,0.1);
   position: relative;
   z-index: 2;
   transition: .4s;
@@ -54,7 +61,7 @@
     &-link {
       color: $colorMain;
       text-decoration: none;
-      font-size: em(20);
+      font-size: em(18);
       font-weight: 400;
       position: relative;
       &:after {

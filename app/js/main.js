@@ -1,4 +1,5 @@
 //=include ../../node_modules/jquery/dist/jquery.js
+//=include ../../node_modules/vue/dist/vue.js
 //=include ../../node_modules/jquery-mask-plugin/dist/jquery.mask.min.js
 //=include ../../node_modules/slick-carousel/slick/slick.js
 //=include ../../node_modules/animejs/anime.min.js
@@ -194,26 +195,26 @@ jQuery(document).ready(function($) {
 
   // sanzhar changes
   
-  (function hoverSteps() { 
-    let tpLeft = document.getElementsByClassName('--left')[0];     
-    let tpRight = document.getElementsByClassName('--right')[0];
-    function directionHover(selHover,selHovered) {
-      selHover.addEventListener('mouseover', () => {
-        selHover.classList.add('tp-w55');
-        selHovered.classList.add('tp-w45');
-        selHover.querySelector('.overlay').classList.add('lr-opacity');
-      });
-      selHover.addEventListener('mouseout', () => {
-        selHover.querySelector('.overlay').classList.remove('lr-opacity');
-        selHover.classList.remove('tp-w55');
-        selHover.classList.remove('tp-w45');
-        selHovered.classList.remove('tp-w55');
-        selHovered.classList.remove('tp-w45');
-      });          
-    }
-    directionHover(tpLeft,tpRight);
-    directionHover(tpRight,tpLeft); 
-  })();
+  // (function hoverSteps() { 
+  //   let tpLeft = document.getElementsByClassName('--left')[0];     
+  //   let tpRight = document.getElementsByClassName('--right')[0];
+  //   function directionHover(selHover,selHovered) {
+  //     selHover.addEventListener('mouseover', () => {
+  //       selHover.classList.add('tp-w55');
+  //       selHovered.classList.add('tp-w45');
+  //       selHover.querySelector('.overlay').classList.add('lr-opacity');
+  //     });
+  //     selHover.addEventListener('mouseout', () => {
+  //       selHover.querySelector('.overlay').classList.remove('lr-opacity');
+  //       selHover.classList.remove('tp-w55');
+  //       selHover.classList.remove('tp-w45');
+  //       selHovered.classList.remove('tp-w55');
+  //       selHovered.classList.remove('tp-w45');
+  //     });          
+  //   }
+  //   directionHover(tpLeft,tpRight);
+  //   directionHover(tpRight,tpLeft); 
+  // })();
 
   (function aboutPlay() {
     $('#about-iframe').click(function() {
@@ -223,89 +224,38 @@ jQuery(document).ready(function($) {
 
   
 
-  (function animNumbers() {   
-    var a = 0;
-    $(window).scroll(function() {    
-      var oTop = $('.content__number:first').offset().top - window.innerHeight;
-      if (a == 0 && $(window).scrollTop() > oTop) {
-        $('.content__number').each(function() {
-          var $this = $(this),
-            countTo = $this.attr('data-count');
-          $({
-            countNum: $this.text()
-          }).animate({
-              countNum: countTo
-            },    
-            {    
-              duration: 3000,
-              easing: 'swing',
-              step: function() {
-                $this.text(Math.floor(this.countNum));
-              },
-              complete: function() {
-                $this.text(this.countNum);
-                //alert('finished');
-              }    
-            });
-        });
-        a = 1;
-      }
+  // (function animNumbers() {   
+  //   var a = 0;
+  //   $(window).scroll(function() {    
+  //     var oTop = $('.content__number:first').offset().top - window.innerHeight;
+  //     if (a == 0 && $(window).scrollTop() > oTop) {
+  //       $('.content__number').each(function() {
+  //         var $this = $(this),
+  //           countTo = $this.attr('data-count');
+  //         $({
+  //           countNum: $this.text()
+  //         }).animate({
+  //             countNum: countTo
+  //           },    
+  //           {    
+  //             duration: 3000,
+  //             easing: 'swing',
+  //             step: function() {
+  //               $this.text(Math.floor(this.countNum));
+  //             },
+  //             complete: function() {
+  //               $this.text(this.countNum);
+  //               //alert('finished');
+  //             }    
+  //           });
+  //       });
+  //       a = 1;
+  //     }
     
-    });
-  })();
+  //   });
+  // })();
 
-  (function animLR() {     
-   let val1Duration = 300;
-   let val0Duration = 350;
-   let TLcontrols = anime.timeline({
-    loop: true,
-    easing: 'linear'
-   });    
-   TLcontrols
-   .add({
-    targets: '.--left .overlay',
-    opacity: [
-      {value: 1,duration:val1Duration, delay:val1Duration},
-      {value: 0,duration:val0Duration, delay:val0Duration}
-  ],                
-
-   })
-   .add({
-    targets: '.--right .overlay',
-    opacity: [
-      {value: 1,duration:val1Duration, delay:val1Duration},
-      {value: 0,duration:val0Duration, delay:val0Duration}
-  ],                  
-    
-   })
-   var leftEven = anime({
-    targets: '.--left .overlay',
-    opacity: [
-      {value: 1,duration:val1Duration, delay:val1Duration},
-      {value: 0,duration:val0Duration, delay:val0Duration}
-    ],
-    easing: 'linear',
-    autoplay: false
-   });
-   var rightEven = anime({
-    targets: '.--right .overlay',
-    opacity: [
-      {value: 1,duration:val1Duration, delay:val1Duration},
-      {value: 0,duration:val0Duration, delay:val0Duration}
-    ],
-    easing: 'linear',
-    autoplay: false
-   });   
-
-  //  left and right main blocks
-  
-  document.querySelector('.--left').onclick = TLcontrols.pause;      
-  document.querySelector('.--right').onclick = TLcontrols.pause;
-  
-  })();
-    
-  (function stepLeft() {
-    let stepBool = true;
+      let stepBool = true;
     let stepBool2 = true;
     // STEP LEFT    
     let stepLMain = document.querySelector('.--left');
@@ -315,26 +265,47 @@ jQuery(document).ready(function($) {
     let stepRMain = document.querySelector('.--right');
     let stepRFirst = document.querySelector('.steps-item__right-1');
     let stepRSecond = document.querySelector('.steps-item__right-2');
-    // event listeners
-    stepLMain.addEventListener('click', () => {
- 
-    // change width
+
+  function animLR() {     
+    var animLr = new Vue({
+      el: '#how-it-works3',
+      data: {
+        leftWidthState: {
+          'change-width-20' : false,
+          'change-width-80' : false
+        },
+        rightWidthState: {
+          'change-width-20' : false,
+          'change-width-80' : false
+        },
+        leftOpacity: false, rightOpacity: false,
+        leftAbsolute1: false, rightAbsolute1: false,
+        leftAbsolute2: false, rightAbsolute2: false
+      },
+      methods: {
+        changeSide: function(event) {
+         let target = event.currentTarget,
+             leftOverlay = document.querySelector('.--left'),
+             rightOverlay = document.querySelector('.--right');                                 
+         if(target.id === '--left') {
+          // ** animation state 
+          
+          // ** width state
+          this.leftWidthState["change-width-20"] = false;
+          this.leftWidthState["change-width-80"] = true;
+          this.rightWidthState["change-width-20"] = true;
+          // ** opacity and absolute 
+          this.leftOpacity = false; this.rightOpacity = true;
+          this.leftAbsolute1 = true; this.leftAbsolute2 = false;
+          this.rightAbsolute1 = false; this.rightAbsolute2 = true;
+          // ** anime
+           // change width
     if (window.matchMedia("(min-width: 1070px)").matches ) { // If media query matches
       $('.steps-item__right-1 p').css('width', '100%')
       $('.steps-item__left-1 p').css('width', '100%')
     } 
   
-    stepLMain.querySelector('.overlay').style.opacity = '1';
-    stepRMain.querySelector('.overlay').style.opacity = '0';
-    stepLMain.classList.remove('change-width-20');
-     stepLMain.classList.add('change-width-80');     
-     stepRMain.classList.add('change-width-20');
-    // change left steps    
-    stepLFirst.classList.add('beabsolute');
-    stepLSecond.classList.remove('beabsolute');
-    // change right steps 
-    stepRFirst.classList.remove('beabsolute');
-    stepRSecond.classList.add('beabsolute');
+
     if(stepBool) {
     (function animateSvg() {
 
@@ -428,121 +399,226 @@ jQuery(document).ready(function($) {
       
     })(); stepBool = false;  }
   
+         } else {
+          // ** animation state 
+
+          // ** width state
+          this.rightWidthState["change-width-20"] = false;
+          this.rightWidthState["change-width-80"] = true;
+          this.leftWidthState["change-width-20"] = true;
+          // ** opacity and absolute
+          this.rightOpacity = false; this.leftOpacity = true;
+          this.rightAbsolute1 = true; this.rightAbsolute2 = false;
+          this.leftAbsolute1 = false; this.leftAbsolute2 = true;   
+ // change width
+ if (window.matchMedia("(min-width: 1070px)").matches ) { // If media query matches
+  $('.steps-item__right-1 p').css('width', '100%')
+  $('.steps-item__left-1 p').css('width', '100%')
+} 
+
+
+if(stepBool2) {
+(function animateSvg2() {
+
+  var basicTimeline = anime.timeline();
+  var basicTimeline2 = anime.timeline();
+  var basicTimeline3 = anime.timeline();
+  basicTimeline
+  .add({
+    targets : ["#svg-right-1", "#svg-right-2", "#svg-right-3"],
+    opacity : 1,
+    scale : [{
+      value : 1.1,
+      elasticity : 100
+    }, {
+      value : 1,
+      elasticity : 100
+    }],
+    delay : function(dtime, fb) {
+      return 1E3 * (1 + fb);
+    },
+    easing : "easeInOutQuad",
+    offset : "-=600"
+  }).add({
+    targets : ["#svg-right-4", "#svg-right-5", "#svg-right-6"],
+    opacity : 1,
+    scale : [{
+      value : 1.1,
+      elasticity : 100
+    }, {
+      value : 1,
+      elasticity : 100
+    }],
+    delay : function(dtime, fb) {
+      return 1E3 * (1 + fb);
+    },
+    easing : "easeInOutQuad",
+    offset : "-=600"
+  });
+  basicTimeline2.add({
+    targets : ["#p-right-1", "#p-right-2", "#p-right-3"],
+    opacity : 1,
+    delay : function(dtime, fb) {
+      return 1E3 * (1 + fb);
+    },
+    easing : "easeInOutQuad",
+    offset : "-=600"
+  }).add({
+    targets : ["#p-right-4", "#p-right-5", "#p-right-6"],
+    opacity : 1,
+    delay : function(dtime, fb) {
+      return 1E3 * (1 + fb);
+    },
+    easing : "easeInOutQuad",
+    offset : "-=600"
+  });
+  basicTimeline3.add({
+    targets : [".svg-r-wrap-1", ".svg-r-wrap-2"],
+    opacity : 1,
+    translateX : "0",
+    width : {
+      value : "200"
+    },
+    easing : "easeInOutQuad",
+    delay : function(dtime, fb, delay) {
+      return 1300 * (1 + fb);
+    },
+    offset : "-=600"
+  }).add({
+    targets : ["#vg-right-3", ".svg-r-wrap-4", ".svg-r-wrap-5"],
+    opacity : 1,
+    translateX : "0",
+    width : {
+      value : "200"
+    },
+    easing : "easeInOutQuad",
+    delay : function(dtime, fb, delay) {
+      return 1100 * (1 + fb);
+    },
+    offset : "-=600"
+  });
+  anime({
+    targets : ".steps-item__right-2__animation h2",
+    opacity : 1,
+    delay : 200,
+    easing : "easeInOutQuad"
+  });
+
+
   
-    });  
-
-    stepRMain.addEventListener('click', () => {
-      // change width
-      if (window.matchMedia("(min-width: 1070px)").matches ) { // If media query matches
-        $('.steps-item__right-1 p').css('width', '100%')
-        $('.steps-item__left-1 p').css('width', '100%')
-      } 
+})(); stepBool2 = false;  }
+                 
+         }
+        }      
+      }
+    })  
+    };
+    animLR();
     
-   
-      stepRMain.querySelector('.overlay').style.opacity = '1';
-      stepLMain.querySelector('.overlay').style.opacity = '0';
-      stepRMain.classList.remove('change-width-20');
-      stepRMain.classList.add('change-width-80');
-      stepLMain.classList.add('change-width-20');
-     // change right steps    
-     stepRFirst.classList.add('beabsolute');
-     stepRSecond.classList.remove('beabsolute');    
-     // change left steps  
-     stepLFirst.classList.remove('beabsolute');
-    stepLSecond.classList.add ('beabsolute');
-    if(stepBool2) {
-    (function animateSvg2() {
-      var basicTimeline = anime.timeline();
-      var basicTimeline2 = anime.timeline();
-      var basicTimeline3 = anime.timeline();      
-      basicTimeline
-      .add({
-        targets: ['#svg-right-1', '#svg-right-2','#svg-right-3'],
-        opacity: 1,       
-        scale: [         
-          {value: 1.1, elasticity: 100},
-          {value: 1, elasticity: 100}
-        ],
-        delay: function(el,i) {
-          return 1000 * (1 + i);
-        },
-        easing: 'easeInOutQuad',
-        offset: '-=600'
-      })
-      .add({
-        targets: ['#svg-right-4', '#svg-right-5','#svg-right-6'],
-        opacity: 1,       
-        scale: [         
-          {value: 1.1, elasticity: 100},
-          {value: 1, elasticity: 100}
-        ],
-        delay: function(el,i) {
-          return 1000 * (1 + i);
-        },
-        easing: 'easeInOutQuad',
-        offset: '-=600'
-      })
-     
-      basicTimeline2
-      .add({
-        targets: ['#p-right-1','#p-right-2','#p-right-3'],
-        opacity: 1,       
-        delay: function(el,i) {
-          return 1000 * (1 + i);
-        },
-        easing: 'easeInOutQuad',
-        offset: '-=600'
-      })
-      .add({
-        targets: ['#p-right-4','#p-right-5','#p-right-6'],
-        opacity: 1,       
-        delay: function(el,i) {
-          return 1000 * (1 + i);
-        },
-        easing: 'easeInOutQuad',
-        offset: '-=600'
-      })
+ 
+  //  anime endlet
+let jivoClick = document.querySelector('.top-jivo');
+let jivoBool = true;
+function jivoVisible() {
+  $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility','visible')  
+}
+function jivoInVisible() {
+  $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility','hidden')
+}
 
-      basicTimeline3
-      .add({
-        targets: ['.svg-r-wrap-1','.svg-r-wrap-2'],
-        opacity: 1,
-        translateX: '0',
-        width: {
-          value: '200'
-        },
-        easing: 'easeInOutQuad',
-        delay: function(el,i,l) {
-          return (1300 * (1 + i));
-        },
-        offset: '-=600'
-      })
-      .add({
-        targets: ['#vg-right-3','.svg-r-wrap-4','.svg-r-wrap-5'],
-        opacity: 1,
-        translateX: '0',
-        width: {
-          value: '200'
-        },
-        easing: 'easeInOutQuad',
-        delay: function(el,i,l) {
-          return (1100 * (1 + i));
-        },
-        offset: '-=600'
-      })
 
-      var stepRH2 = anime({
-        targets: '.steps-item__right-2__animation h2',
-        opacity: 1,       
-        delay: 200,
-        easing: 'easeInOutQuad',
-      });
+document.querySelectorAll('.services__block').forEach((el) => {
+  el.addEventListener('click',() => {
+    el.querySelector('.services__block__image').style.transform = 'translateX(0)';
+    el.querySelector('.services__block__text').style.transform = 'translateX(0)';    
+    el.querySelector('.services__block__text').classList.remove('op0');    
+  })
+});
 
-    })(); stepBool2 = false; }
-      
+
+function openLicense() {
+  let first,second,overlay;
+  first = document.querySelector('.first-hidden');
+  second =  document.querySelector('.second-hidden');
+  overlay = document.querySelector('.license-overlay');
+  document.querySelector('.license').addEventListener('click', (e) => {
+    e = event.target; 
+    switch (e.id) {      
+      case 'license-first':
+        first.classList.toggle('dn');
+        overlay.classList.toggle('dn');         
+        break;
+      case 'license-second':
+        second.classList.toggle('dn');
+        overlay.classList.toggle('dn');
+        break;        
+    }
+  }) 
+  document.querySelectorAll('.license-hidden > button').forEach((el) => {
+    el.addEventListener('click',() =>{
+      el.parentElement.classList.toggle('dn');
+      overlay.classList.toggle('dn'); 
+    })
+  });
+};
+
+jivoClick.addEventListener('click', () => {    
+      jivoVisible()
+      jivo_api.open();           
+      setTimeout(() => {
+        document.querySelector('#jivo_close_button').addEventListener('click',() =>{
+          jivoInVisible()
+        })
+      }, 500);
     });
-  })();
-  //  anime end
+    if(window.matchMedia("(min-width:960px)").matches) {
+      document.querySelector('#license-first').addEventListener('click',() =>{
+        window.open('assets/documents/license-first.pdf','_blank')
+      })
+      document.querySelector('#license-second').addEventListener('click',() =>{
+        window.open('assets/documents/license-second.pdf','_blank')
+      })
+    }
+
+    if(window.matchMedia("(max-width:960px)").matches) {
+      $('.license p:nth-child(1)').insertAfter('#license-first');
+      $('.license-icon').insertBefore('.license > .container > h2');
+      openLicense();
+      document.querySelectorAll('.services__button').forEach((el) => {
+        el.addEventListener('click',() => {
+          if(el.textContent === 'Скрыть') {
+            el.textContent = 'Подробнее';
+          } else {
+            el.textContent = 'Скрыть'
+          }          
+          el.nextElementSibling.classList.toggle('text-dn');                 
+        })
+      });
+    }
+    
+    $('.your-class').slick({
+        arrows:false,
+        dots:false
+    });
+    
+      
+
+
+
+   
+    
+ 
+
+
+  
+
+  
+  
+    
+
+    
+          
+
 
 
     

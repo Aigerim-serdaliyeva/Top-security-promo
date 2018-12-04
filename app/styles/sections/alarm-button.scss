@@ -1,0 +1,141 @@
+.alarm-button {
+    position: relative;
+    height: 986px;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    background:url($path + 'back-alarm.png') no-repeat;   
+    h3 {
+        width: 100%;
+        text-align: center;
+        color: #EF3B39;
+        font-size: 3.75em;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: bold;
+    } 
+    .alarm-hand {     
+        height: calc(100% - 26px);
+        width: 50%;       
+        background: url($path + 'alarm-hand.png') no-repeat;
+        background-size: cover;
+        background-position: center right;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            background: #EF3B39;
+            height: 120px;
+            width: calc(100% + 80%);
+            margin-top: 105px;
+            z-index: -1;
+            border-radius: 50px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        }
+    }
+    .alarm-content {
+        font-family: Montserrat;
+        height: calc(100% - 26px);
+        width: 50%;      
+        color: #353535;
+        position: relative;
+    }
+    h2 {
+      font-family: Bebas Neue;
+      color: #fff;
+      font-size: 35px;
+      line-height: 35px;
+      margin: 130px 0 40px;   
+    }
+    p {
+        font-size: 20px;
+        margin: 0 0 44px;
+    }
+    button {
+        outline: 0;
+        background:#FFB800;
+        border-radius: 60px;
+        border: none;  
+        color: #fff;
+        font-family: Montserrat;
+        padding: 0.5em 1.2em;
+        font-size: 20px;       
+        text-transform: uppercase;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        margin-left: 150px;
+        cursor: pointer;
+    }
+}
+
+.mob {
+    display: none;
+}
+
+@media screen and (max-width:960px) {
+    .des {
+        display: none;
+    }
+    .mob {
+     display: block;   
+    }
+    $left-alarm : -70px;
+    $left-l-alarm : 0;
+    .alarm-button  {
+        height: auto;
+        padding-top: 50px;       
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        h3 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            font-size: 2.25em;
+        }        
+        img {
+            width: 70%;           
+            object-fit: cover;
+            position: relative;
+            left: $left-alarm;
+        }
+        .alarm-content{
+            height: 100%;
+            position: absolute;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;     
+            align-items: center;       
+            width: auto;
+            h2 {
+               
+                margin: 0 0 0 0 ;
+               color: #353535;
+               font-size: 20px;
+               line-height: 20px;
+               margin-top: 8px;
+            }        
+        }
+        span {
+            margin: 10px 0 0;
+            display: block;
+            position: relative;
+            font-size: 14px;
+            line-height:14px ;
+          
+        }
+        button {            
+            font-size: 12px;
+            margin: 10px 0 0;
+         
+        }
+        .alarm-hand {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}

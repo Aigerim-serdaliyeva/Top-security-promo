@@ -17,7 +17,9 @@ mixin header()
           ul.navbar-menu-list
             each item in navbar.items
               +navbar-item(item)
-        a(href="tel:+77010840817").navbar-phone
+            img(src="assets/media/images/content/header-icon.svg", alt="")  
+            a.nav-number(href="tel:+77273467657")  +7 (727) 346-76-57   
+        a(href="tel:+77273467657").navbar-phone
       .mobile
         nav.mobile-menu
           ul.mobile-menu-list

@@ -1,15 +1,16 @@
 mixin services() 
   section.services-wrap#services.spy-it
     .container.services
-      h1.section-title.section-title--alt.anim.slide-in-top Что мы предлагаем
-      p.services-text.anim.slide-in-bot Надежный удаленный контроль при помощи<br>беспроводной сигнализации и смартфона в квартире, доме или офисе
+      h1.section-title.section-title--alt.anim.slide-in-top Наши услуги
+      p.services-text.anim.slide-in-bot Надежный удаленный контроль при помощи<br>беспроводной сигнализации в квартире, доме или офисе
       .services__container
         .services__first.services__block.anim.slide-in-left
-          .services__block__title Тревожная сигнализация
+          .services__block__title Охранная сигнализация #[br] Standart          
           .services__block__content 
-            .services__block__image
+            .services__block__image            
               img(src="assets/media/images/content/promo-benefits-left.svg", alt="")
-            .services__block__text
+            button.services__button Подробнее              
+            .services__block__text.op0.text-dn
               | Интеллектуальная GSM система для защиты дома, офиса, дачи или гаража.
               br
               br
@@ -20,11 +21,12 @@ mixin services()
               br
               | Беспроводной тип передачи сигнала
         .services__first.services__block.anim.slide-in-right
-          .services__block__title Охранная сигнализация
+          .services__block__title Охранная сигнализация #[br] Premium
           .services__block__content 
             .services__block__image
               img(src="assets/media/images/content/promo-benefits-right.svg", alt="")
-            .services__block__text
+            button.services__button Подробнее  
+            .services__block__text.op0.text-dn
               | Комплекс охранной сигнализации формата Wi-Fi + GSM
               br
               br

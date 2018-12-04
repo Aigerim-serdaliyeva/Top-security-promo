@@ -33,9 +33,9 @@
   &__block {
     width: 33%;
     height: 100%;
-
     display: flex;
     flex-direction: column;    
+    justify-content: flex-end;
     padding: 20px 0;
     .block {
       &__menu {
@@ -261,6 +261,11 @@
   }
 }
 
+.primary-a {
+  color: #EF3B39;
+  text-decoration: none;
+}
+
 .mle {
   display: none;
 }
@@ -302,4 +307,20 @@
     }
   }
   }
+}
+
+@media screen and (max-width: 960px) {
+.new-footer {
+  a {
+    text-decoration: none;    
+  }
+  .primary-a {
+    color: #EF3B39;
+  }
+  .secondary-a {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+
 }

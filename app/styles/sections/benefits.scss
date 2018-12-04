@@ -16,8 +16,9 @@
       .benefit {
         justify-content: flex-end;
         align-items: flex-start;
-        background:url('assets/media/images/content/benefit-5.png') no-repeat;
+        background:url('assets/media/images/content/tp-woman.jpg') no-repeat;
         background-size: cover;
+        background-position: center;
         height: 18.75em;
                 
       }
@@ -30,8 +31,10 @@
   }
   &-wrap {
     padding: em(85) 0 em(74);
-    background-image: url($imgPath+'promo-back-benefits.png');
+    background-image: url($imgPath+'tp-back-white.jpg') ;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
     overflow: hidden;
     position: relative;
     &:before {

@@ -8,10 +8,7 @@ mixin footer()
         .container
          .new-footer__wrap
            .new-footer__block.jcsb 
-             .block__menu
-              a(href="#services") Услуги
-              a(href="#how-it-works") О компании
-              a(href="#contacts") Контакты
+             .block__menu            
              .block__location
               h2 ТОО «Top Security KZ»
               p
@@ -19,21 +16,24 @@ mixin footer()
                br
                | ул.Асемтау 58
                br
-               |Телефон: +7 (701) 084 0817
+               a Телефон: +7 (727) 346-76-57
                br              
                |Email: info@topsecurity.kz
            .new-footer__block
              .block__logo
                img(src="assets/media/images/content/logo-ft.svg", alt="Top Secturity logotype") 
              .block__number
-               a +7 (727) 346 8318
+               a.primary-a(href="tel:+77273467657") +7 (727) 346-76-57
              .block__preveligous
                p *Бесплатный звонок по городу Алматы
            .new-footer__block.aife.jcfe
              .block__social 
-               img(src="assets/media/images/shared/vk.svg" onclick="location.href='https://vk.com/topsecuritykz'")
-               img(src="assets/media/images/shared/fb.svg" onclick="location.href='https://www.facebook.com/topseckz/'")
-               img(src="assets/media/images/shared/inst.svg" onclick="location.href='https://www.instagram.com/topsecurity.kz/ '")
+                img(src="assets/media/images/shared/vk.svg" onclick="window.open('https://vk.com/topsecuritykz','_blank')" )
+                img(src="assets/media/images/shared/fb.svg" onclick="window.open('https://www.facebook.com/topseckz/','_blank')" )
+                img(src="assets/media/images/shared/inst.svg" onclick="window.open('https://www.instagram.com/topsecurity.kz/','_blank')")
+                //-  img(src="assets/media/images/shared/vk.svg" onclick="location.href='https://vk.com/topsecuritykz'")
+                //-  img(src="assets/media/images/shared/fb.svg" onclick="location.href='https://www.facebook.com/topseckz/'")
+                //-  img(src="assets/media/images/shared/inst.svg" onclick="location.href='https://www.instagram.com/topsecurity.kz/ '")               
              .block__copyright
                p 
                 | Copyright © 2018 Top Security KZ.
@@ -47,7 +47,7 @@ mixin footer()
               .block__logo
                 img(src="assets/media/images/content/logo-ft.svg", alt="Top Secturity logotype") 
               .block__number
-                a +7 (727) 346 8318
+                a.primary-a(href="tel:+77273467657") +7 (727) 346-76-57
               .block__preveligous
                 p *Бесплатный звонок по городу Алматы          
             .new-footer__block.jcsb 
@@ -59,14 +59,14 @@ mixin footer()
                 br
                 | ул.Асемтау 58
                 br
-                |Телефон: +7 (701) 084 0817
+                a.secondary-a(href="tel:+77273467657") Телефон: +7 (727) 346-76-57
                 br              
                 |Email: info@topsecurity.kz
             .new-footer__block.jcc
               .block__social 
-                img(src="assets/media/images/shared/vk.svg" onclick="location.href='https://vk.com/topsecuritykz'")
-                img(src="assets/media/images/shared/fb.svg" onclick="location.href='https://www.facebook.com/topseckz/'")
-                img(src="assets/media/images/shared/inst.svg" onclick="location.href='https://www.instagram.com/topsecurity.kz/ '")
+                img(src="assets/media/images/shared/vk.svg" onclick="window.open('https://vk.com/topsecuritykz','_blank')" )
+                img(src="assets/media/images/shared/fb.svg" onclick="window.open('https://www.facebook.com/topseckz/','_blank')" )
+                img(src="assets/media/images/shared/inst.svg" onclick="window.open('https://www.instagram.com/topsecurity.kz/','_blank')")
               .block__copyright
                 p 
                  | Copyright © 2018 Top Security KZ.

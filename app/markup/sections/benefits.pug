@@ -5,17 +5,12 @@ mixin benefit(data, index)
       figcaption.benefit-caption
         h2.benefit-title!=data.title
         p.benefit-text!=data.text
-  else
-    figure.benefit
-      img.benefit-img(src="assets/media/images/content/benefit-5.png", alt=data.title)
-      figcaption.benefit-caption
-        h2.benefit-title!=data.title
-        p.benefit-text!=data.text
+
   
 mixin benefits() 
   section.benefits-wrap#benefits.spy-it
     .container
-      .section-title.anim.slide-in-top 5 веских причин выбрать<br>Top Security KZ
+      .section-title.anim.slide-in-top 4 веские причины выбрать<br>Top Security KZ
       ul.benefits
         each item, index in benefits
           li.benefits-item.anim.slide-in-bot
