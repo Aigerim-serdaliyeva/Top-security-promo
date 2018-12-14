@@ -520,10 +520,12 @@ if(stepBool2) {
 let jivoClick = document.querySelector('.top-jivo');
 let jivoBool = true;
 function jivoVisible() {
-  $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility','visible')  
+  // $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility','visible')  ;
+  $('.globalClass_ET').show();
 }
 function jivoInVisible() {
-  $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility','hidden')
+  // $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility','hidden');
+  $('.globalClass_ET').hide();
 }
 
 
@@ -571,6 +573,8 @@ jivoClick.addEventListener('click', () => {
         })
       }, 500);
     });
+
+    
     if(window.matchMedia("(min-width:960px)").matches) {
       document.querySelector('#license-first').addEventListener('click',() =>{
         window.open('assets/documents/license-first.pdf','_blank')

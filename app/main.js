@@ -24858,10 +24858,12 @@ jQuery(document).ready(function ($) {
   var jivoClick = document.querySelector('.top-jivo');
   var jivoBool = true;
   function jivoVisible() {
-    $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility', 'visible');
+    // $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility','visible')  ;
+    $('.globalClass_ET').show();
   }
   function jivoInVisible() {
-    $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility', 'hidden');
+    // $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility','hidden');
+    $('.globalClass_ET').hide();
   }
 
   document.querySelectorAll('.services__block').forEach(function (el) {
@@ -24909,6 +24911,7 @@ jQuery(document).ready(function ($) {
       });
     }, 500);
   });
+
   if (window.matchMedia("(min-width:960px)").matches) {
     document.querySelector('#license-first').addEventListener('click', function () {
       window.open('assets/documents/license-first.pdf', '_blank');
