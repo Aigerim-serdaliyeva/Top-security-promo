@@ -819,8 +819,11 @@ body {
 .hero {
   padding-bottom: 5em;
   padding-left: 0.3125em; }
+  .no-webp .hero-wrap {
+    background-image: url("assets/media/images/shared/promo-second-bg.jpg"); }
+  .webp .hero-wrap {
+    background-image: url("assets/media/images/shared/promo-second-bg.webp"); }
   .hero-wrap {
-    background-image: url("assets/media/images/shared/promo-second-bg.jpg");
     background-size: cover;
     background-position: center;
     height: calc(100vh - 50px);
@@ -1417,11 +1420,14 @@ body {
 .steps {
   margin-top: 34px;
   padding: 0; }
+  .no-webp .steps-wrap {
+    background-image: url("assets/media/images/shared/rects.png"), url("assets/media/images/shared/step-bg-22.png"), url("assets/media/images/shared/step-bg-11.png"); }
+  .webp .steps-wrap {
+    background-image: url("assets/media/images/shared/rects.png"), url("assets/media/images/shared/step-bg-22.webp"), url("assets/media/images/shared/step-bg-11.webp"); }
   .steps-wrap {
     padding: 4.4375em 0;
     padding-bottom: 0;
     overflow: hidden;
-    background-image: url("assets/media/images/shared/rects.png"), url("assets/media/images/shared/step-bg-2.png"), url("assets/media/images/shared/step-bg-1.png");
     background-position: center center,  bottom left, top right;
     background-size: cover, auto 50%, auto 50%;
     background-repeat: no-repeat; }
@@ -2428,6 +2434,13 @@ body {
   .about-wrap .section-title {
     font-size: 3.75em; } }
 
+.top-video {
+  height: 500px;
+  width: 90%; }
+  @media (max-width: 960px) {
+    .top-video {
+      height: 60vw; } }
+
 .dn {
   display: none; }
 
@@ -2558,6 +2571,12 @@ body {
     height: calc(100vh - 6rem);
     width: 100%; } }
 
+.no-webp .alarm-hand {
+  background: url("assets/media/images/content/alarm-hand.png?v=001") no-repeat; }
+
+.webp .alarm-hand {
+  background: url("assets/media/images/content/alarm-hand.webp") no-repeat; }
+
 .alarm-button {
   position: relative;
   height: 986px;
@@ -2580,7 +2599,6 @@ body {
   .alarm-button .alarm-hand {
     height: calc(100% - 26px);
     width: 50%;
-    background: url("assets/media/images/content/alarm-hand.png") no-repeat;
     background-size: cover;
     background-position: center right;
     position: relative; }

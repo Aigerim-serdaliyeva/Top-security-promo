@@ -21,10 +21,7 @@
       list-style-type: none;
       position: relative;
       @media screen and (max-width:960px) {
-          width: 20%;
-          &::before {
-          
-          }
+          width: 20%;          
       }
       &::before {
         content: '';
@@ -60,9 +57,14 @@
 
 .hero {
   padding-bottom: em(80);
-  padding-left: em(5);
-  &-wrap {
+  padding-left: em(5);  
+  .no-webp &-wrap {
     background-image: url($imgPath+'promo-second-bg.jpg');
+  }
+  .webp &-wrap {
+    background-image: url($imgPath+'promo-second-bg.webp');
+  }
+  &-wrap {   
     background-size: cover;
     background-position: center;
     height: calc(100vh - 50px );

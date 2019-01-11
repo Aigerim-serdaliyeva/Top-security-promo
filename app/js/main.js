@@ -1,8 +1,10 @@
 //=include ../../node_modules/jquery/dist/jquery.js
-//=include ../../node_modules/vue/dist/vue.js
+//=include ../../node_modules/vue/dist/vue.min.js
 //=include ../../node_modules/jquery-mask-plugin/dist/jquery.mask.min.js
 //=include ../../node_modules/slick-carousel/slick/slick.js
 //=include ../../node_modules/animejs/anime.min.js
+//=include ../../node_modules/webp/modernizr-custom.js
+
 
 
 jQuery(document).ready(function($) {

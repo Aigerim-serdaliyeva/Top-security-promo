@@ -300,14 +300,22 @@ width: 80% !important;
 .steps {
   margin-top: 34px;
   padding: 0;
+  .no-webp &-wrap {
+    background-image: 
+    url('assets/media/images/shared/rects.png'),
+    url('assets/media/images/shared/step-bg-22.png'),
+    url('assets/media/images/shared/step-bg-11.png');
+  }
+  .webp &-wrap {
+    background-image: 
+    url('assets/media/images/shared/rects.png'),
+    url('assets/media/images/shared/step-bg-22.webp'),
+    url('assets/media/images/shared/step-bg-11.webp');
+  }
 	&-wrap {
     padding: em(71) 0;
     padding-bottom: 0;
-    overflow: hidden;
-    background-image: 
-      url('assets/media/images/shared/rects.png'),
-      url('assets/media/images/shared/step-bg-2.png'),
-      url('assets/media/images/shared/step-bg-1.png');
+    overflow: hidden;    
     background-position: center center,  bottom left, top right;
     background-size: cover, auto 50%, auto 50%;
     background-repeat: no-repeat;
@@ -422,9 +430,7 @@ width: 80% !important;
       margin-right: 0;
     }
   }
-  &.active {
-    
-  }
+
 }
 @keyframes line{
   0% {

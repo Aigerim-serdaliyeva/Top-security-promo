@@ -3,7 +3,7 @@
 		{
 			"title": "Используем современную экипировку",
 			"text": "Новейшее оружие, средства связи, скоростные автомобили – грозная сила против ваших врагов   ",
-			"img": "assets/media/images/content/benefit-1.png"
+			"img": "assets/media/images/content/benefit-11.jpg"
 		},
 		{
 			"title": "бесплатный Психолог",
@@ -13,12 +13,12 @@
 		{
 			"title": "Гарантируем надежность",
 			"text": "Вас охраняют бойцы, прошедшие специальную подготовку",
-			"img": "assets/media/images/content/benefit-3.png"
+			"img": "assets/media/images/content/benefit-33.jpg"
 		},
 		{
 			"title": "Работаем оперативно",
-			"text": "Будем у вас уже через 3-6 минут <br> после вызова",
-			"img": "assets/media/images/content/benefit-4.png"
+			"text": "Будем у вас уже через 5-15 минут <br> после вызова",
+			"img": "assets/media/images/content/benefit444.jpg"
 		},
 		{
 			"title": "Заботимся о клиенте",
@@ -69,7 +69,7 @@
 			},
 			{
 				"title": "Группа",
-				"text": "Оперативная группа выезжает на место 3-6 минут",
+				"text": "Оперативная группа выезжает на место от 5-15 минут",
 				"img": "step-3"
 			},
 			{

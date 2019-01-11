@@ -123,10 +123,7 @@
       display: block;
       
     }
-  }
-  &-aside {
-
-  }
+  }  
   &-main {
     flex-basis: 100%;
   }
@@ -164,4 +161,12 @@
       }
     }
   }
+}
+
+.top-video {
+ height: 500px;
+ width: 90%;
+ @media (max-width: 960px) {
+   height: 60vw;
+ }
 }
