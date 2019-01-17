@@ -2008,6 +2008,46 @@ body {
 .op0 {
   opacity: 0; }
 
+.spec {
+  margin-top: 0.5em; }
+
+.spec-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateX(0px) !important;
+          transform: translateX(0px) !important;
+  opacity: 1 !important;
+  text-align: center; }
+
+#spec {
+  height: 220px;
+  margin: 0 auto; }
+  @media (max-width: 960px) {
+    #spec {
+      height: 380px; } }
+
+.spec-image {
+  -webkit-transform: translate(0px) !important;
+          transform: translate(0px) !important;
+  background: url("assets/media/images/content/spec-dat.jpg") no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-radius: 30px; }
+  .spec-image img {
+    display: none; }
+    @media (max-width: 960px) {
+      .spec-image img {
+        display: block; } }
+
+.spec__title {
+  text-align: center;
+  color: #252525;
+  font-family: "Montserrat"; }
+
 .benefits {
   margin-top: 3.1875em;
   margin-bottom: 0;

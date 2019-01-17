@@ -174,3 +174,44 @@
 .op0 {
   opacity: 0;
 }
+
+.spec {
+  margin-top: 0.5em; 
+}
+.spec-text {
+  display: flex;  
+  align-items: center;
+  transform: translateX(0px) !important;
+  opacity: 1 !important;
+  text-align: center;
+}
+
+#spec {
+  height: 220px;
+  margin: 0 auto;
+  @media (max-width: 960px) {
+    height: 380px;
+  }
+}
+
+
+
+.spec-image {
+  transform: translate(0px) !important;
+  background: url('assets/media/images/content/spec-dat.jpg') no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-radius: 30px;
+  img {
+    display: none;
+    @media (max-width: 960px) {
+      display: block;
+    }
+  }
+}
+
+.spec__title {  
+  text-align: center;
+  color: #252525;
+  font-family: "Montserrat"
+}
