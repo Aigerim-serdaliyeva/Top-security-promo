@@ -1,16 +1,56 @@
 //=include ../../node_modules/jquery/dist/jquery.js
-//=include ../../node_modules/vue/dist/vue.min.js
+//=include ../../node_modules/vue/dist/vue.js
 //=include ../../node_modules/jquery-mask-plugin/dist/jquery.mask.min.js
 //=include ../../node_modules/slick-carousel/slick/slick.js
-//=include ../../node_modules/animejs/anime.min.js
 //=include ../../node_modules/webp/modernizr-custom.js
 
 
 
+
+
+var stepsVue = new Vue({
+  el: '#sanj-steps',
+  data: {
+   leftWidth: 1,
+   rightWidth: 1,
+   leftShow: true,
+   rightShow: true,
+   lhShow: false,
+   rhShow: false,
+   lists: [
+     { id: 1, class: 'content__img', img: 'assets/media/images/content/steps-before-image1.jpg' },
+     { id: 2, class: 'content__svg', img: ''  },
+     { id: 3, class: 'content__img', img: 'assets/media/images/content/steps-before-image2.jpg' },
+     { id: 4, class: 'content__svg', img: '' },
+     { id: 5, class: 'content__img', img: 'assets/media/images/content/steps-before-image3.jpg' },
+     { id: 6, class: 'content__svg', img: '' },
+     { id: 7, class: 'content__img', img: 'assets/media/images/content/steps-before-image4.jpg' },
+     { id: 8, class: 'content__svg', img: '' },
+     { id: 9, class: 'content__img', img: 'assets/media/images/content/steps-before-image5.jpg' },
+     { id: 10, class: 'content__svg', img: '' },
+     { id: 11, class: 'content__img', img: 'assets/media/images/content/steps-before-image6.jpg' },
+     { id: 12, class: 'content__svg', img: '' },
+     { id: 13, class: 'content__img', img: 'assets/media/images/content/steps-before-image7.jpg' },
+     
+   ]
+  },
+  methods: {
+    changeLeftWidth() {
+      this.leftWidth = 2; this.rightWidth = 1;
+      this.leftShow =  false; this.rightShow = true;
+      this.lhShow = true; this.rhShow = false
+    },
+    changeRightWidth() {
+      this.leftWidth = 1; this.rightWidth = 2;
+      this.leftShow =  true; this.rightShow = false;
+      this.rhShow = true; this.lhShow = false;
+    }
+  }
+})
+
+
+
 jQuery(document).ready(function($) {
-
-
-
   // smooth scroll to anchor
   $('.js-scroll-to').on('click', function(event) {
     event.preventDefault();
@@ -226,296 +266,7 @@ jQuery(document).ready(function($) {
 
   
 
-  // (function animNumbers() {   
-  //   var a = 0;
-  //   $(window).scroll(function() {    
-  //     var oTop = $('.content__number:first').offset().top - window.innerHeight;
-  //     if (a == 0 && $(window).scrollTop() > oTop) {
-  //       $('.content__number').each(function() {
-  //         var $this = $(this),
-  //           countTo = $this.attr('data-count');
-  //         $({
-  //           countNum: $this.text()
-  //         }).animate({
-  //             countNum: countTo
-  //           },    
-  //           {    
-  //             duration: 3000,
-  //             easing: 'swing',
-  //             step: function() {
-  //               $this.text(Math.floor(this.countNum));
-  //             },
-  //             complete: function() {
-  //               $this.text(this.countNum);
-  //               //alert('finished');
-  //             }    
-  //           });
-  //       });
-  //       a = 1;
-  //     }
-    
-  //   });
-  // })();
 
-      let stepBool = true;
-    let stepBool2 = true;
-    // STEP LEFT    
-    let stepLMain = document.querySelector('.--left');
-    let stepLFirst = document.querySelector('.steps-item__left-1');
-    let stepLSecond = document.querySelector('.steps-item__left-2');
-    //  STEP RIGHT
-    let stepRMain = document.querySelector('.--right');
-    let stepRFirst = document.querySelector('.steps-item__right-1');
-    let stepRSecond = document.querySelector('.steps-item__right-2');
-
-  function animLR() {     
-    var animLr = new Vue({
-      el: '#how-it-works3',
-      data: {
-        leftWidthState: {
-          'change-width-20' : false,
-          'change-width-80' : false
-        },
-        rightWidthState: {
-          'change-width-20' : false,
-          'change-width-80' : false
-        },
-        leftOpacity: false, rightOpacity: false,
-        leftAbsolute1: false, rightAbsolute1: false,
-        leftAbsolute2: false, rightAbsolute2: false
-      },
-      methods: {
-        changeSide: function(event) {
-         let target = event.currentTarget,
-             leftOverlay = document.querySelector('.--left'),
-             rightOverlay = document.querySelector('.--right');                                 
-         if(target.id === '--left') {
-          // ** animation state 
-          
-          // ** width state
-          this.leftWidthState["change-width-20"] = false;
-          this.leftWidthState["change-width-80"] = true;
-          this.rightWidthState["change-width-20"] = true;
-          // ** opacity and absolute 
-          this.leftOpacity = false; this.rightOpacity = true;
-          this.leftAbsolute1 = true; this.leftAbsolute2 = false;
-          this.rightAbsolute1 = false; this.rightAbsolute2 = true;
-          // ** anime
-           // change width
-    if (window.matchMedia("(min-width: 1070px)").matches ) { // If media query matches
-      $('.steps-item__right-1 p').css('width', '100%')
-      $('.steps-item__left-1 p').css('width', '100%')
-    } 
-  
-
-    if(stepBool) {
-    (function animateSvg() {
-
-      var basicTimeline = anime.timeline();
-      var basicTimeline2 = anime.timeline();
-      var basicTimeline3 = anime.timeline();
-      basicTimeline
-      .add({
-        targets: ['#svg-left-1', '#svg-left-2','#svg-left-3'],
-        opacity: 1,       
-        scale: [         
-          {value: 1.1, elasticity: 100},
-          {value: 1, elasticity: 100}
-        ],
-        delay: function(el,i) {
-          return 1000 * (1 + i);
-        },
-        easing: 'easeInOutQuad',
-        offset: '-=600'
-      })
-      .add({
-        targets: ['#svg-left-4', '#svg-left-5','#svg-left-6','#svg-left-7'],
-        opacity: 1,       
-        scale: [         
-          {value: 1.1, elasticity: 100},
-          {value: 1, elasticity: 100}
-        ],
-        delay: function(el,i) {
-          return 1000 * (1 + i);
-        },
-        easing: 'easeInOutQuad',
-        offset: '-=600'
-      })
-     
-      basicTimeline2
-      .add({
-        targets: ['#p-left-1','#p-left-2','#p-left-3'],
-        opacity: 1,       
-        delay: function(el,i) {
-          return 1000 * (1 + i);
-        },
-        easing: 'easeInOutQuad',
-        offset: '-=600'
-      })
-      .add({
-        targets: ['#p-left-4','#p-left-5','#p-left-6','#p-left-7'],
-        opacity: 1,       
-        delay: function(el,i) {
-          return 1000 * (1 + i);
-        },
-        easing: 'easeInOutQuad',
-        offset: '-=600'
-      })
-
-      basicTimeline3
-      .add({
-        targets: ['.svg-wrap-1','.svg-wrap-2'],
-        opacity: 1,
-        translateX: '0',
-        width: {
-          value: '200'
-        },
-        easing: 'easeInOutQuad',
-        delay: function(el,i,l) {
-          return (1300 * (1 + i));
-        },
-        offset: '-=600'
-      })
-      .add({
-        targets: ['#vg-left-3','.svg-wrap-4','.svg-wrap-5','#vg-left-6'],
-        opacity: 1,
-        translateX: '0',
-        width: {
-          value: '200'
-        },
-        easing: 'easeInOutQuad',
-        delay: function(el,i,l) {
-          return (1100 * (1 + i));
-        },
-        offset: '-=600'
-      })
-    
-      var stepLH2 = anime({
-        targets: '.steps-item__left-2__animation h2',
-        opacity: 1,       
-        delay: 200,
-        easing: 'easeInOutQuad',
-      });
-    
- 
-      
-    })(); stepBool = false;  }
-  
-         } else {
-          // ** animation state 
-
-          // ** width state
-          this.rightWidthState["change-width-20"] = false;
-          this.rightWidthState["change-width-80"] = true;
-          this.leftWidthState["change-width-20"] = true;
-          // ** opacity and absolute
-          this.rightOpacity = false; this.leftOpacity = true;
-          this.rightAbsolute1 = true; this.rightAbsolute2 = false;
-          this.leftAbsolute1 = false; this.leftAbsolute2 = true;   
- // change width
- if (window.matchMedia("(min-width: 1070px)").matches ) { // If media query matches
-  $('.steps-item__right-1 p').css('width', '100%')
-  $('.steps-item__left-1 p').css('width', '100%')
-} 
-
-
-if(stepBool2) {
-(function animateSvg2() {
-
-  var basicTimeline = anime.timeline();
-  var basicTimeline2 = anime.timeline();
-  var basicTimeline3 = anime.timeline();
-  basicTimeline
-  .add({
-    targets : ["#svg-right-1", "#svg-right-2", "#svg-right-3"],
-    opacity : 1,
-    scale : [{
-      value : 1.1,
-      elasticity : 100
-    }, {
-      value : 1,
-      elasticity : 100
-    }],
-    delay : function(dtime, fb) {
-      return 1E3 * (1 + fb);
-    },
-    easing : "easeInOutQuad",
-    offset : "-=600"
-  }).add({
-    targets : ["#svg-right-4", "#svg-right-5", "#svg-right-6"],
-    opacity : 1,
-    scale : [{
-      value : 1.1,
-      elasticity : 100
-    }, {
-      value : 1,
-      elasticity : 100
-    }],
-    delay : function(dtime, fb) {
-      return 1E3 * (1 + fb);
-    },
-    easing : "easeInOutQuad",
-    offset : "-=600"
-  });
-  basicTimeline2.add({
-    targets : ["#p-right-1", "#p-right-2", "#p-right-3"],
-    opacity : 1,
-    delay : function(dtime, fb) {
-      return 1E3 * (1 + fb);
-    },
-    easing : "easeInOutQuad",
-    offset : "-=600"
-  }).add({
-    targets : ["#p-right-4", "#p-right-5", "#p-right-6"],
-    opacity : 1,
-    delay : function(dtime, fb) {
-      return 1E3 * (1 + fb);
-    },
-    easing : "easeInOutQuad",
-    offset : "-=600"
-  });
-  basicTimeline3.add({
-    targets : [".svg-r-wrap-1", ".svg-r-wrap-2"],
-    opacity : 1,
-    translateX : "0",
-    width : {
-      value : "200"
-    },
-    easing : "easeInOutQuad",
-    delay : function(dtime, fb, delay) {
-      return 1300 * (1 + fb);
-    },
-    offset : "-=600"
-  }).add({
-    targets : ["#vg-right-3", ".svg-r-wrap-4", ".svg-r-wrap-5"],
-    opacity : 1,
-    translateX : "0",
-    width : {
-      value : "200"
-    },
-    easing : "easeInOutQuad",
-    delay : function(dtime, fb, delay) {
-      return 1100 * (1 + fb);
-    },
-    offset : "-=600"
-  });
-  anime({
-    targets : ".steps-item__right-2__animation h2",
-    opacity : 1,
-    delay : 200,
-    easing : "easeInOutQuad"
-  });
-
-
-  
-})(); stepBool2 = false;  }
-                 
-         }
-        }      
-      }
-    })  
-    };
-    animLR();
     
  
   //  anime endlet
@@ -606,28 +357,5 @@ jivoClick.addEventListener('click', () => {
         arrows:false,
         dots:false
     });
-    
-      
-
-
-
-   
-    
- 
-
-
-  
-
-  
-  
-    
-
-    
-          
-
-
-
-    
-
   
 })

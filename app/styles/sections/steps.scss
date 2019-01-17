@@ -1,297 +1,153 @@
-// Sanzhar changes
-
-// global classes
-.tp-w55{
-  width: calc(55% - 10px) !important;  
-}
-.tp-w45 {
-  width: calc(45% - 10px) !important;
-}
-
-.lr-opacity {
-opacity: 1 !important;
+@mixin overlay() {
+  content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%; 
+      pointer-events: none;       
 }
 
-// Svg animation for stroke moving
-@mixin svgLine($start,$end) {   
-  0% {  
-    stroke-dashoffset: $start;
-  }
-  100% {
-    stroke-dashoffset: $end;
-  }
-}
-@mixin absolutSvg($left, $right, $top, $width) {
-  @if $left == '' {
-    position: absolute;
-    right: $right;
-    top: $top;
-    svg {
-      opacity: 0;
-      width: $width;
-    }    
-  } 
-  @if $right == '' {
-    position: absolute;
-    left: $left;
-    top: $top;
-    svg {
-      opacity: 0 ;
-      width: $width;
-          
-    }    
-  }
-  
-  }
-
-
-// Color for main text in the beginning steps 
-.stepRed {
-  color: #ef3b39 !important;
-}
-.stepYellow {
-  color: #ffb800 !important;
+@mixin coverCenter() {
+  background-size: cover;
+  background-position:center;
 }
 
-// Hack for step objects
-.beabsolute {   
- 
-  opacity: 0 !important;
-  position: absolute !important;
+@function vh($px) {
+  @return ($px * 0.10319) + vh;
 }
 
-.change-width-80 {
-width: 80% !important;
-}
-.change-width-20 {
-  width: 20% !important;
-}
-
-// Svg animation for stroke moving
-@keyframes new-line {
-  @include svgLine(0,-200); 
-}  
-
-@keyframes new-line2 {
-  @include svgLine(-200,0);  
-}  
-
-
-.absolute__svg {
-  @include absolutSvg('',-50px ,84px ,200px );
-}
-
-.absolute__svg2 {
-  @include absolutSvg(0,'' ,400px ,460px ); 
-}
-
-
-.absolute__svg3 {
-  @include absolutSvg('',-50px ,74px ,135px )  
+@function vw($px) {
+  @return ($px * 0.05208) + vw;
 }
 
 
 .asan-steps {
   display: none ;
 }
-// new step
 
-@mixin stepDirection($primary,$secondary,$imageDirection,$primaryDir,$secondaryDir,$itemBdC) {
-  #{$primary} {        
-    height: 100%;
-    width: 100%;
-    display: inline-block;
-    position: relative;        
-    cursor: pointer;
-    &__block {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: $primaryDir;
-      flex-direction: column;
-    }      
-    p {
-      width: 305px;
-      margin: 0;
-      color: #fff;
-      font-size: 80px;
-      line-height: 80px;
-      text-align: center;
-      text-transform: uppercase;
-      font-weight: bold;
-      font-family: Bebas Neue;
-      z-index: 10;
-    }
-    img {
-      height: 277px;
-      z-index: 10;
-      width: 341px;
-      margin-bottom: 64.67px;
-    }
+#sanj-steps {
+  height: auto;
+  width: 100%;
+  padding: 2vw 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tp-step {
+  height: 40vw;  
+  width: 49%;
+  color: #000;  
+  position: relative;
+  background: rgb(37, 37, 37);
+  border-radius: vw(3);
+  box-shadow: 0 1px 4px #000;
+  transition: 0.3s;
+  font-family: Bebas Neue;
+  color: #fff;
+  display: flex;
+  flex-direction: column;  
+  h2 {
+    text-align: center;
+    font-size: 3vw;
   }
-  #{$secondary} {        
-    height: 100%;
-    width: 100%;
-    display: inline-flex;  
-    justify-content: $secondaryDir;
-    align-items: center;
-    padding: 70px;
-    z-index: 10;
-    position: relative;                
-    transition: 0.7s ease-in-out;
-    transition-delay: 0.3s;
-          
-    svg {
-     animation:new-line 2s infinite linear;                 
-     transform: translateX(-50);
-    }
-
-    &__animation {                    
-      height: 993px;
-      width: 993px;                  
-      z-index: 10;
-      
-      h2 {
-        margin: 0;
-        font-family: Bebas Neue;
-        font-size: 54px;
-        line-height: 54px;
-        color: $itemBdC;
-        text-align: center;
-        width: 100%;  text-transform: uppercase;
-        margin-bottom: 56px;
-        opacity: 0;
-      }
-      .animation-wrap {
-        height: auto;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        position: relative;   
-        &__svg {              
-          width: 200px;
-          position: relative;
-        }          
-        .svg-wrap {                             
-            width: 0;
-            overflow: hidden;                                           
-        }
-        .svg-2 {
-          display: flex;
-          justify-content: flex-end;
-          svg {
-            animation:new-line2 2s infinite linear !important;
-          }
-        }         
-        &__item {
-          height: 170px;
-          width: 170px;
-          border: 0.625em solid $itemBdC;
-          border-radius: 50%;
-          opacity: 0;                                                     
-        }
-        &__text {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          text-align: center;
-          margin-bottom: 5%;
-          z-index: 10;
-          p {
-            width: 25%;
-            opacity: 0;
-          }
-        }
-        @for $i from 1 through 8 {
-          .item-#{$i} {
-            background: url('assets/media/images/content/steps-#{$imageDirection}-image#{$i}.jpg') no-repeat;
-            background-size: cover;
-            background-position: center;
-            z-index: 10;
-          }
-        }
-                                                                    
-      }
-
-
-    }
+  .span-left {
+    color: #ef3b39;
+  }
+  .span-right {
+    color: #ffb800;
   }
 }
 
-.steps-wrap {
-  
-  .new-container {
-    width: 100%;  
+.tp-step-left {  
+  margin-right: 1vw;  
+  align-items: flex-end;  
+  .hidden-fade__title {
+    color: #ef3b39;
   }
-
-  .steps-container {
-    width: 100%;  
-    height: auto;    
-    display: flex;
-    margin-top: 70px;
-    justify-content: space-between;
-    overflow: hidden;
-
-    .steps-item {
-      height: 1070px;          
-      position: relative;
-      transition: 0.4s;     
-      width: calc(50% - 10px);  
-      background:  rgba(0, 0, 0, 0.9);
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 25);
-      position: relative;
-      border: 1px solid #515151;      
-      border-radius: 3px;     
-      .overlay {
-        opacity: 0;
-        transition: 0.4s;
-        pointer-events: none;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        z-index: 1;
-      }  
-      @include stepDirection('&__left-1','&__left-2', 'before',flex-end, flex-end,#EF3B39);
-      @include stepDirection('&__right-1','&__right-2', 'after',flex-start, flex-start,#FFB800)
-    }
-    // 2 big items
-    @keyframes turnOn {
-      0% { opacity:0 }
-      50% {opacity:1}
-      100% {opacity: 0}
-    }
-    .turnOn {
-      // animation: turnOn 2.5s infinite both ease-in-out;
-      opacity: 1 !important;
-    }
-    .--left { 
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      border-left: none;                             
-      .overlay {
-        background: linear-gradient(to right, rgba(239, 59, 57, 0.6) 0%,
-        rgba(239, 59, 57, 0) 100%);  
-        z-index: 1;              
-      }
-    }
-    .--right { 
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      border-right: none;           
-      .overlay {
-        background: linear-gradient(to left, rgba(255, 138, 0, 0.6) 0%,
-        rgba(255, 138, 0, 0) 100%);  
-        animation-delay: 1s;      
-      }
-    }
-    // -2 big items
-
+  &::after {
+    @include overlay();   
+    background: linear-gradient(90deg, rgba(239, 59, 57, 0.6) 0%, rgba(239, 59, 57, 0) 100%);
   }
 }
 
-// Sanzhar changes end
+
+.tp-step-right { 
+  .hidden-fade__title {
+    color: #ffb800;
+  }   
+  text-align: center;
+  align-items: flex-start;
+  background: rgba(0,0,0,.9) !important;
+  &::after {
+    @include overlay();   
+    background: linear-gradient(270deg, rgba(255, 138, 0, 0.6) 0%, rgba(255, 138, 0, 0) 100%);
+  }
+}
+
+.tp-fade-enter-active, .tp-fade-leave-active {
+  transition: opacity .2s;
+}
+.tp-fade-enter, .tp-fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.hidden-fade {
+  height: 100%;
+  width: 90%;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 0;
+  padding: 1vw 0;  
+  z-index: 10;
+  &__title {
+    text-align: center;
+    font-size: 2.5vw;    
+    font-weight: bold;
+  }
+}
+
+.hidden-fade__content {
+  width: 100%;
+  display: flex;  
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  .content__img {
+    height: vw(150);
+    width: vw(150);
+    border: .5vw solid #ef3b39;
+    border-radius: 50%;
+  }
+  .content__svg {
+    width: vw(150);
+  }
+    
+}
+
+
+.hidden-fade-enter-active, .hidden-fade-leave-active {
+  transition: opacity .3s; 
+}
+.hidden-fade-enter, .hidden-fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+   opacity: 0; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -607,189 +463,15 @@ width: 80% !important;
 //  sanzhar media
 
 @media (min-width: 1070px) and (max-width:1370px) {
-  
-  .absolute__svg {
-    position: absolute;
-    right: -20px;
-    top: 5px;
-    svg {
-      opacity: 0;
-      width: 104px;
-    }
-  }
-  
-  .absolute__svg2 {
-    position: absolute;
-    left: 0;
-    top: 250px;
-    svg {
-      opacity: 0 ;
-      width: 360px;
-      
-    }
-  }
-  
-  .absolute__svg3 {
-    position: absolute;
-    right: -20px;
-    top: 15px;
-    svg {
-      opacity: 0;
-      width: 114px;
-      path {
-        stroke-width: 6;
-      }
-    }
-  }
-  
-  
   .asan-steps {
     display: none ;
-  }
-  // new step
-  .steps-wrap {    
-    .new-container {
-      width: 100%;       
-    }
-  
-    .steps-container {     
-      .steps-item {      
-        &__left-1 {               
-          p {
-            width: 405px;
-            margin: 0;
-            color: #fff;
-            font-size: 60px;
-            line-height: 60px;      
-          }
-          img {
-            height: 277px;
-            z-index: 10;
-            width: 341px;
-            margin-bottom: 64.67px;
-          }
-        }
-        &__left-2 {          
-          &__animation {                    
-            height: 993px;
-            width: 693px;                              
-            .animation-wrap {          
-              &__svg {              
-                width: 200px;
-                position: relative;
-              }
-              .svg-1 {
-                svg {
-                  path {
-                    stroke-width: 5;
-                  }
-                }
-              }
-              .svg-2 {
-                display: flex;
-                justify-content: flex-end;
-                svg {                  
-                  animation:new-line2 2s infinite linear !important;
-                  path {
-                    stroke-width: 5;
-                  }
-                }
-              }         
-              &__item {
-                height: 90px;
-                width: 90px;
-                border: 0.325em solid #EF3B39;                                              
-              }
-              &__text {   
-                margin-bottom: 5%;               
-                p {
-                  width: 20%;
-                  opacity: 0;
-                }
-              }
-
-            }
-  
-  
-          }
-        }
-        &__right-1 {    
-          p {
-            width: 405px;
-            margin: 0;
-            color: #fff;
-            font-size: 60px;
-            line-height: 60px; 
-  
-          }
-          img {
-            height: 277px;
-            z-index: 10;
-            width: 341px;
-            margin-bottom: 64.67px;
-          }        
-        }
-        &__right-2 {           
-          &__animation {                    
-            height: 993px;
-            width: 693px;          
-            z-index: 10;         
-            .animation-wrap {       
-              &__svg {              
-                width: 200px;
-              }   
-              .svg-1 {
-                svg {
-                  path {
-                    stroke-width: 5;
-                  }
-                }
-              }
-              .svg-2 {
-                display: flex;
-                justify-content: flex-end;
-                svg {
-                  animation:new-line2 2s infinite linear !important;
-                  path {
-                    stroke-width: 5;
-                  }
-                }
-              }              
-              &__item {
-                height: 90px;
-                width: 90px;
-                border: 0.325em solid #FFB800;
-                border-radius: 50%;  
-                opacity: 0;        
-              }
-              &__text {
-                width: 100%;
-                z-index: 10;
-                display: flex;
-                justify-content: space-between;
-                text-align: center;
-                margin-bottom: 5%;
-                
-                p {
-                  width: 20%;
-                  opacity: 0;
-                }
-              }
-        
-            }    
-          }
-        }
-      }     
-    }
   }
 }
 
 
 // end sanzhar media
 
-[v-cloak] {
-  display: none;
-}
+
 
 .addOpacity {
   opacity: 0 !important;
