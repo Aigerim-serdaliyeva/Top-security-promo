@@ -189,6 +189,7 @@
 #spec {
   height: 220px;
   margin: 0 auto;
+  pointer-events: none;
   @media (max-width: 960px) {
     height: 380px;
   }

@@ -2025,7 +2025,8 @@ body {
 
 #spec {
   height: 220px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  pointer-events: none; }
   @media (max-width: 960px) {
     #spec {
       height: 380px; } }
