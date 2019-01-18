@@ -1,56 +1,350 @@
 //=include ../../node_modules/jquery/dist/jquery.js
-//=include ../../node_modules/vue/dist/vue.js
+//=include ../../node_modules/vue/dist/vue.min.js
 //=include ../../node_modules/jquery-mask-plugin/dist/jquery.mask.min.js
-//=include ../../node_modules/slick-carousel/slick/slick.js
+//=include ../../node_modules/animejs/anime.min.js
 //=include ../../node_modules/webp/modernizr-custom.js
+//=include ../../node_modules/slick-carousel/slick/slick.js
 
 
 
 
-
-var stepsVue = new Vue({
-  el: '#sanj-steps',
-  data: {
-   leftWidth: 1,
-   rightWidth: 1,
-   leftShow: true,
-   rightShow: true,
-   lhShow: false,
-   rhShow: false,
-   lists: [
-     { id: 1, class: 'content__img', img: 'assets/media/images/content/steps-before-image1.jpg' },
-     { id: 2, class: 'content__svg', img: ''  },
-     { id: 3, class: 'content__img', img: 'assets/media/images/content/steps-before-image2.jpg' },
-     { id: 4, class: 'content__svg', img: '' },
-     { id: 5, class: 'content__img', img: 'assets/media/images/content/steps-before-image3.jpg' },
-     { id: 6, class: 'content__svg', img: '' },
-     { id: 7, class: 'content__img', img: 'assets/media/images/content/steps-before-image4.jpg' },
-     { id: 8, class: 'content__svg', img: '' },
-     { id: 9, class: 'content__img', img: 'assets/media/images/content/steps-before-image5.jpg' },
-     { id: 10, class: 'content__svg', img: '' },
-     { id: 11, class: 'content__img', img: 'assets/media/images/content/steps-before-image6.jpg' },
-     { id: 12, class: 'content__svg', img: '' },
-     { id: 13, class: 'content__img', img: 'assets/media/images/content/steps-before-image7.jpg' },
-     
-   ]
-  },
-  methods: {
-    changeLeftWidth() {
-      this.leftWidth = 2; this.rightWidth = 1;
-      this.leftShow =  false; this.rightShow = true;
-      this.lhShow = true; this.rhShow = false
-    },
-    changeRightWidth() {
-      this.leftWidth = 1; this.rightWidth = 2;
-      this.leftShow =  true; this.rightShow = false;
-      this.rhShow = true; this.lhShow = false;
-    }
-  }
-})
 
 
 
 jQuery(document).ready(function($) {
+
+  if (window.matchMedia("(min-width: 960px)").matches) {
+    let t1 = anime.timeline({
+      easing: 'linear',
+      autoplay: false
+    });
+    
+    let t2 = anime.timeline({
+      easing: 'linear',
+      autoplay: false
+    });
+    
+    var stepsVue = new Vue({
+      el: '#sanj-steps',
+      data: {
+       leftWidth: 1,
+       rightWidth: 1,
+       leftShow: true,
+       rightShow: true,
+       lhShow: false,
+       rhShow: false,
+       booleanT1: true,
+       booleanT2: true,
+       lists1: [
+         { id: 'left-svg1', class: 'content__img content__img__red', img: 'assets/media/images/content/steps-before-image1.jpg', 
+         text: `Злоумышленник 
+         проникает в помещение 
+         1 мин` },     
+         { id: 'left-svg2', class: 'content__img content__img__red', img: 'assets/media/images/content/steps-before-image2.jpg',
+         text: `Собирает деньги 
+         и ценные вещи
+         5-7 мин`
+        },     
+         { id: 'left-svg3', class: 'content__img content__img__red', img: 'assets/media/images/content/steps-before-image3.jpg',
+         text: `Спокойно покидает дом 
+         с награбленным 
+         имуществом 
+         30 сек`
+        },        
+       ],
+      lists2: [    
+        { id: 'left-svg6', class: 'content__img content__img__red', img: 'assets/media/images/content/steps-before-image4.jpg',
+        text: `
+        Устранение последствий 
+    ограбления
+        `
+      },    
+        { id: 'left-svg5', class: 'content__img content__img__red', img: 'assets/media/images/content/steps-before-image5.jpg',
+        text: `
+        Вызывает полицию
+        `
+      },    
+        { id: 'left-svg4', class: 'content__img content__img__red', img: 'assets/media/images/content/steps-before-image6.jpg',
+        text: `
+        Хозяин возвращается 
+    и фиксирует кражу
+        `
+      },    
+      ],
+      lists3: [    
+        { id: 'right-svg1', class: 'content__img content__img__yellow', img: 'assets/media/images/content/steps-after-image1.jpg',
+        text: `
+        Датчики фиксируют попытку 
+    незаконного проникновения
+    1-2 сек
+        `
+      },    
+        { id: 'right-svg2', class: 'content__img content__img__yellow', img: 'assets/media/images/content/steps-after-image2.jpg',
+        text: `
+        Срабатывает сирена
+    1-2 сек
+        `
+      },    
+        { id: 'right-svg3', class: 'content__img content__img__yellow', img: 'assets/media/images/content/steps-after-image3.jpg',
+        text: `
+        Оператор получает сигнал 
+    оповещает охрану 
+    10 сек
+        `
+      },    
+      ],
+      lists4: [    
+        { id: 'right-svg6', class: 'content__img content__img__yellow', img: 'assets/media/images/content/steps-after-image4.jpg',
+        text: `
+        Клиент наслаждается 
+    покоем
+        `
+      },    
+        { id: 'right-svg5', class: 'content__img content__img__yellow', img: 'assets/media/images/content/steps-after-image5.jpg',
+        text: `
+        Угроза устранена
+        `
+      },    
+        { id: 'right-svg4', class: 'content__img content__img__yellow', img: 'assets/media/images/content/steps-after-image6.jpg',
+        text: `
+        Оперативная группа 
+    выезжает на место от 5-15 минут
+        `
+      },    
+      ]
+    },
+      methods: {
+        changeLeftWidth() {
+          this.leftWidth = 2; this.rightWidth = 1;
+          this.leftShow =  false; this.rightShow = true;
+          this.lhShow = true; this.rhShow = false; 
+          if(this.booleanT1) {
+            let svgAnimTop = document.querySelector('.tp-step-left .svg-anim-top path'),
+            svgAnimBot = document.querySelector('.tp-step-left .svg-anim-bottom path'),
+            imageDuration = 1000;       
+            t1
+            .add({
+             targets: '#left-svg1',
+             opacity: {
+               value: 1,
+               duration:1000
+             },
+             scale: [1, 1.1, 1],
+             duration: imageDuration 
+            })
+            .add({
+              targets: svgAnimTop,
+              d: ['M0 4H0', 'M0 4H180'],
+              duration: 500          
+            })       
+            .add({
+              targets: '#left-svg2',
+              opacity: {
+                value: 1,
+                duration:1000
+              },
+              scale: [1, 1.1, 1],
+              duration: imageDuration          
+            })
+            .add({
+              targets: svgAnimTop,
+              d: ['M0 4H360', 'M0 4H520'],
+              duration: 500          
+            })    
+            .add({
+              targets: '#left-svg3',
+              opacity: {
+                value: 1,
+                duration:1000
+              },
+              scale: [1, 1.1, 1],
+              duration: imageDuration          
+            })
+            .add({
+              targets: '.tp-step-left .content-right-svg path',
+              strokeDashoffset: [anime.setDashoffset, 0],                  
+              duration: 1000,
+              delay: function(el, i) { return i * 150 },          
+              complete: function(el) {
+                document.querySelector('.tp-step-left .content-right-svg').classList.add('svg-anim-right')
+              }
+            })                
+            .add({
+              targets: '#left-svg4',
+              opacity: {
+                value: 1,
+                duration:1000
+              },
+              scale: [1, 1.1, 1],
+              duration: imageDuration          
+            })
+            .add({
+              targets: svgAnimBot,
+              translateX: ['100%', '67%'],
+              duration: 500          
+            })   
+            .add({
+              targets: '#left-svg5',
+              opacity: {
+                value: 1,
+                duration:1000
+              },
+              scale: [1, 1.1, 1],
+              duration: imageDuration          
+            }) 
+            .add({
+              targets: svgAnimBot,
+              translateX: ['40%', '0'],
+              duration: 500          
+            })  
+            .add({
+              targets: '#left-svg6',
+              opacity: {
+                value: 1,
+                duration:1000
+              },
+              scale: [1, 1.1, 1],
+              duration: imageDuration          
+            })
+            .add({
+              targets: '.tp-step-left .content-left-svg path',
+              strokeDashoffset: [anime.setDashoffset, 0],                  
+              duration: 1000,
+              delay: function(el, i) { return i * 150 },          
+              complete: function(el) {
+                document.querySelector('.tp-step-left .content-left-svg').classList.add('svg-anim-left')
+              }
+            })  
+            .add({
+              targets: '#left-svg7',
+              opacity: {
+                value: 1,
+                duration:1000
+              },
+              scale: [1, 1.1, 1],
+              duration: 1500          
+            })                        
+            this.booleanT1 = false
+          }   
+          t1.play();
+          t2.pause();   
+                     
+        },
+        changeRightWidth() {
+          this.leftWidth = 1; this.rightWidth = 2;
+          this.leftShow =  true; this.rightShow = false;
+          this.rhShow = true; this.lhShow = false;
+    
+          if(this.booleanT2) {
+            let svgAnimTop = document.querySelector('.tp-step-right .svg-anim-top path'),
+            svgAnimBot = document.querySelector('.tp-step-right .svg-anim-bottom path'),
+            imageDuration = 1000;       
+            t2
+            .add({
+             targets: '#right-svg1',
+             opacity: {
+               value: 1,
+               duration:1000
+             },
+             scale: [1, 1.1, 1],
+             duration: imageDuration 
+            })
+            .add({
+              targets: svgAnimTop,
+              d: ['M0 4H0', 'M0 4H180'],
+              duration: 500          
+            })       
+            .add({
+              targets: '#right-svg2',
+              opacity: {
+                value: 1,
+                duration:1000
+              },
+              scale: [1, 1.1, 1],
+              duration: imageDuration          
+            })
+            .add({
+              targets: svgAnimTop,
+              d: ['M0 4H360', 'M0 4H520'],
+              duration: 500          
+            })    
+            .add({
+              targets: '#right-svg3',
+              opacity: {
+                value: 1,
+                duration:1000
+              },
+              scale: [1, 1.1, 1],
+              duration: imageDuration          
+            })
+            .add({
+              targets: '.tp-step-right .content-right-svg path',
+              strokeDashoffset: [anime.setDashoffset, 0],                  
+              duration: 1000,
+              delay: function(el, i) { return i * 150 },          
+              complete: function(el) {
+                document.querySelector('.tp-step-right .content-right-svg').classList.add('svg-anim-right')
+              }
+            })    
+            .add({
+              targets: '#right-svg4',
+              opacity: {
+                value: 1,
+                duration:1000
+              },
+              scale: [1, 1.1, 1],
+              duration: imageDuration          
+            })
+            .add({
+              targets: svgAnimBot,
+              translateX: ['100%', '67%'],
+              duration: 500          
+            })     
+            .add({
+              targets: '#right-svg5',
+              opacity: {
+                value: 1,
+                duration:1000
+              },
+              scale: [1, 1.1, 1],
+              duration: imageDuration          
+            })
+            .add({
+              targets: svgAnimBot,
+              translateX: ['40%', '0'],
+              duration: 500          
+            })  
+            .add({
+              targets: '#right-svg6',
+              opacity: {
+                value: 1,
+                duration:1000
+              },
+              scale: [1, 1.1, 1],
+              duration: imageDuration          
+            }) 
+            .add({
+              targets: '#right-svg7',
+              opacity: {
+                value: 1,
+                duration:1000
+              },
+              scale: [1, 1.1, 1],
+              duration: imageDuration          
+            })            
+            t2.play();
+            this.booleanT2 = false
+          }
+          t2.play();
+          t1.pause();      
+        }
+      }
+    })
+  } 
+  
+
+
+
   // smooth scroll to anchor
   $('.js-scroll-to').on('click', function(event) {
     event.preventDefault();

@@ -38,33 +38,78 @@ mixin steps()
       ul.steps
         each item, index in steps.list
           +step(item, index)
-    h1.section-title.anim.slide-in-top=steps.title      
+    h1.sanj-steps.section-title.anim.slide-in-top=steps.title      
     #sanj-steps(v-cloak)
-     <section @mouseover="changeLeftWidth" :style='{ flex: leftWidth }' class="tp-step-left tp-step">
+     <section @mouseenter="changeLeftWidth" :style='{ flex: leftWidth }' class="tp-step-left tp-step">
       
-      .tp-fade(v-show="leftShow")     
-        img(src="assets/media/images/content/steps-l-bg.svg", alt="") 
-        <h2 > ОБЪЕКТ <br> БЕЗ <br> ОХРАНЫ <br> TOP <br> SECURITY <br> KZ </h2>
-      transition(name="hidden-fade")  
-       .hidden-fade(v-show="lhShow")
-        .hidden-fade__title ОБЪЕКТ БЕЗ ОХРАНЫ TOP SECURITY KZ
-        ul.hidden-fade__content
-          li(v-for="list in lists" ,:class="list.class" ,
-           :style="{ 'background': 'url(' + list.img + ')' }")
-
+      .tp-fade(v-show="leftShow")           
+          img(src="assets/media/images/content/steps-l-bg.svg", alt="") 
+          <h2 > ОБЪЕКТ <br> БЕЗ <br> ОХРАНЫ <br> TOP <br> SECURITY <br> KZ </h2>        
+      transition(name="fade")    
+        .hidden-fade(v-show="lhShow")
+          .hidden-fade__title ОБЪЕКТ БЕЗ ОХРАНЫ TOP SECURITY KZ
+          .hidden-fade__content
+            ul
+              li(v-for="list in lists1",:id="list.id")
+                div( :class="list.class")
+                  img(:src="list.img")
+                <p> {{ list.text}} </p>                
+              <svg class="content__svg svg-anim-top" viewBox="0 0 520 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
+              </svg>
+            <svg class="content-right-svg " viewBox="0 0 52 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-1.46343e-05 4L15 4C33.2254 4.00001 48 18.7746 48 37L48 169.189L48 295C48 313.225 33.2254 328 15 328L-4.71775e-07 328" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
+            </svg>  
+            ul
+              li(v-for="list in lists2", :id="list.id")
+                div(:class="list.class")
+                  img(:src="list.img")
+                <p> {{ list.text}} </p>
+              <svg class="content__svg svg-anim-bottom"  viewBox="0 0 520 8" fill="none" xmlns="http://www.w3.org/2000/svg">               
+                <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>               
+              </svg>
+            <svg class="content-left-svg" viewBox="0 0 499 328" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M139 4.00001L37 4.00001C18.7746 4.00001 4 18.7746 4 37L4 147.391L4 291C4 309.225 18.7746 324 37 324L499 324" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
+            </svg>  
+            ul(style="justify-content: center; margin:0")  
+              li(id="left-svg7")  
+                div(class="content__img content__img__red") 
+                  img(src="assets/media/images/content/steps-before-image7.jpg", alt="")                 
+                p.
+                  Долгие недели ожидания
+                  возврата пропавших 
+                  вещей 
+                 
 
      </section>
-     <section @mouseover="changeRightWidth" :style='{ flex: rightWidth }' class="tp-step-right tp-step">
+     <section @mouseenter="changeRightWidth" :style='{ flex: rightWidth }' class="tp-step-right tp-step">
       
-      .tp-fade(v-show="rightShow") 
-          img(src="assets/media/images/content/steps-2-bg.svg", alt="") 
-          <h2> ОБЪЕКТ <br> БЕЗ <br> ОХРАНЫ <br> TOP <br> SECURITY <br> KZ </h2>     
-      transition(name="hidden-fade")   
+      .tp-fade(v-show="rightShow")           
+            img(src="assets/media/images/content/steps-2-bg.svg", alt="") 
+            <h2> ОБЪЕКТ <br> БЕЗ <br> ОХРАНЫ <br> TOP <br> SECURITY <br> KZ </h2>                          
+      transition(name="fade")  
         .hidden-fade(v-show="rhShow") 
           .hidden-fade__title ОБЪЕКТ C ОХРАНОЙ TOP SECURITY KZ
-          ul.hidden-fade__content
-            li(v-for="list in lists" ,:class="list.class")
-
+          .hidden-fade__content
+            ul
+              li(v-for="list in lists3", :id="list.id")
+                div(:class="list.class" )
+                  img(:src="list.img")                
+                <p> {{ list.text}} </p>
+              <svg class="content__svg svg-anim-top" viewBox="0 0 520 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 4H0" stroke="#ffb800" stroke-width="7" stroke-dasharray="25 8"/>
+              </svg>
+            <svg class="content-right-svg" viewBox="0 0 52 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M-1.46343e-05 4L15 4C33.2254 4.00001 48 18.7746 48 37L48 169.189L48 295C48 313.225 33.2254 328 15 328L-4.71775e-07 328" stroke="#ffb800" stroke-width="7" stroke-dasharray="25 8"/>
+            </svg>               
+            ul
+              li(v-for="list in lists4", :id="list.id")
+                div(:class="list.class")
+                  img(:src="list.img")
+                <p> {{ list.text}} </p>
+              <svg class="content__svg svg-anim-bottom" viewBox="0 0 520 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 4H720" stroke="#ffb800" stroke-width="7" stroke-dasharray="25 8"/>
+              </svg>              
      </section>
   
                                                                        

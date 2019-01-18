@@ -13,7 +13,7 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-    <link href="main.css?v=145" rel="stylesheet"/>
+    <link href="main.css?v=142" rel="stylesheet"/>
     <script type="text/javascript">(function(){ var widget_id = '2CMvzc6NhX';var d=document;var w=window;function l(){var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -193,25 +193,69 @@
             </li>
           </ul>
         </div>
-        <h1 class="section-title anim slide-in-top">Как это работает?</h1>
-        <div id="sanj-steps" v-cloak="v-cloak"><section @mouseover="changeLeftWidth" :style='{ flex: leftWidth }' class="tp-step-left tp-step">
-          <div class="tp-fade" v-show="leftShow">    <img src="assets/media/images/content/steps-l-bg.svg" alt=""/><h2 > ОБЪЕКТ <br> БЕЗ <br> ОХРАНЫ <br> TOP <br> SECURITY <br> KZ </h2></div>
-          <transition name="hidden-fade"> 
+        <h1 class="sanj-steps section-title anim slide-in-top">Как это работает?</h1>
+        <div id="sanj-steps" v-cloak="v-cloak"><section @mouseenter="changeLeftWidth" :style='{ flex: leftWidth }' class="tp-step-left tp-step">
+          <div class="tp-fade" v-show="leftShow">          <img src="assets/media/images/content/steps-l-bg.svg" alt=""/><h2 > ОБЪЕКТ <br> БЕЗ <br> ОХРАНЫ <br> TOP <br> SECURITY <br> KZ </h2>        </div>
+          <transition name="fade">   
             <div class="hidden-fade" v-show="lhShow">
               <div class="hidden-fade__title">ОБЪЕКТ БЕЗ ОХРАНЫ TOP SECURITY KZ</div>
-              <ul class="hidden-fade__content">
-                <li v-for="list in lists" :class="list.class" :style="{ 'background': 'url(' + list.img + ')' }"></li>
-              </ul>
+              <div class="hidden-fade__content">
+                <ul>
+                  <li v-for="list in lists1" :id="list.id">
+                    <div :class="list.class"><img :src="list.img"/></div><p> {{ list.text}} </p>                
+                  </li><svg class="content__svg svg-anim-top" viewBox="0 0 520 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
+</svg>
+                </ul><svg class="content-right-svg " viewBox="0 0 52 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M-1.46343e-05 4L15 4C33.2254 4.00001 48 18.7746 48 37L48 169.189L48 295C48 313.225 33.2254 328 15 328L-4.71775e-07 328" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
+</svg>  
+                <ul>
+                  <li v-for="list in lists2" :id="list.id">
+                    <div :class="list.class"><img :src="list.img"/></div><p> {{ list.text}} </p>
+                  </li><svg class="content__svg svg-anim-bottom"  viewBox="0 0 520 8" fill="none" xmlns="http://www.w3.org/2000/svg">               
+<path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>               
+</svg>
+                </ul><svg class="content-left-svg" viewBox="0 0 499 328" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M139 4.00001L37 4.00001C18.7746 4.00001 4 18.7746 4 37L4 147.391L4 291C4 309.225 18.7746 324 37 324L499 324" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
+</svg>  
+                <ul style="justify-content: center; margin:0"> 
+                  <li id="left-svg7"> 
+                    <div class="content__img content__img__red"> <img src="assets/media/images/content/steps-before-image7.jpg" alt=""/></div>
+                    <p>
+                      Долгие недели ожидания
+                      возврата пропавших 
+                      вещей 
+                      
+                      
+                    </p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </transition></section>
-<section @mouseover="changeRightWidth" :style='{ flex: rightWidth }' class="tp-step-right tp-step">
-          <div class="tp-fade" v-show="rightShow"> <img src="assets/media/images/content/steps-2-bg.svg" alt=""/><h2> ОБЪЕКТ <br> БЕЗ <br> ОХРАНЫ <br> TOP <br> SECURITY <br> KZ </h2>     </div>
-          <transition name="hidden-fade">  
+<section @mouseenter="changeRightWidth" :style='{ flex: rightWidth }' class="tp-step-right tp-step">
+          <div class="tp-fade" v-show="rightShow">          <img src="assets/media/images/content/steps-2-bg.svg" alt=""/><h2> ОБЪЕКТ <br> БЕЗ <br> ОХРАНЫ <br> TOP <br> SECURITY <br> KZ </h2>                          </div>
+          <transition name="fade"> 
             <div class="hidden-fade" v-show="rhShow"> 
               <div class="hidden-fade__title">ОБЪЕКТ C ОХРАНОЙ TOP SECURITY KZ</div>
-              <ul class="hidden-fade__content">
-                <li v-for="list in lists" :class="list.class"></li>
-              </ul>
+              <div class="hidden-fade__content">
+                <ul>
+                  <li v-for="list in lists3" :id="list.id">
+                    <div :class="list.class"><img :src="list.img"/></div><p> {{ list.text}} </p>
+                  </li><svg class="content__svg svg-anim-top" viewBox="0 0 520 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4H0" stroke="#ffb800" stroke-width="7" stroke-dasharray="25 8"/>
+</svg>
+                </ul><svg class="content-right-svg" viewBox="0 0 52 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M-1.46343e-05 4L15 4C33.2254 4.00001 48 18.7746 48 37L48 169.189L48 295C48 313.225 33.2254 328 15 328L-4.71775e-07 328" stroke="#ffb800" stroke-width="7" stroke-dasharray="25 8"/>
+</svg>               
+                <ul>
+                  <li v-for="list in lists4" :id="list.id">
+                    <div :class="list.class"><img :src="list.img"/></div><p> {{ list.text}} </p>
+                  </li><svg class="content__svg svg-anim-bottom" viewBox="0 0 520 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4H720" stroke="#ffb800" stroke-width="7" stroke-dasharray="25 8"/>
+</svg>              
+                </ul>
+              </div>
             </div>
           </transition></section>
         </div>
@@ -475,6 +519,6 @@
         </div>
       </div>
     </main>
-    <script src="main.js?v=37"></script>
+    <script src="main.js?v=142"></script>
   </body>
 </html>

@@ -13,7 +13,7 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-    <link href="main.css?v=145" rel="stylesheet"/>
+    <link href="main.css?v=142" rel="stylesheet"/>
     <script type="text/javascript">(function(){ var widget_id = '2CMvzc6NhX';var d=document;var w=window;function l(){var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -117,7 +117,7 @@
         </div>
       </section>
       <div id="TLcontrols"></div>
-      <section class="steps-wrap spy-it" id="how-it-works3" v-cloak="v-cloak">
+      <section class="steps-wrap spy-it" id="how-it-works3">
         <div class="container asan-steps">
           <h1 class="section-title anim slide-in-top">Как это работает?</h1>
           <ul class="steps">
@@ -193,146 +193,71 @@
             </li>
           </ul>
         </div>
-        <div class="container new-container sanj-steps">
-          <h1 class="section-title anim slide-in-top">Как это работает?</h1>
-          <div class="steps-container">
-            <div class="steps-item --left anim slide-in-left" v-on:mouseover="changeSide" :class="leftWidthState" id="--left">
-              <div class="overlay turnOn" :class="{ 'addOpacity': leftOpacity }"></div>
-              <div class="steps-item__left-1" :class="{ 'beabsolute': leftAbsolute1 }">
-                <div class="steps-item__left-1__block">         <img src="assets/media/images/content/steps-l-bg.svg" alt=""/>
-                  <p>
-                     Объект <br/><span class="stepRed">без</span><br/>охраны<br/>top <br/>security <br/>kz</p>
-                </div>
-              </div>
-              <div class="steps-item__left-2" :class="{ 'beabsolute': leftAbsolute2 }">
-                <div class="steps-item__left-2__animation">
-                  <h2>Объект без охраны top security kz</h2>
-                  <div class="animation-wrap">
-                    <div class="animation-wrap__item item-1" id="svg-left-1"></div>
-                    <div class="animation-wrap__svg svg-1">
-                      <div class="svg-wrap svg-wrap-1"><svg id="vg-left-1" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns:mydata="http://www.w3.org/2000/svg">
+        <h1 class="sanj-steps section-title anim slide-in-top">Как это работает?</h1>
+        <div id="sanj-steps" v-cloak="v-cloak"><section @mouseenter="changeLeftWidth" :style='{ flex: leftWidth }' class="tp-step-left tp-step">
+          <div class="tp-fade" v-show="leftShow">          <img src="assets/media/images/content/steps-l-bg.svg" alt=""/><h2 > ОБЪЕКТ <br> БЕЗ <br> ОХРАНЫ <br> TOP <br> SECURITY <br> KZ </h2>        </div>
+          <transition name="fade">   
+            <div class="hidden-fade" v-show="lhShow">
+              <div class="hidden-fade__title">ОБЪЕКТ БЕЗ ОХРАНЫ TOP SECURITY KZ</div>
+              <div class="hidden-fade__content">
+                <ul>
+                  <li v-for="list in lists1" :id="list.id">
+                    <div :class="list.class"><img :src="list.img"/></div><p> {{ list.text}} </p>                
+                  </li><svg class="content__svg svg-anim-top" viewBox="0 0 520 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
 </svg>
-                      </div>
-                    </div>
-                    <div class="animation-wrap__item item-2" id="svg-left-2"></div>
-                    <div class="animation-wrap__svg svg-1">
-                      <div class="svg-wrap svg-wrap-2"><svg id="vg-left-2" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
+                </ul><svg class="content-right-svg " viewBox="0 0 52 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M-1.46343e-05 4L15 4C33.2254 4.00001 48 18.7746 48 37L48 169.189L48 295C48 313.225 33.2254 328 15 328L-4.71775e-07 328" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
+</svg>  
+                <ul>
+                  <li v-for="list in lists2" :id="list.id">
+                    <div :class="list.class"><img :src="list.img"/></div><p> {{ list.text}} </p>
+                  </li><svg class="content__svg svg-anim-bottom"  viewBox="0 0 520 8" fill="none" xmlns="http://www.w3.org/2000/svg">               
+<path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>               
 </svg>
-                      </div>
-                    </div>
-                    <div class="animation-wrap__item item-3" id="svg-left-3"></div>
-                    <div class="animation-wrap__text">
-                      <p id="p-left-1">Злоумышленник <br/>проникает в помещение<br/>1 мин</p>
-                      <p id="p-left-2">Собирает деньги <br/>и ценные вещи<br/>5-7 мин</p>
-                      <p id="p-left-3">Спокойно покидает дом <br/>с награбленным <br/>имуществом  <br/>30 сек  </p>
-                    </div>
-                    <div class="absolute__svg"><svg id="vg-left-3" width="139" height="332" viewBox="0 0 139 332" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M-1.52588e-05 4.00001L102 4.00001C120.225 4.00001 135 18.7746 135 37L135 169.189L135 295C135 313.225 120.225 328 102 328L-1.0963e-06 328" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
-</svg>
-                    </div>
-                    <div class="animation-wrap__item item-4" id="svg-left-6"> </div>
-                    <div class="animation-wrap__svg svg-2"> 
-                      <div class="svg-wrap svg-wrap-5">
-                                     <svg id="vg-left-5" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
-</svg>    
-                      </div>
-                    </div>
-                    <div class="animation-wrap__item item-5" id="svg-left-5"> </div>
-                    <div class="animation-wrap__svg svg-2">
-                      <div class="svg-wrap svg-wrap-4"><svg id="vg-left-4" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 4H720" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
-</svg> 
-                      </div>
-                    </div>
-                    <div class="animation-wrap__item item-6" id="svg-left-4">      </div>
-                    <div class="animation-wrap__text">
-                      <p id="p-left-6">Устранение последствий  <br/>ограбления</p>
-                      <p id="p-left-5">Вызывает полицию  </p>
-                      <p id="p-left-4">Хозяин возвращается <br/>и фиксирует кражу </p>
-                    </div>
-                    <div class="absolute__svg2">
-                       <svg id="vg-left-6" width="499" height="328" viewBox="0 0 499 328" fill="none" xmlns="http://www.w3.org/2000/svg">
+                </ul><svg class="content-left-svg" viewBox="0 0 499 328" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M139 4.00001L37 4.00001C18.7746 4.00001 4 18.7746 4 37L4 147.391L4 291C4 309.225 18.7746 324 37 324L499 324" stroke="#EF3B39" stroke-width="7" stroke-dasharray="25 8"/>
-</svg>                                                                                                  
-                    </div>
-                    <div class="animation-wrap__item item-7" id="svg-left-7"></div>
-                    <div class="animation-wrap__text" style="justify-content:center">
-                      <p id="p-left-7">Долгие недели ожидания<br/>возврата пропавших <br/>вещей</p>
-                    </div>
-                  </div>
-                </div>
+</svg>  
+                <ul style="justify-content: center; margin:0"> 
+                  <li id="left-svg7"> 
+                    <div class="content__img content__img__red"> <img src="assets/media/images/content/steps-before-image7.jpg" alt=""/></div>
+                    <p>
+                      Долгие недели ожидания
+                      возврата пропавших 
+                      вещей 
+                      
+                      
+                    </p>
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="steps-item --right anim slide-in-right" id="--right" v-on:mouseover="changeSide" :class="rightWidthState">
-              <div class="overlay turnOn" :class="{'addOpacity': rightOpacity}"></div>
-              <div class="steps-item__right-1" :class="{ 'beabsolute': rightAbsolute1 }">
-                <div class="steps-item__right-1__block"> <img src="assets/media/images/content/steps-2-bg.svg" alt=""/>
-                  <p>
-                     Объект<br/><span class="stepYellow">под</span><br/>охраной<br/>top <br/>security<br/>kz</p>
-                </div>
-              </div>
-              <div class="steps-item__right-2" :class="{ 'beabsolute': rightAbsolute2 }">
-                <div class="steps-item__right-2__animation">
-                  <h2>Объект c охраной top security kz</h2>
-                  <div class="animation-wrap">
-                    <div class="animation-wrap__item item-1" id="svg-right-1"></div>
-                    <div class="animation-wrap__svg svg-1">
-                      <div class="svg-wrap svg-r-wrap-1">
-                         <svg id="vg-right-1" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
+          </transition></section>
+<section @mouseenter="changeRightWidth" :style='{ flex: rightWidth }' class="tp-step-right tp-step">
+          <div class="tp-fade" v-show="rightShow">          <img src="assets/media/images/content/steps-2-bg.svg" alt=""/><h2> ОБЪЕКТ <br> БЕЗ <br> ОХРАНЫ <br> TOP <br> SECURITY <br> KZ </h2>                          </div>
+          <transition name="fade"> 
+            <div class="hidden-fade" v-show="rhShow"> 
+              <div class="hidden-fade__title">ОБЪЕКТ C ОХРАНОЙ TOP SECURITY KZ</div>
+              <div class="hidden-fade__content">
+                <ul>
+                  <li v-for="list in lists3" :id="list.id">
+                    <div :class="list.class"><img :src="list.img"/></div><p> {{ list.text}} </p>
+                  </li><svg class="content__svg svg-anim-top" viewBox="0 0 520 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4H0" stroke="#ffb800" stroke-width="7" stroke-dasharray="25 8"/>
 </svg>
-                      </div>
-                    </div>
-                    <div class="animation-wrap__item item-2" id="svg-right-2"></div>
-                    <div class="animation-wrap__svg svg-1">
-                      <div class="svg-wrap svg-r-wrap-2">
-                         <svg id="vg-right-2" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
-</svg>
-                      </div>
-                    </div>
-                    <div class="animation-wrap__item item-3" id="svg-right-3"></div>
-                    <div class="animation-wrap__text">
-                      <p id="p-right-1">Датчики фиксируют попытку <br/>незаконного проникновения<br/>1-2 сек</p>
-                      <p id="p-right-2">Срабатывает сирена<br/>1-2 сек<br/></p>
-                      <p id="p-right-3">Оператор получает сигнал <br/>оповещает охрану <br/>10 сек  </p>
-                    </div>
-                    <div class="absolute__svg3"><svg  id="vg-right-3" width="139" height="332" viewBox="0 0 139 332" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M-1.52588e-05 4.00001L102 4.00001C120.225 4.00001 135 18.7746 135 37L135 169.189L135 295C135 313.225 120.225 328 102 328L-1.0963e-06 328" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
-</svg>
-                    </div>
-                    <div class="animation-wrap__item item-4" id="svg-right-6">  </div>
-                    <div class="animation-wrap__svg svg-2">
-                      <div class="svg-wrap svg-r-wrap-5">
-                         <svg id="vg-right-5" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
-</svg>    
-                      </div>
-                    </div>
-                    <div class="animation-wrap__item item-5" id="svg-right-5">  </div>
-                    <div class="animation-wrap__svg svg-2">
-                      <div class="svg-wrap svg-r-wrap-4">
-                         <svg id="vg-right-4" width="200" height="8" viewBox="0 0 200 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 4H720" stroke="#FFB800" stroke-width="7" stroke-dasharray="25 8"/>
-</svg> 
-                      </div>
-                    </div>
-                    <div class="animation-wrap__item item-6" id="svg-right-4">     </div>
-                    <div class="animation-wrap__text">
-                      <p id="p-right-6">Клиент наслаждается <br/>покоем </p>
-                      <p id="p-right-5">Угроза устранена</p>
-                      <p id="p-right-4">Оперативная группа <br/>выезжает на место
-                        от 5-15 минут                                                                                               
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                </ul><svg class="content-right-svg" viewBox="0 0 52 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M-1.46343e-05 4L15 4C33.2254 4.00001 48 18.7746 48 37L48 169.189L48 295C48 313.225 33.2254 328 15 328L-4.71775e-07 328" stroke="#ffb800" stroke-width="7" stroke-dasharray="25 8"/>
+</svg>               
+                <ul>
+                  <li v-for="list in lists4" :id="list.id">
+                    <div :class="list.class"><img :src="list.img"/></div><p> {{ list.text}} </p>
+                  </li><svg class="content__svg svg-anim-bottom" viewBox="0 0 520 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4H720" stroke="#ffb800" stroke-width="7" stroke-dasharray="25 8"/>
+</svg>              
+                </ul>
               </div>
             </div>
-          </div>
+          </transition></section>
         </div>
       </section>
       <section class="benefits-wrap spy-it" id="benefits">
@@ -594,6 +519,6 @@
         </div>
       </div>
     </main>
-    <script src="main.js?v=37"></script>
+    <script src="main.js?v=142"></script>
   </body>
 </html>

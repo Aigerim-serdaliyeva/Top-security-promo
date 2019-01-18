@@ -35,7 +35,7 @@
 }
 
 .tp-step {
-  height: 40vw;  
+  height: 50vw;  
   width: 49%;
   color: #000;  
   position: relative;
@@ -59,11 +59,25 @@
   }
 }
 
+.tp-fade {  
+  display: flex; 
+  flex-direction: column;
+}
+
 .tp-step-left {  
   margin-right: 1vw;  
   align-items: flex-end;  
   .hidden-fade__title {
     color: #ef3b39;
+  }
+  h2 {
+    margin-right: vw(50);
+  }
+  .tp-fade {
+   align-items: flex-end;
+  }
+  .hidden-fade {
+    right: 0;
   }
   &::after {
     @include overlay();   
@@ -73,9 +87,18 @@
 
 
 .tp-step-right { 
+  h2 {
+    margin-left: vw(50);
+  }
   .hidden-fade__title {
     color: #ffb800;
-  }   
+  }     
+  .hidden-fade {
+    left: 0;
+  }
+  .tp-fade {
+    align-items: flex-start;
+   }
   text-align: center;
   align-items: flex-start;
   background: rgba(0,0,0,.9) !important;
@@ -85,25 +108,18 @@
   }
 }
 
-.tp-fade-enter-active, .tp-fade-leave-active {
-  transition: opacity .2s;
-}
-.tp-fade-enter, .tp-fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
-  opacity: 0;
-}
-
 [v-cloak] {
   display: none;
 }
 
 .hidden-fade {
   height: 100%;
-  width: 90%;
-  border: 1px solid #fff;
+  width: 90%;  
   position: absolute;
   top: 0;
   padding: 1vw 0;  
-  z-index: 10;
+  z-index: 10;      
+  
   &__title {
     text-align: center;
     font-size: 2.5vw;    
@@ -111,34 +127,143 @@
   }
 }
 
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
+
 .hidden-fade__content {
-  width: 100%;
-  display: flex;  
-  flex-wrap: wrap;
-  justify-content: center;
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  flex-direction: column;  
+  margin-top: vw(50); 
+  position: relative;
+  ul{
+    width: 65%;    
+    display: flex;    
+  justify-content: space-between;  
   list-style-type: none;
+  position: relative;
+  margin: 0;
+  padding: 0 !important;
+  margin-bottom: 7vw;
+  }  
   .content__img {
     height: vw(150);
-    width: vw(150);
+    width: vw(150);    
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }      
+  }  
+  .content__img__red {
     border: .5vw solid #ef3b39;
-    border-radius: 50%;
   }
+  .content__img__yellow {
+    border: .5vw solid #ffb800;
+  }
+  li {
+    position: relative;
+    opacity: 0;
+    p {
+      position: absolute;
+      width: 7.5vw;
+      font-size: vw(15);
+      text-align: center;
+      font-family: Montserrat;
+      text-transform: none;
+    }
+  }
+}
+
   .content__svg {
-    width: vw(150);
+    width: 23vw;
+    height: 1vw;
+    position: absolute;    
+    z-index: -1;   
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;        
+    margin: auto;
+  }      
+
+  .content-right-svg {    
+    height: vw(292);       
+    width: 5vw;
+    position: absolute;
+    top: vw(70);
+    right: vw(140);
+    z-index: -1;
+    margin: auto;         
   }
-    
-}
+  
+  .content-left-svg {    
+    height: vw(300);           
+    position: absolute;
+    top: vw(357);
+    left: vw(80);
+    z-index: -1;
+    margin: auto; 
+    animation: dash-left 1s linear infinite;       
+  }
 
+  .svg-anim-top {
+    animation: dash-top 1s linear infinite;
+  }
 
-.hidden-fade-enter-active, .hidden-fade-leave-active {
-  transition: opacity .3s; 
-}
-.hidden-fade-enter, .hidden-fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
-   opacity: 0; 
-}
+  .svg-anim-bottom {        
+    animation: dash-bottom 1s linear infinite;               
+  }
 
+  .svg-anim-right path {
+    animation: dash-right 1s linear infinite;   
+  }
 
+  .svg-anim-left path {
+    animation: dash-left 1s linear infinite;   
+  }
 
+  @keyframes dash-top {
+    to {
+      stroke-dashoffset: -100;
+    }
+  }
+
+  @keyframes dash-bottom {
+    to {
+      stroke-dashoffset: 100;
+    }
+  }
+
+  @keyframes dash-right {
+    from {
+      stroke-dasharray: 25 8;
+    }
+    to {
+      stroke-dasharray: 25 8;
+      stroke-dashoffset: -100;
+    }
+  }
+
+  @keyframes dash-left {
+    from {
+      stroke-dasharray: 25 8;
+    }
+    to {
+      stroke-dasharray: 25 8;
+      stroke-dashoffset: -100;
+    }
+  }
 
 
 
@@ -451,6 +576,9 @@
 }
 
 @media screen and (max-width: 1070px) {
+  #sanj-steps {
+    display: none !important;
+  }
   .sanj-steps {
     display: none !important;
   }
@@ -470,8 +598,6 @@
 
 
 // end sanzhar media
-
-
 
 .addOpacity {
   opacity: 0 !important;
