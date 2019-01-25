@@ -7,11 +7,39 @@ mixin benefit(data, index)
         p.benefit-text!=data.text
 
   
-mixin benefits() 
+mixin benefits()     
+  #triggerElem
   section.benefits-wrap#benefits.spy-it
     .container
-      .section-title.anim.slide-in-top 4 веские причины выбрать<br>Top Security KZ
+      .section-title.anim.slide-in-top 4 веские причины выбрать<br>Top Security KZ      
       ul.benefits
         each item, index in benefits
           li.benefits-item.anim.slide-in-bot
-            +benefit(item, index)
+            +benefit(item, index)              
+  #modal-spec.modal-event
+    .modal-spec
+      .close-butt X
+      .modal-spec__title
+        h2 Спецпредложение
+        p При оплате Годовой Абонентской платы оборудование #[br] устанавливается бесплатно
+      .modal-spec__main
+        .modal-spec__main__img
+          img(src="assets/media/images/content/pirpet.jpg", alt="") 
+        .modal-spec__main__content
+          h2 Комплектация: Standard
+          p.
+            3 датчика движения, 1 датчик размыкания, 1 сирена, 2 пульта #[br]#[br]
+            Датчики движения не реагирующие #[br] на домашних животных.
+      .modal-spec__footer    
+        form
+          input.spec__login(type="text", placeholder="Ваше имя", required, name="name2")
+          i(class="input-label-icon--user login-i")             
+
+          input.spec__number(type="text", placeholder="Номер телефона", data-mask="+7 (000) 0000 000", required, name="phone2")  
+          i(class="input-label-icon--phone number-i")            
+          button(type="submit", class="prevent-new-mail") Заказать
+        a.hidden-a(href="tel:+77273467657") Позвонить  
+          
+                          
+
+

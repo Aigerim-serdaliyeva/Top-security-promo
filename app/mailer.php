@@ -38,6 +38,5 @@
 		$mail->addAddress('m.masseyeva@muratov.kz');
 		$mail->Subject = EMAIL_SUBJECT;
 		$mail->Body	   = sprintf(EMAIL_BODY, $data['name'], $data['phone']);
-
 		$mail->send();
 	}

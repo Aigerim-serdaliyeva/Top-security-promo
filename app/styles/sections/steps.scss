@@ -21,6 +21,9 @@
   @return ($px * 0.05208) + vw;
 }
 
+@function vwM($px) { 
+  @return (($px * 0.05208) * 2) + vw;
+}
 
 .asan-steps {
   display: none ;
