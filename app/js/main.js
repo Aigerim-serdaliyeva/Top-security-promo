@@ -107,7 +107,7 @@ jQuery(document).ready(function($) {
       },    
         { id: 'right-svg4', class: 'content__img content__img__yellow', img: 'assets/media/images/content/steps-after-image6.jpg',
         text: `
-        Оперативная группа 
+        Мобильная группа 
     выезжает на место от 5-15 минут
         `
       },    
@@ -691,6 +691,12 @@ prevented.addEventListener('click', (event) => {
 var input_name2 = document.getElementsByClassName('spec__login')[0].value;
 var input_phone2 = document.getElementsByClassName('spec__number')[0].value;
 
+if (input_name2 === null || input_name2 === ''  || input_phone2 === '' || input_phone2 === null) {
+    event.preventDefault();
+    event.stopPropagation();
+    console.log('this');
+}
+else {
 $.ajax({
   type: "POST",
   url: "vendor/call-me.php",
@@ -699,5 +705,6 @@ $.ajax({
     modalSpec.classList.remove('modal-visible')
   }
 });
+}
 })
 

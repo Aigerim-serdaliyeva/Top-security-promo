@@ -1,8 +1,8 @@
 <?php
-	define("AUTH_SERVER", "smtp.yandex.ru");
+	define("AUTH_SERVER", "smtp.mail.ru");
 	define("AUTH_PORT", "465");
-	define("AUTH_LOGIN", "no-reply@muratov.kz");
-	define("AUTH_PASSWORD", "gkqadrgsqutmxqfe");
+	define("AUTH_LOGIN", "no-reply@topsecurity.kz");
+	define("AUTH_PASSWORD", "ct4pRuRA1yR$");
 
 	define("EMAIL_FROM", "info@topsecurity.kz");
 	define("EMAIL_NAME", "Top Security Promo");
@@ -33,9 +33,11 @@
 		$mail->Username = AUTH_LOGIN;
 		$mail->Password = AUTH_PASSWORD;
 
-		$mail->SetFrom(AUTH_LOGIN, EMAIL_NAME);
-		$mail->addAddress('g.kadyrova@muratov.kz');
-		$mail->addAddress('m.masseyeva@muratov.kz');
+		$mail->SetFrom(AUTH_LOGIN, EMAIL_NAME);        
+        $mail->addAddress('info@topsecurity.kz');		
+        $mail->addCC("callcentre@muratov.kz");
+        $mail->addCC("z.bertoleuova@newestate.kz");
+        $mail->addCC("a.zhadraeva@newestate.kz");
 		$mail->Subject = EMAIL_SUBJECT;
 		$mail->Body	   = sprintf(EMAIL_BODY, $data['name'], $data['phone']);
 		$mail->send();

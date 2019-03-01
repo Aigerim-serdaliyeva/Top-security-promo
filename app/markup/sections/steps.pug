@@ -86,10 +86,10 @@ mixin steps()
       
       .tp-fade(v-show="rightShow")           
             img(src="assets/media/images/content/steps-2-bg.svg", alt="") 
-            <h2> ОБЪЕКТ <br> БЕЗ <br> ОХРАНЫ <br> TOP <br> SECURITY <br> KZ </h2>                          
+            <h2> ОБЪЕКТ <br> ПОД <br> ОХРАНОЙ <br> TOP <br> SECURITY <br> KZ </h2>                          
       transition(name="fade")  
         .hidden-fade(v-show="rhShow") 
-          .hidden-fade__title ОБЪЕКТ C ОХРАНОЙ TOP SECURITY KZ
+          .hidden-fade__title ОБЪЕКТ ПОД ОХРАНОЙ TOP SECURITY KZ
           .hidden-fade__content
             ul
               li(v-for="list in lists3", :id="list.id")

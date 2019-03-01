@@ -13490,7 +13490,7 @@ jQuery(document).ready(function ($) {
         }, { id: 'right-svg5', class: 'content__img content__img__yellow', img: 'assets/media/images/content/steps-after-image5.jpg',
           text: '\n        \u0423\u0433\u0440\u043E\u0437\u0430 \u0443\u0441\u0442\u0440\u0430\u043D\u0435\u043D\u0430\n        '
         }, { id: 'right-svg4', class: 'content__img content__img__yellow', img: 'assets/media/images/content/steps-after-image6.jpg',
-          text: '\n        \u041E\u043F\u0435\u0440\u0430\u0442\u0438\u0432\u043D\u0430\u044F \u0433\u0440\u0443\u043F\u043F\u0430 \n    \u0432\u044B\u0435\u0437\u0436\u0430\u0435\u0442 \u043D\u0430 \u043C\u0435\u0441\u0442\u043E \u043E\u0442 5-15 \u043C\u0438\u043D\u0443\u0442\n        '
+          text: '\n        \u041C\u043E\u0431\u0438\u043B\u044C\u043D\u0430\u044F \u0433\u0440\u0443\u043F\u043F\u0430 \n    \u0432\u044B\u0435\u0437\u0436\u0430\u0435\u0442 \u043D\u0430 \u043C\u0435\u0441\u0442\u043E \u043E\u0442 5-15 \u043C\u0438\u043D\u0443\u0442\n        '
         }]
       },
       methods: {
@@ -14029,12 +14029,18 @@ prevented.addEventListener('click', function (event) {
   var input_name2 = document.getElementsByClassName('spec__login')[0].value;
   var input_phone2 = document.getElementsByClassName('spec__number')[0].value;
 
-  $.ajax({
-    type: "POST",
-    url: "vendor/call-me.php",
-    data: { name2: input_name2, phone2: input_phone2 },
-    success: function success(response) {
-      modalSpec.classList.remove('modal-visible');
-    }
-  });
+  if (input_name2 === null || input_name2 === '' || input_phone2 === '' || input_phone2 === null) {
+    event.preventDefault();
+    event.stopPropagation();
+    console.log('this');
+  } else {
+    $.ajax({
+      type: "POST",
+      url: "vendor/call-me.php",
+      data: { name2: input_name2, phone2: input_phone2 },
+      success: function success(response) {
+        modalSpec.classList.remove('modal-visible');
+      }
+    });
+  }
 });
