@@ -13965,7 +13965,7 @@ jQuery(document).ready(function ($) {
       window.open('assets/documents/license-first.pdf', '_blank');
     });
     document.querySelector('#license-second').addEventListener('click', function () {
-      window.open('assets/documents/license-second.pdf', '_blank');
+      window.open('assets/documents/license-second.pdf?v=001', '_blank');
     });
   }
 

@@ -2607,7 +2607,7 @@ body {
     background-size: cover;
     background-position: center; }
   .license .second-hidden {
-    background: url("assets/media/images/content/second-license.png") no-repeat;
+    background: url("assets/media/images/content/second-license2.png") no-repeat;
     background-size: cover;
     background-position: center; }
 
@@ -3223,6 +3223,8 @@ body {
   .new-footer .primary-a {
     color: #EF3B39; }
   .new-footer .secondary-a {
-    color: rgba(255, 255, 255, 0.6); } }
+    color: rgba(255, 255, 255, 0.6); }
+  .ym-advanced-informer {
+    display: none; } }
 
 /*# sourceMappingURL=main.css.map */
