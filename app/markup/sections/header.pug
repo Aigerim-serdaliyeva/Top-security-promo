@@ -17,11 +17,14 @@ mixin header()
           ul.navbar-menu-list
             each item in navbar.items
               +navbar-item(item)
-            img(src="assets/media/images/content/header-icon.svg", alt="")  
-            a.nav-number(href="tel:+77273390452")  +7 (727) 339-04-52   
-            img(src="assets/media/images/content/header-icon.svg", alt="", style="margin-left: 10px;")  
-            a.nav-number 5335
-        a(href="tel:+77273390452").navbar-phone
+            article
+                section.dflex  
+                    img(src="assets/media/images/content/header-icon.svg", alt="")  
+                    a.nav-number(href="tel:+77010316713") +7 (701) 031-67-13            
+                section.dflex  
+                    img(src="assets/media/images/content/header-icon.svg", alt="")  
+                    a.nav-number(href="tel:+77273390452") +7 (727) 339-04-52
+        a(href="tel:+77010316713").navbar-phone
       .mobile
         nav.mobile-menu
           ul.mobile-menu-list

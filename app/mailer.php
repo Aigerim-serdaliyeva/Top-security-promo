@@ -35,9 +35,7 @@
 
 		$mail->SetFrom(AUTH_LOGIN, EMAIL_NAME);        
         $mail->addAddress('info@topsecurity.kz');		
-        $mail->addCC("callcentre@muratov.kz");
-        $mail->addCC("z.bertoleuova@muratov.kz");
-        $mail->addCC("a.zhadraeva@newestate.kz");
+        $mail->addCC("callcentre@muratov.kz");           
 		$mail->Subject = EMAIL_SUBJECT;
 		$mail->Body	   = sprintf(EMAIL_BODY, $data['name'], $data['phone']);
 		$mail->send();
