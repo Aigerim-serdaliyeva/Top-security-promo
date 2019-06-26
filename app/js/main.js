@@ -676,11 +676,13 @@ function getScrollPosition() {
 }
 
 modalSpec.addEventListener('click', (e) => {
+  e.preventDefault();
   let event = e.target;   
   if(event.id === 'modal-spec') {
     modalSpec.classList.remove('modal-visible')
   }
 })
+
 
 document.querySelector('.close-butt').addEventListener('click', () => {
   modalSpec.classList.remove('modal-visible')

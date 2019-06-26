@@ -25,17 +25,18 @@
   font-family: Montserrat;
   padding: 20px;
   &__wrap {
-    height: 300px;
+    height: auto;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;    
+    align-items: flex-end;
   }
   &__block {
     width: 33%;
     height: 100%;
     display: flex;
     flex-direction: column;    
-    justify-content: flex-end;
+    
     padding: 20px 0;
     .block {
       &__menu {
@@ -284,6 +285,9 @@
     }
     &__block {
       width: 100%;
+      .block__number {
+          font-size: 25px;
+      }
     }
     .block {
       &__location {

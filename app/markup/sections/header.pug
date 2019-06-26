@@ -24,7 +24,15 @@ mixin header()
                 section.dflex  
                     img(src="assets/media/images/content/header-icon.svg", alt="")  
                     a.nav-number(href="tel:+77273390452") +7 (727) 339-04-52
-        a(href="tel:+77010316713").navbar-phone
+                section.dflex  
+                    img(src="assets/media/images/content/header-icon.svg", alt="")  
+                    a.nav-number(
+                        href="tel:5335"
+                        style=`
+                            font-size: 20px;
+                        `
+                    )  5335                    
+        a(href="tel:5335" onclick="dataLayer.push({'event': 'header-phone'})").navbar-phone
       .mobile
         nav.mobile-menu
           ul.mobile-menu-list

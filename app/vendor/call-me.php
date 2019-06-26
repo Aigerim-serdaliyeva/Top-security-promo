@@ -14,18 +14,20 @@ try {
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.yandex.ru';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'no-reply@muratov.kz';                 // SMTP username
-    $mail->Password = 'gkqadrgsqutmxqfe';                           // SMTP password
+    $mail->Username = 'no-reply@topsecurity.kz';                 // SMTP username
+    $mail->Password = 'ct4pRuRA1yR$';                           // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465;                                    // TCP port to connect to
     $input_name2 = $_POST["name2"];
     $input_phone2 = $_POST["phone2"];
     //Recipients       
+    $mail->addAddress('info@topsecurity.kz');		
+    $mail->addCC("callcentre@muratov.kz");      
     $mail->addAddress('sanch941@gmail.com', 'Green');
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Заявка с главной мобильной версии Kazarm.kz';
+    $mail->Subject = 'Заявка promo.topsecurity.kz';
     $mail->Body    = "
     <html>
       <head>

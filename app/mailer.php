@@ -4,7 +4,7 @@
 	define("AUTH_LOGIN", "no-reply@topsecurity.kz");
 	define("AUTH_PASSWORD", "ct4pRuRA1yR$");
 
-	define("EMAIL_FROM", "info@topsecurity.kz");
+	define("EMAIL_FROM", "no-reply@topsecurity.kz");
 	define("EMAIL_NAME", "Top Security Promo");
 	define("EMAIL_SUBJECT", "Заказали звонок");
 	define("EMAIL_BODY", "Имя - %s <br> Телефон - %s");
@@ -36,6 +36,7 @@
 		$mail->SetFrom(AUTH_LOGIN, EMAIL_NAME);        
         $mail->addAddress('info@topsecurity.kz');		
         $mail->addCC("callcentre@muratov.kz");           
+        $mail->addCC("sanch941@gmail.com");
 		$mail->Subject = EMAIL_SUBJECT;
 		$mail->Body	   = sprintf(EMAIL_BODY, $data['name'], $data['phone']);
 		$mail->send();

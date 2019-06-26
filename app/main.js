@@ -14014,6 +14014,7 @@ function getScrollPosition() {
 }
 
 modalSpec.addEventListener('click', function (e) {
+  e.preventDefault();
   var event = e.target;
   if (event.id === 'modal-spec') {
     modalSpec.classList.remove('modal-visible');

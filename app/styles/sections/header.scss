@@ -57,6 +57,7 @@
     }
     &-item {
       padding: em(10) em(16) em(11);
+      display: flex; align-items: center;
     }
     &-link {
       color: $colorMain;
