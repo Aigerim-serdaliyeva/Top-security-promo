@@ -2,7 +2,7 @@ mixin callback()
   section.callback-wrap.anim.slide-in-bot#callback.spy-it
     .container
       .callback
-        .callback-title Остались вопросы?
+        .callback-title Нужна консультация?
         .callback-desc Заполните поля, и мы Вам перезвоним!
         form.callback-form.ajax-form
           .input
@@ -14,7 +14,7 @@ mixin callback()
             label.input-label(for="callback_phone") 
               i.input-label-icon.input-label-icon--phone
               span Номер телефона
-            input.input-value(type="text", data-mask="+7 (000) 0000 000", required, id="callback_phone", name="phone")
+            input.input-value(type="text", data-mask="8(000)000-00-00", required, id="callback_phone", name="phone")
           .input.callback-end
             button.btn.btn--primary(type="submit" onclick="dataLayer.push({'event': 'footer-call'})") Заказать
           .callback-form-message.callback-form-message--success Ваше сообщение отправлено!

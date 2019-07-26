@@ -35,7 +35,7 @@ mixin benefits()
           input.spec__login(type="text", placeholder="Ваше имя", required, name="name2")
           i(class="input-label-icon--user login-i")             
 
-          input.spec__number(type="text", placeholder="Номер телефона", data-mask="+7 (000) 0000 000", required, name="phone2")  
+          input.spec__number(type="text", placeholder="Номер телефона", data-mask="8(000)000-00-00", required, name="phone2")  
           i(class="input-label-icon--phone number-i")            
           button(type="submit", class="prevent-new-mail" onclick="dataLayer.push({'event': 'modal-spec'})") Заказать
         a.hidden-a(href="tel:+77273467657" onclick="dataLayer.push({'event': 'modal-spec'})") Позвонить  
