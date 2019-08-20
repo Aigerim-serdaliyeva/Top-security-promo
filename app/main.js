@@ -13902,18 +13902,6 @@ jQuery(document).ready(function ($) {
     });
   })();
 
-  //  anime endlet
-  var jivoClick = document.querySelector('.top-jivo');
-  var jivoBool = true;
-  function jivoVisible() {
-    // $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility','visible')  ;
-    $('.globalClass_ET').show();
-  }
-  function jivoInVisible() {
-    // $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility','hidden');
-    $('.globalClass_ET').hide();
-  }
-
   document.querySelectorAll('.services__block').forEach(function (el) {
     el.addEventListener('click', function () {
       el.querySelector('.services__block__image').style.transform = 'translateX(0)';

@@ -563,18 +563,6 @@ jQuery(document).ready(function($) {
 
     
  
-  //  anime endlet
-let jivoClick = document.querySelector('.top-jivo');
-let jivoBool = true;
-function jivoVisible() {
-  // $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility','visible')  ;
-  $('.globalClass_ET').show();
-}
-function jivoInVisible() {
-  // $('#jivo-iframe-container,#jivo_container,[class^="jivo"],[id^="jivo"]').css('visibility','hidden');
-  $('.globalClass_ET').hide();
-}
-
 
 document.querySelectorAll('.services__block').forEach((el) => {
   el.addEventListener('click',() => {
