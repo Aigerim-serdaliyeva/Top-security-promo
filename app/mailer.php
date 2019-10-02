@@ -34,8 +34,9 @@
 		$mail->Password = AUTH_PASSWORD;
 
 		$mail->SetFrom(AUTH_LOGIN, EMAIL_NAME);        
-        $mail->addAddress('info@topsecurity.kz');		
-        $mail->addCC("callcentre@muratov.kz");           
+        $mail->addAddress('info@topsecurity.kz');		                   
+        $mail->addCC("v.klepikova@muratov.kz");
+        $mail->addCC("y.shmatkova@muratov.kz");        
         $mail->addCC("sanch941@gmail.com");
 		$mail->Subject = EMAIL_SUBJECT;
 		$mail->Body	   = sprintf(EMAIL_BODY, $data['name'], $data['phone']);

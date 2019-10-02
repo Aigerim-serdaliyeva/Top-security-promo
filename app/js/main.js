@@ -599,15 +599,7 @@ function openLicense() {
   });
 };
 
-jivoClick.addEventListener('click', () => {    
-      jivoVisible()
-      jivo_api.open();           
-      setTimeout(() => {
-        document.querySelector('#jivo_close_button').addEventListener('click',() =>{
-          jivoInVisible()
-        })
-      }, 500);
-    });
+
 
     
     if(window.matchMedia("(min-width:960px)").matches) {
@@ -641,60 +633,4 @@ jivoClick.addEventListener('click', () => {
     });  
 })
 
-let elemOffset = document.querySelector('#triggerElem').offsetTop,
-    modalSpec = document.querySelector('#modal-spec'),
-    scrollObject = {},
-    scrollTrue = true;
-
-window.addEventListener('scroll', () => {
-  getScrollPosition();
-})
-
-function getScrollPosition() {   
-   scrollObject = {
-    x: window.pageXOffset,
-    y: window.pageYOffset
-   }        
-    if(scrollObject.y > elemOffset) {
-      if(scrollTrue) {
-        modalSpec.classList.add('modal-visible');        
-      }
-      scrollTrue = false;      
-    }      
-}
-
-modalSpec.addEventListener('click', (e) => {
-  e.preventDefault();
-  let event = e.target;   
-  if(event.id === 'modal-spec') {
-    modalSpec.classList.remove('modal-visible')
-  }
-})
-
-
-document.querySelector('.close-butt').addEventListener('click', () => {
-  modalSpec.classList.remove('modal-visible')
-})
-let prevented = document.querySelector('.prevent-new-mail');
-
-prevented.addEventListener('click', (event) => {
-var input_name2 = document.getElementsByClassName('spec__login')[0].value;
-var input_phone2 = document.getElementsByClassName('spec__number')[0].value;
-
-if (input_name2 === null || input_name2 === ''  || input_phone2 === '' || input_phone2 === null) {
-    event.preventDefault();
-    event.stopPropagation();
-    console.log('this');
-}
-else {
-$.ajax({
-  type: "POST",
-  url: "vendor/call-me.php",
-  data: {  name2 : input_name2, phone2 : input_phone2 },
-  success: function(response) {            
-    modalSpec.classList.remove('modal-visible')
-  }
-});
-}
-})
 
